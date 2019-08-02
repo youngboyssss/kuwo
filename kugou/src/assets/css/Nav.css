@@ -1,0 +1,10 @@
+body,ul,li,p,h3,dl,dd{margin: 0;padding: 0;}
+a,span,i{display: block;}
+a{text-decoration: none;}
+li{list-style:none;}
+li{list-style:none;}
+html{font-size: 32vw;}
+
+.top{
+    height: 100px;
+}

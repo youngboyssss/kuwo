@@ -1,0 +1,318 @@
+{
+  "content": {
+    "data": {
+      "isLogin": false,
+      "page": {
+        "pageSize": 15,
+        "start": "0",
+        "result": [
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5033588,
+            "positionName": "销售主管",
+            "city": "郑州",
+            "createTime": "今天 16:00",
+            "salary": "8k-12k",
+            "companyId": 123763,
+            "companyLogo": "i/image2/M00/42/C3/CgotOVrDVUeANc21AABwNm509IU196.png",
+            "companyName": "斗米",
+            "companyFullName": "北京斗米优聘科技发展有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4881840,
+            "positionName": "品牌商务",
+            "city": "深圳",
+            "createTime": "今天 16:00",
+            "salary": "12k-24k",
+            "companyId": 110752,
+            "companyLogo": "i/image2/M01/E9/34/CgoB5lx2YzSAJKr9AAAodPGF0NE898.png",
+            "companyName": "花旦传媒有限公司",
+            "companyFullName": "深圳花旦传媒有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4881790,
+            "positionName": "微信广告投放专员",
+            "city": "深圳",
+            "createTime": "今天 16:00",
+            "salary": "6k-12k",
+            "companyId": 110752,
+            "companyLogo": "i/image2/M01/E9/34/CgoB5lx2YzSAJKr9AAAodPGF0NE898.png",
+            "companyName": "花旦传媒有限公司",
+            "companyFullName": "深圳花旦传媒有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4916877,
+            "positionName": "金融AI研究实习生",
+            "city": "北京",
+            "createTime": "今天 16:00",
+            "salary": "1k-2k",
+            "companyId": 98285,
+            "companyLogo": "i/image/M00/64/C7/CgpFT1mjrAyAULA7AAAfwvqpd4M068.png",
+            "companyName": "国美金控",
+            "companyFullName": "国美金控投资有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4911962,
+            "positionName": "视频后期制作",
+            "city": "深圳",
+            "createTime": "今天 16:00",
+            "salary": "8k-15k",
+            "companyId": 8277,
+            "companyLogo": "i/image/M00/59/DE/CgpEMlmEKw2AWckhAAp07wWI89c070.jpg",
+            "companyName": "路通网络",
+            "companyFullName": "深圳市路通网络技术有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5032807,
+            "positionName": "高级Java开发工程师",
+            "city": "上海",
+            "createTime": "今天 15:58",
+            "salary": "20k-35k",
+            "companyId": 32836,
+            "companyLogo": "i/image2/M01/0B/B0/CgotOVycbBCATsD3AAAzJzsV8rQ881.png",
+            "companyName": "达达-京东到家",
+            "companyFullName": "达疆网络科技（上海）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5082065,
+            "positionName": "高级算法工程师",
+            "city": "上海",
+            "createTime": "今天 15:58",
+            "salary": "20k-30k",
+            "companyId": 32836,
+            "companyLogo": "i/image2/M01/0B/B0/CgotOVycbBCATsD3AAAzJzsV8rQ881.png",
+            "companyName": "达达-京东到家",
+            "companyFullName": "达疆网络科技（上海）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4803908,
+            "positionName": "后期制作",
+            "city": "北京",
+            "createTime": "今天 15:57",
+            "salary": "5k-10k",
+            "companyId": 267128,
+            "companyLogo": "i/image2/M01/A8/30/CgotOVvk_7-ALObPAAAbXiUnTCM810.png",
+            "companyName": "东润互动",
+            "companyFullName": "北京东润互动科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5084009,
+            "positionName": "游戏UI设计师",
+            "city": "成都",
+            "createTime": "今天 15:57",
+            "salary": "8k-12k",
+            "companyId": 114978,
+            "companyLogo": "i/image/M00/04/00/CgqKkVbFXSeACvNAAACesP6K1Zw650.jpg",
+            "companyName": "世纪阳天",
+            "companyFullName": "成都世纪阳天科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4871815,
+            "positionName": "JAVA软件研发工程师",
+            "city": "北京",
+            "createTime": "今天 15:57",
+            "salary": "8k-13k",
+            "companyId": 340097,
+            "companyLogo": "i/image2/M01/6C/50/CgoB5ltOpX6AAmXVAAAlD_3szGA034.jpg",
+            "companyName": "东方瑞创达",
+            "companyFullName": "烟台东方瑞创达电子科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5082574,
+            "positionName": "android开发工程师",
+            "city": "深圳",
+            "createTime": "今天 15:57",
+            "salary": "8k-12k",
+            "companyId": 50247,
+            "companyLogo": "image1/M00/00/84/CgYXBlTUXeGATr0XAABW995UbiQ754.jpg",
+            "companyName": "壹零后",
+            "companyFullName": "深圳壹零后信息技术有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4911999,
+            "positionName": "内容审核专员/客服专员",
+            "city": "上海",
+            "createTime": "今天 15:56",
+            "salary": "4k-5k",
+            "companyId": 34331,
+            "companyLogo": "i/image2/M01/D5/DD/CgoB5lxRUkGAcAjoAAH1pyXcJEA383.png",
+            "companyName": "么么直播",
+            "companyFullName": "上海星艾网络科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5057530,
+            "positionName": "售前工程师",
+            "city": "成都",
+            "createTime": "今天 15:56",
+            "salary": "12k-16k",
+            "companyId": 317188,
+            "companyLogo": "i/image2/M01/7D/65/CgotOVt2N42AUR-3AAAUslSTJ9g285.png",
+            "companyName": "成都拓尔思",
+            "companyFullName": "成都拓尔思信息技术有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5083546,
+            "positionName": "ASO推广经理",
+            "city": "上海",
+            "createTime": "今天 15:56",
+            "salary": "10k-20k",
+            "companyId": 34331,
+            "companyLogo": "i/image2/M01/D5/DD/CgoB5lxRUkGAcAjoAAH1pyXcJEA383.png",
+            "companyName": "么么直播",
+            "companyFullName": "上海星艾网络科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4913457,
+            "positionName": "Camera 硬件工程师",
+            "city": "北京",
+            "createTime": "今天 15:56",
+            "salary": "16k-26k",
+            "companyId": 9863,
+            "companyLogo": "i/image3/M00/21/45/Cgq2xlqTtdaAAY_iAAB7PdrfsFc847.png",
+            "companyName": "MYNTAI小觅智能",
+            "companyFullName": "轻客智能科技（江苏）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5032535,
+            "positionName": "高级前端开发工程师",
+            "city": "上海",
+            "createTime": "今天 15:58",
+            "salary": "20k-30k",
+            "companyId": 32836,
+            "companyLogo": "i/image2/M01/0B/B0/CgotOVycbBCATsD3AAAzJzsV8rQ881.png",
+            "companyName": "达达-京东到家",
+            "companyFullName": "达疆网络科技（上海）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5035073,
+            "positionName": "Java架构师",
+            "city": "上海",
+            "createTime": "今天 15:58",
+            "salary": "30k-50k",
+            "companyId": 32836,
+            "companyLogo": "i/image2/M01/0B/B0/CgotOVycbBCATsD3AAAzJzsV8rQ881.png",
+            "companyName": "达达-京东到家",
+            "companyFullName": "达疆网络科技（上海）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5061296,
+            "positionName": "出纳",
+            "city": "上海",
+            "createTime": "今天 15:55",
+            "salary": "5k-7k",
+            "companyId": 206860,
+            "companyLogo": "i/image2/M01/04/6E/CgoB5lyTTpWACe3cAAAUAPKRCd8599.png",
+            "companyName": "墨智科技",
+            "companyFullName": "墨智科技（深圳）有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 5087356,
+            "positionName": "Android驱动工程师",
+            "city": "广州",
+            "createTime": "今天 15:55",
+            "salary": "12k-20k",
+            "companyId": 170745,
+            "companyLogo": "i/image2/M01/8F/85/CgotOVugyrOAXHb0AAAki9o4SLs736.png",
+            "companyName": "讯码科技",
+            "companyFullName": "广州市讯码通讯科技有限公司"
+          },
+          {
+            "logger": {
+              "traceCapable": true,
+              "name": "com.lagou.entity.mobile.MobilePosition"
+            },
+            "positionId": 4827737,
+            "positionName": "BSP开发工程师",
+            "city": "广州",
+            "createTime": "今天 15:55",
+            "salary": "15k-20k",
+            "companyId": 170745,
+            "companyLogo": "i/image2/M01/8F/85/CgotOVugyrOAXHb0AAAki9o4SLs736.png",
+            "companyName": "讯码科技",
+            "companyFullName": "广州市讯码通讯科技有限公司"
+          }
+        ],
+        "totalCount": "237719",
+        "pageNo": 1
+      }
+    },
+    "rows": []
+  },
+  "message": "第1页数据,每页20条, 查询成功!",
+  "state": 1
+}
