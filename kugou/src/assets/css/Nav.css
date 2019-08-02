@@ -1,10 +1,58 @@
 body,ul,li,p,h3,dl,dd{margin: 0;padding: 0;}
+body{
+    font-family: "微软雅黑",arial,sans-serif;
+}
 a,span,i{display: block;}
 a{text-decoration: none;}
 li{list-style:none;}
 li{list-style:none;}
-html{font-size: 32vw;}
 
-.top{
-    height: 100px;
+.yxl{
+    display: flex;
+    flex-direction: column;
 }
+
+.yxl .header{
+    position: fixed;
+}
+
+.yxl .iconfont{
+    width: 21px;
+    height: 21px;
+    color: #ffffff;
+    margin-top: 14px;
+    margin-left: 5px;
+}
+
+.yxl .search{
+    width: 375px;
+    height: 44px;
+    background: #1da0ef;
+    display: flex;
+    justify-content: space-between;
+}
+
+.yxl .logo{
+    background: url("../images/Nav/logo.png") 0 center no-repeat;
+    display: block;
+    width: 105px;
+    height: 44px;
+    background-size: 100%;
+    margin-right: 140px;
+}
+
+.yxl .link{
+    display: flex;
+    width: 750px;
+    height: 40px;
+}
+
+.yxl .link a{
+    display: block;
+    font-size: 0.3rem;
+    line-height: 0.76rem;
+    width: 75px;
+    height: 40px;
+}
+
+

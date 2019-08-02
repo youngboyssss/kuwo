@@ -1,19 +1,16 @@
 import React from "react";
 import {
-    Route,
     BrowserRouter as Router,
-    withRouter
+    Route
 } from "react-router-dom"
-import MyNav from '../../router/MyNav'
-
-export default class Search extends React.Component{
+import MyNav from '../../router/DownloadAPP'
+export default class DownloadAPP extends React.Component{
     render(){
         return (
             <div>
-                推荐二级路由
+                下载APP
                 {this.props.children?<MyNav navList={this.props.children}></MyNav>:null}
             </div>
         )
-
     }
 }

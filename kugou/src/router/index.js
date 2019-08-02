@@ -7,12 +7,12 @@ import search from './search'
 import singer from './singer'
 
 const routers = [
+    ...search,
     ...recommend,
     ...ranking,
     ...classify,
     ...singer,
-    ...mv,
-    ...search
+    ...mv
 ]
 export default {
     basename:"newh5",

@@ -1,6 +1,7 @@
 import Search from "../../views/Search";
 import SearchList from "../../views/Search/SearchList"
 import children from './children'
+import Font_search from '../../components/Fonts_search'
 export default [
     {//搜索
         to:"/search",
@@ -8,6 +9,7 @@ export default [
         exact:true,
         context:"搜索",
         component:Search,
+        font:Font_search,
         children:[
             ...children
         ],

@@ -14,7 +14,7 @@ class GuardRouter extends React.Component{
         let children = [...(this.props.children || [])]   //一级路由的children是否存在
         let meta = {...(this.props.meta || {})};  //一级路由的meta标签是否为空
         return (
-           <div>
+           <div className={"header"}>
                {meta.isFooter?<MyNav navList={router.routers}></MyNav>:null}   {/*一级路由判断是否加导航栏*/}
                <this.props.component children={children}/>           {/*写入该组件，并传入孩子内容*/}
            </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './assets/js/rem'
 import './index.css';
+import './assets/css/fonts.css'
 import "./assets/css/Nav.css"
 import App from './App';
 import axios from "axios";
