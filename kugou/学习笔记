@@ -1,4 +1,0 @@
-代理服务器：proxy
-    1、下载
-        cnpm install http-proxy-middleware -D
-    2、在你的src目录下创建一个名字为 setupProxy.js的文件
