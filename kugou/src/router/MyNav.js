@@ -15,7 +15,8 @@ class MyNav extends React.Component {
                             if (v.context === "搜索") {
                                 console.log(v.context,9999999)
                                 return (<NavLink key={i} exact={v.exact} to={v.to} style={{color: "#333"}}
-                                                 activeStyle={{color: "#2095dd",borderBottom: "2px solid #2095dd"}}><v.font /></NavLink>)
+                                                 activeStyle={{color: "#2095dd",borderBottom: "2px solid #2095dd"}}><v.font />
+                                </NavLink>)
                             }
                         })
                     }

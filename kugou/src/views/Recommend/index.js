@@ -12,6 +12,5 @@ export default class Recommend extends React.Component{
                 {this.props.children?<MyNav navList={this.props.children}></MyNav>:null}
             </div>
         )
-
     }
 }
