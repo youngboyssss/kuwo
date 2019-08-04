@@ -9,9 +9,8 @@ import MyNav from '../../router/MyNav'
 export default class Search extends React.Component{
     render(){
         return (
-            <div>
-                推荐二级路由
-                {this.props.children?<MyNav navList={this.props.children}></MyNav>:null}
+            <div className={"search"}>
+
             </div>
         )
 

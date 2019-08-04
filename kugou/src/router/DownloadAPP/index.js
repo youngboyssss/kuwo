@@ -9,6 +9,7 @@ export default[
         exact: true,
         context: "下载APP",
         component: Mv,
+        sbNav:false,
         children: [
 
         ],
@@ -24,6 +25,7 @@ export default[
         to: "/MvList",
         path: "/MvList",
         exact: true,
+        sbNav:false,
         context: "首播",
         component: MvList,
         children: [],

@@ -5,11 +5,17 @@ import {
 } from "react-router-dom"
 import MyNav from '../../router/MyNav'
 export default class Classify extends React.Component{
+    async componentDidMount() {
+        const {data} =  await this.axios.get("http://127.0.0.1/getClassify")
+        console.log(data,66666)
+        if(data.ok == 1)
+            this.data = data.infoList
+    }
+
     render(){
         return (
-            <div>
-                分类二级路由
-                {this.props.children?<MyNav navList={this.props.children}></MyNav>:null}
+            <div className={"classify"}>
+
             </div>
         )
     }

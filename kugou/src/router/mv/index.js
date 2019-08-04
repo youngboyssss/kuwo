@@ -9,8 +9,9 @@ export default[
         exact: true,
         context: "MV",
         component: Mv,
+        sbNav:false,
         children: [
-            ...children
+           // ...children
         ],
         meta: {
             title: "拉钩网",
@@ -21,10 +22,11 @@ export default[
     },
 
     {//Mvlist  ----------  排行列表
-        to: "/MvList",
-        path: "/MvList",
+        to: "/MvList/:id",
+        path: "/MvList/:id",
         exact: true,
         context: "首播",
+        sbNav:false,
         component: MvList,
         children: [],
         meta: {

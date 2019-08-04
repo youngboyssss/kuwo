@@ -8,8 +8,9 @@ export default [
         exact:true,
         context:"推荐",
         component:Recommend,
+        sbNav:false,
         children:[
-            ...children
+            //...children
         ],
         meta:{
             keywored:"关键字",
@@ -21,6 +22,7 @@ export default [
         to:"/playlist",
         path:"/playlist",
         exact:true,
+        sbNav:false,
         context:"每日新歌",
         component:PlayList,
         children:[],

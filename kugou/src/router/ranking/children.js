@@ -6,6 +6,7 @@ export default [
         exact:true,
         context:"酷我飙升榜",
         component:Ranking,
+        sbNav:true,
         meta:{
             keywored:"关键字",
             descrieption:"描述",

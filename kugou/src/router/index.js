@@ -16,6 +16,6 @@ const routers = [
 ]
 export default {
     basename:"newh5",
-    forceRefresh:true,
+    forceRefresh:false,
     routers
 }

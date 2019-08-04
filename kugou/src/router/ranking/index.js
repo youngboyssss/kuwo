@@ -7,8 +7,9 @@ export default [
         path:"/ranking",
         context:"排行",
         component:Ranking,
+        sbNav:false,
         children:[
-            ...children
+            //...children
         ],
         meta:{
             // title:"搜索",
@@ -22,6 +23,7 @@ export default [
         path:"/rankinglist",
         exact:true,
         context:"酷我飙升榜",
+        sbNav:false,
         component:RankingList,
         children:[
 

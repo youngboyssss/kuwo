@@ -1,0 +1,161 @@
+var t1 = new Date().getTime();
+function json2url(json) {
+	json.t = Math.random();
+	var arr = [];
+	for ( var i in json) {
+		arr.push(i + '=' + encodeURIComponent(json[i]));
+	}
+	return arr.join('&');
+}
+
+function ajax(json) {
+	json = json || {};
+	if (!json.url)
+		return;
+	json.data = json.data || {};
+	json.type = json.type || 'get';
+
+	if (window.XMLHttpRequest) {
+		var oAjax = new XMLHttpRequest();
+	} else {
+		var oAjax = new ActiveXObject('Microsoft.XMLHTTP');
+	}
+
+	switch (json.type.toLowerCase()) {
+	case 'get':
+		oAjax.open('GET', json.url + '?' + json2url(json.data), true);
+		oAjax.send();
+		break;
+	case 'post':
+		oAjax.open('POST', json.url, true);
+		oAjax.setRequestHeader('Content-Type',
+				'application/x-www-form-urlencoded');
+		oAjax.send(json2url(json.data));
+		break;
+	}
+
+	oAjax.onreadystatechange = function() {
+		if (oAjax.readyState == 4) {
+			if (oAjax.status >= 200 && oAjax.status < 300
+					|| oAjax.status == 304) {
+				json.success && json.success(oAjax.responseText);
+			} else {
+				json.error && json.error(oAjax.status);
+			}
+		}
+	};
+}
+
+function loadtime() {
+	var t2 = new Date().getTime();
+	var lt = t2 - t1;
+	var aurl = window.location.href;
+	var stat = document.getElementById("SYS_PAGE_STAT");
+	var fp = document.getElementById("SYS_FP");
+	var mainHost = document.getElementById("SYS_MAIN_HOST");
+    var reqId = document.getElementById("REQ_ID");
+    var ploadParamObj = document.getElementById("PLOAD_PARAM");
+	var pstat = "";
+	if(stat){
+		pstat = stat.value;
+	}
+	var afp = "";
+	if(fp){
+		afp = fp.value;
+	}
+
+	var areqId = "";
+	if(reqId){
+		areqId = reqId.value;
+	}
+	var host = "";
+	if(mainHost){
+		host = mainHost.value;
+	}
+	var ploadParam = ""
+	if(ploadParamObj){
+        ploadParam = ploadParamObj.value;
+	}
+	var url = host + "/analysis/pload";
+	ajax({
+		url : url,
+		type : 'post',
+		data : {
+			'ltime' : lt,
+			'aurl' : aurl,
+			'fp' : afp,
+			'reqid' : areqId,
+			'pstat':pstat,
+            'ploadParam':ploadParam
+		},
+		success : function(str) {
+
+		},
+		error : function(s) {
+
+		}
+	});
+}
+
+document.onreadystatechange = loaded;
+
+function loaded() {
+	if (document.readyState == 'complete') {
+		var nowhost = window.location.protocol + "//" + window.location.host;
+		var sysMainHost = document.getElementById("SYS_MAIN_HOST");
+		var host = nowhost;
+		if(sysMainHost){
+			host = sysMainHost.value;
+			if(host != nowhost){
+				sysMainHost.value = nowhost;
+			}
+		}
+		var profileId = document.getElementById("PROFILE_ID");
+
+		if(profileId && profileId.value == 'test'){
+            var testTip = document.createElement("div");
+            testTip.id = "test-tip";
+            testTip.innerHTML = "您现在访问的是测试环境！！！<span id='test-tip-close'>点击或轻触关闭</span>";
+            document.body.appendChild(testTip);
+            testTip.onclick = function (e) {
+                testTip.parentNode.removeChild(testTip);
+            }
+		}
+		// loadtime();
+	}
+}
+
+function postFocusClick(focusId){
+	var afp = document.getElementById("SYS_FP").value;
+	var host = document.getElementById("SYS_MAIN_HOST").value;
+	var url = host + "/analysis/wwwIndexFocusClick";
+	ajax({
+		url : url,
+		type : 'post',
+		data : {
+			focusId : focusId,
+			fp : afp
+		},
+		success : function(str) {
+
+		},
+		error : function(s) {
+
+		}
+	});
+}
+
+function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}

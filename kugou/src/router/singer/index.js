@@ -9,8 +9,9 @@ export default [
         exact:true,
         context:"歌手",
         component:Singer,
+        sbNav:false,
         children:[
-            ...children
+            //...children
         ],
         meta:{
             title:"拉钩网",
@@ -25,6 +26,7 @@ export default [
         exact:true,
         context:"热门歌手",
         component:ArtistList,
+        sbNav:false,
         children:[
 
         ],

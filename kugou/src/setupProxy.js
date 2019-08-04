@@ -1,11 +1,11 @@
 const proxy = require("http-proxy-middleware");
 module.exports = function (app) {
     console.log(1111111);
-    app.use("/lagou",proxy({
-        target:"https://m.lagou.com",
+    app.use("/kugou",proxy({
+        target:"http://zhiboserver.kuwo.cn",
         changeOrigin:true,
         pathRewrite:{
-            "^/lagou":""
+            "^/kugou":""
         }
     }))
     // app.get("/xixi",function (req,res) {

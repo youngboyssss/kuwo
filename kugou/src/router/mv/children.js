@@ -7,6 +7,7 @@ export default [
         exact: true,
         context: "首播",
         component: MvList,
+        sbNav:true,
         meta: {
             keywored: "关键字",
             descrieption: "描述",

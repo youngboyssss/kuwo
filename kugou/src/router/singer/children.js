@@ -6,6 +6,7 @@ export default [
         exact:true,
         context:"热门歌手",
         component:Singer,
+        sbNav:true,
         meta:{
             keywored:"关键字",
             descrieption:"描述",

@@ -1,0 +1,1003 @@
+/**
+ * 1.0.0
+ */
+//var main_host = 'http://127.0.0.1:8080';
+var u = navigator.userAgent;
+var isios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+var oldurl = window.location.href;
+var dqfsurl='';
+var openappstr='';
+
+var config = {};
+config.stopBubble = function (e) {
+    if (window.event && window.event.cancelBubble) {
+        window.event.cancelBubble = true;
+    }
+    if (e && e.stopPropagation) {
+        e.stopPropagation();
+    }
+};
+
+function $S(s) {
+    return document.querySelector('#' + s);
+}
+
+function $query(s) {
+    return document.querySelectorAll(s);
+}
+
+function $html(s, html) {
+    $S(s).innerHTML = html;
+}
+function $display(s, f) {
+    $S(s).style.display = f;
+}
+function $isvisible(s) {
+    try {
+        if ($S(s).style.display == 'none')return false;
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+HTMLElement.prototype.appendHTML = function (html) {
+    var divTemp = document.createElement("div"), nodes = null, fragment = document.createDocumentFragment();
+    divTemp.innerHTML = html;
+    nodes = divTemp.childNodes;
+    for (var i = 0, length = nodes.length; i < length; i += 1) {
+        fragment.appendChild(nodes[i].cloneNode(true));
+    }
+    this.appendChild(fragment);
+    // 据说下面这样子世界会更清净
+    nodes = null;
+    fragment = null;
+};
+
+//获取地址参数
+function getQueryString(name) {
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if (r != null){
+    return decodeURIComponent(r[2]);
+}else{
+    return null;
+}
+}
+function errorimg(obj, defimg) {
+    obj.src = defimg;
+}
+var defaultpic = '//image.kuwo.cn/mpage/html5/2016/default.png';
+
+var createAjax = function () {
+    var xhr = null;
+    try {
+        xhr = new ActiveXObject("microsoft.xmlhttp");
+    } catch (e1) {
+        try {
+            xhr = new XMLHttpRequest();
+        } catch (e2) {
+            window.alert("您的浏览器不支持ajax，请更换！");
+        }
+    }
+    return xhr;
+};
+var ajax = function (conf) {
+    var type = conf.type;
+    var url = conf.url;
+    var data = conf.data;
+    var dataType = conf.dataType;
+    var success = conf.success;
+    if (type == null) {
+        type = "get";
+    }
+    if (dataType == null) {
+        dataType = "text";
+    }
+    var xhr = createAjax();
+    xhr.open(type, url, true);
+    if (type == "GET" || type == "get") {
+        xhr.send(null);
+    } else if (type == "POST" || type == "post") {
+        xhr.setRequestHeader("content-type",
+            "application/x-www-form-urlencoded");
+        xhr.send(data);
+    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            if (dataType == "text" || dataType == "TEXT") {
+                if (success != null) {
+                    success(xhr.responseText);
+                }
+            } else if (dataType == "xml" || dataType == "XML") {
+                if (success != null) {
+                    success(xhr.responseXML);
+                }
+            } else if (dataType == "json" || dataType == "JSON") {
+                if (success != null) {
+                    success(eval("(" + xhr.responseText + ")"));
+                }
+            }
+        } else if (xhr.readyState == 4 && xhr.status != 200) {
+            //alert("请求失败!");
+        }
+    };
+};
+
+var kuwo={
+    jsonp:function(url,data,success,error){
+        var add  = /\?/.test( url ) ? "&" : "?";
+        var script =  document.createElement("script");
+        script.jsonp = 1;
+        var url = url + add + data;
+        script.src = url;
+        script.onload = script.onreadystatechange = function(){
+            if( -[1,] || /loaded|complete/i.test(this.readyState)){
+                kuwo.removeScript(script);
+            }
+        }
+        script.onerror = function(){
+            requestErr();
+            kuwo.removeScript(script);
+        }
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(script);
+    },
+    removeScript: function(script){
+        if(typeof script.jsonp === "undefined" ){
+            alert("请求出错,请重试");
+        }
+        if (script.clearAttributes) {
+            script.clearAttributes();
+        } else {
+            script.onload = script.onreadystatechange = script.onerror = null;
+        }
+        script.parentNode.removeChild(script);
+    }
+}
+
+//向后台发送日志
+function sendLogCht(cmd,type,prod){
+	try{
+		var url="//listeninglin.kuwo.cn/h5Touch?type="+type+"&cmd="+cmd+"&prod="+prod;
+		kuwo.jsonp(url,"r="+new Date().getTime(),function(json){},function(){});
+	}catch(e){}
+}
+
+function getDate(flag){
+    var dateTime=new Date();
+    var yy=dateTime.getFullYear();
+    var MM=dateTime.getMonth()+1;  //因为1月这个方法返回为0，所以加1
+    if(MM<10)MM="0"+MM;
+    var dd=dateTime.getDate();
+    if(dd<10)dd="0"+dd;
+    var week=dateTime.getDay();
+    var hh=dateTime.getHours();
+    if(flag==1){
+        return yy+""+MM+""+dd;
+    }else if(flag==2){
+        return dateTime.getTime();
+    }
+    return yy+""+MM+""+dd+""+hh;
+}
+
+function checkSpecialChar(s, usetype) {
+    if (!s) return '';
+    s = '' + s;
+    if (usetype == "titlename") {
+        return s.replace(/\&apos;/g, "'").replace(/\\'/g, "\'").replace(/\"/g, "&quot;").replace(/\&amp;apos;/g, "'");
+    } else if (usetype == "name") {
+        return s.replace(/\"/g, "&quot;").replace(/\'/g, "\\\'").replace(/\&apos;/g, "\\\'").replace(/\&#039;/g, "\\\'").replace(/\\/g, "").replace(/'/g, "");
+    } else if (usetype == "disname") {
+        return s.replace(/\&quot;/g, "\"").replace(/\&apos;/g, "\'").replace(/\\'/g, "\'").replace(/\&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\%26apos\%3B/g, "'").replace(/\%26quot\%3B/g, "\"").replace(/\%26amp\%3B/g, "&");
+    }
+    return s.replace(/\&/g, "&amp;").replace(/\"/g, "&quot;").replace(/\'/g, "\\\'").replace(/\&amp;apos;/g, "&#039;");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    window.onresize = function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    }
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+
+}, false)
+
+function lazyLoad() {
+    var aImg = document.getElementsByTagName('img');
+    var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
+    var clientH = document.documentElement.clientHeight;
+    var scrollB = scrollT + clientH;
+    for (var i = 0; i < aImg.length; i++) {
+        var src = aImg[i].getAttribute('data-src');
+        if (src && aImg[i].offsetTop < scrollB) {
+            aImg[i].setAttribute('src', src);
+        }
+    }
+}
+//图片延时加载
+lazyLoad();
+window.onscroll = function () {
+    lazyLoad();
+};
+
+function toDouble(num) {
+    return num < 10 ? '0' + num : num;
+}
+
+/*toast提示*/
+var toastTime = null;
+var displayTime = null;
+function setToast(html) {
+    if (toastTime != null) {
+        clearTimeout(toastTime);
+        clearTimeout(displayTime);
+    }
+    //$S('toast').css('display','block');
+    $display('toast', 'block');
+    $S('toast').style.opacity = '1';
+    $S('toast').innerHTML = html;
+    toastTime = setTimeout(function () {
+        $S('toast').style.opacity = '0';
+        displayTime = setTimeout(function () {
+            $display('toast', 'none');
+        }, 1000);
+    }, 1000);
+}
+function showtoast() {
+    setToast('<div class="toasttxt">请输入歌曲名和歌手名</div>');
+}
+function showtoast2() {
+    setToast('<div style="color:#fff;background: rgba(0, 0, 0, 0.6);border-radius: 10px;text-align: center;width:65%;height:40px;line-height:40px;margin: 0 auto;">每日最多投票10次</div>');
+}
+
+
+//cookie
+function addCookie(sName, sValue, iDay) {
+    if (iDay) {
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate() + iDay);
+        document.cookie = sName + '=' + sValue + '; PATH=/; EXPIRES=' + oDate.toGMTString();
+    } else {
+        document.cookie = sName + '=' + sValue + '; PATH=/';
+    }
+}
+
+function getCookie(sName) {
+    var arr = document.cookie.split('; ');
+    for (var i = 0; i < arr.length; i++) {
+        var arr2 = arr[i].split('=');
+        if (arr2[0] == sName) {
+            return arr2[1];
+        }
+    }
+}
+
+function removeCookie(sName) {
+    addCookie(sName, 1, -1);
+}
+
+function commPlaySong(mid,bdfrom,e) {
+	config.stopBubble(e);
+    if(oldurl.indexOf('m.kuwo.cn')>-1 || oldurl.indexOf('vsite.h5.kuwo.cn')>-1){
+    	window.location.href = '/yinyue/'+mid+"?bdfrom="+bdfrom;
+    }else{
+    	window.location.href = '/newh5/singles/content?mid=' + mid+"&bdfrom="+bdfrom;
+    }
+}
+function commPlaySongDownLink(mid,e) {
+    config.stopBubble(e);
+    window.location.href = "//m.kuwo.cn/down/single/"+mid;
+}
+function commPlayMv(mid, e) {
+    config.stopBubble(e);
+    window.location.href = '//m.kuwo.cn/mv/' + mid + '/?bdfrom=newh5';
+
+}
+function commPlayAlbum(albumid,e){
+    config.stopBubble(e);
+    window.location.href = '/newh5/album/content?albumid='+albumid;
+}
+function jumpArtistList(artistId,e){
+    config.stopBubble(e);
+    window.location.href = '/newh5/artist/artistList?id='+artistId;
+}
+function jumpArtistDetail(artistId,e){
+    config.stopBubble(e);
+    window.location.href = '/newh5/artist/artistDetail?id='+artistId;
+}
+function focusclick(url,index){
+	var imgobj=new Image();
+	imgobj.src='//webstat.kuwo.cn/logtjsj/commsj/commjstj/html5/focus_'+index+'.jpg';
+	jumpPage(url);
+}
+function commDownSong(mid, e) {
+    config.stopBubble(e);
+    downapk('dqdown');
+
+}
+function commDownSong_fromArtist(mid, e) {
+    config.stopBubble(e);
+    downapk('artist');
+
+}
+
+function commDownSong_fromMV(mid, e) {
+    config.stopBubble(e);
+    downapk('mvpage');
+
+}
+function jumpPage(url) {
+    if(url.indexOf('zhibo') > -1) {
+        pagelog(0,'M站->点击直播');
+    }
+    window.location.href = url;
+}
+
+function pagelog(uid, psrc) {
+    try {
+        var logurl = '//m.kuwo.cn/api/stat/sendCommLog';
+        $.ajax({
+            url: logurl,
+            type: 'post',
+            async: false,
+            data: {
+                'uid': uid,
+                'psrc': psrc
+            },
+            dataType: 'json',
+            success:function(data) {
+
+            }
+        });
+    }catch(e) {}
+    
+}
+
+function jumpsm(key){
+	var playclick = new Image();
+    playclick.src = "//webstat.kuwo.cn/logtjsj/commsj/commjstj/gosm/goto_h5sm_pv.jpg";
+	var urlsm='//m.sa.sm.cn/s?q='+encodeURIComponent(key)+'&from=wh10242';
+	jumpPage(urlsm);
+}
+function playAll(type) {
+    var mids = "";
+    var ridarr="";
+    if(type=='artist'){
+        ridarr = $query('.tabcontent ul li');
+    }else{
+        ridarr = $query('.musicListBox ul li');
+    }
+    if (!ridarr || ridarr.length == 0) {
+        alert("没有歌曲播放");
+        return;
+    }
+    for (var i = 0; i < ridarr.length; i++) {
+        var ridobj = ridarr[i];
+        if (i > 0)mids += " ";
+        mids += ridobj.getAttribute("mid");
+    }
+    jumpPage('/newh5/singles/content?mid=' + mids);
+}
+
+
+function sendtime(url) {
+    window.setTimeout(function () {
+        var playclick = new Image();
+        playclick.src = url;
+    }, 300);
+}
+
+function cbkgetAppInfo(data){
+	var obj = eval("("+data.data+")");
+	var install=obj["cn.kuwo.player"].install;
+	if(install==1){
+		if(openappstr==''){
+			window.location.href="kwapp://open?f=myapp";
+		}else{
+			window.location.href=openappstr+"&f=myapp";
+		}
+	}else{
+		window.location.href="tmast://appdetails?pname=cn.kuwo.player&scene=20280503";
+	}
+}
+
+function closeOpenTipsBox(){
+    document.querySelector(".cantOpenTipsBox").style.display = "none";
+}
+function openClient(){
+	document.querySelector(".cantOpenTipsBox").style.display = "block";
+}
+
+var downbaourl = "";
+var dtiosurl = "//g.koowo.com/g.real?aid=text_ad_1578&ver=&url=https://itunes.apple.com/cn/app/ku-wo-yin-lepro/id588673713?l=en&mt=8";
+var dtarurl = "//g.koowo.com/g.real?aid=text_ad_1319&ver=&url=http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_html5_2014.apk";
+var yyburl = "//a.app.qq.com/o/simple.jsp?pkgname=cn.kuwo.player";
+function downapk(pageType) {
+    if (isios) {
+    	if(oldurl.indexOf("8e58bdkdfuqy")>-1){
+    		var ua = navigator.userAgent.toLowerCase();
+            var tmpua = navigator.appVersion;
+            if (ua.match(/MicroMessenger/i) == "micromessenger"||ua.match(/WeiBo/i) == "weibo"||tmpua.indexOf('QQ/') > -1) {
+            	openClient();
+            	return;
+            }else{
+            	downbaourl = "https://itunes.apple.com/cn/app/ku-wo-yin-lepro/id588673713?l=en&mt=8";
+            }
+    	}else{
+    		openIosApp();
+    		return;
+    	}
+    } else {
+        var tmpua = navigator.appVersion;
+        if (tmpua.indexOf('QQ/') > -1 || tmpua.indexOf('MicroMessenger/') > -1) {
+            downbaourl = yyburl;
+        } else if (tmpua.indexOf("qqdownloader/") > -1){
+        	window.location.href="jsb://getAppInfo/0/cbkgetAppInfo?packagenames=cn.kuwo.player";
+        	return;
+        } else if (oldurl.indexOf("woshopd") > -1 || dtarurl == "") {
+            downbaourl = "//www.koowo.com/pa_mbox/shouji/android/KuwoPlayer_wo.apk?name=酷我音乐&type=2";
+        } else if (oldurl.indexOf("bdfrom=wnl") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_wnlmusic.apk";
+        } else if (oldurl.indexOf("from=sm") > -1 || oldurl.indexOf("from=shenma") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_smmusic.apk";
+        	//downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_sky.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_shenma_h5_pv.jpg');
+        } else if (oldurl.indexOf("dq360") > -1 || oldurl.indexOf("=hsy360") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_haosou.apk";
+        	//downbaourl = "http://mobile.kuwo.cn/mpage/apk/kwplayer_ar_haosou.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_dq360_h5_pv.jpg');
+        } else if (oldurl.indexOf("singer") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_Singer.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_singer_h5_pv.jpg');
+        } else if (oldurl.indexOf("tieba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tieba.apk";
+        } else if (oldurl.indexOf("=baidumv") > -1) {
+        	downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_baidumv.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baidumv_h5_pv.jpg');
+        } else if (oldurl.indexOf("xbaidu") > -1 || oldurl.indexOf("x360") > -1 || oldurl.indexOf("xsogou") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_X_FIRE.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_xfire_h5_pv.jpg');
+        } else if (oldurl.indexOf("baidu") > -1 || oldurl.indexOf("baiduysxs") > -1 ||oldurl.indexOf("=gwbaidu") > -1) {
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_shoubai.apk";
+        	downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tieba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baidu_h5_pv.jpg');
+        } else if (oldurl.indexOf("index_mtv123") > -1 || oldurl.indexOf("index_yue365") > -1 || oldurl.indexOf("index_yy8844") > -1) {
+            downbaourl = "//mobile.kuwo.cn/hzdown";
+        } else if (oldurl.indexOf("index_9ku") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_9ku.apk";
+        } else if (oldurl.indexOf("tuba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tuba_h5_pv.jpg');
+        } else if (oldurl.indexOf("ks") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kuaishou.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_kuaishou_h5_pv.jpg');
+        } else if (oldurl.indexOf("meipai") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_meipai.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_meipai_h5_pv.jpg');
+        } else if (oldurl.indexOf("=ydqhz") > -1){
+        	//downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_pcauto.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_pcauto_h5_pv.jpg');
+            if(!window.YDJSInterface){
+            }else{
+                if("openAppDetail" in YDJSInterface){
+                    window.YDJSInterface.openAppDetail(349,'cn.kuwo.player','kwapp://open?t=6&u=280021&n=运动');
+                    return;
+                }
+            }
+        } else if (oldurl.indexOf("ydzx") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_1dian.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_ydzx_h5_pv.jpg');
+        } else if (oldurl.indexOf("okii") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_okii.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_okii_h5_pv.jpg');
+        } else if (oldurl.indexOf("tuzhan") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuzhan.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tuzhan_h5_pv.jpg');
+        } else if (oldurl.indexOf("huanyin") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_huanyin.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_huanyin_h5_pv.jpg');
+        } else if (oldurl.indexOf("gg1") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_gg1.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_gg1_h5_pv.jpg');
+        } else if (oldurl.indexOf("=sogou") > -1 || oldurl.indexOf("=gwsogou") > -1){
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_sogou.apk";
+        	downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_sogou_h5_pv.jpg');
+        } else if (oldurl.indexOf("=tt52") > -1 || oldurl.indexOf("=52tt") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_52TT.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tt52_h5_pv.jpg');
+        } else if (oldurl.indexOf("=baobao") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_baobao.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baobao_h5_pv.jpg');
+        } else if (oldurl.indexOf("=wanba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_gg1.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_wanba_h5_pv.jpg');
+        } else if (oldurl.indexOf("=myapp") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_myapp.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_myapp_h5_pv.jpg');
+        } else if ((pageType == "index") || (pageType == "bang") || (pageType == "category") || (pageType == "artistCategory")) {
+        	sendLogCht("h5_log","0","ar");
+            window.location.href = '/static/page/downpage/downpage.html?dataSource=index&pageType='+pageType;
+        	//downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m1.apk";m站顶部下载app也改成拉起app的逻辑
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_indexm1_h5_pv.jpg');
+            return;
+        } else if (pageType == "dqpage") {
+        	sendLogCht("h5_log","1","ar");
+            downbaourl="//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m2.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_dqpagem2_h5_pv.jpg');
+        } else if(pageType =="plphbalbum"){
+            downbaourl="//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m3.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_plphbalbumm3_h5_pv.jpg');
+        } else if (pageType == "artist") {
+        	sendLogCht("h5_log","4","ar");
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m4.apk";
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m5.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_artist_h5_pv.jpg');
+        } else if (pageType == "mvpage") {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m5.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_mvpage_h5_pv.jpg');
+        }else {
+        	sendLogCht("h5_log","0","ar");
+            downbaourl = dtarurl;
+        }
+        sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_hzall_h5_pv.jpg');
+    }
+    window.location.href = downbaourl;
+}
+function cpxq(pageType) {
+    if (isios) {
+        if(oldurl.indexOf("8e58bdkdfuqy")>-1){
+            var ua = navigator.userAgent.toLowerCase();
+            var tmpua = navigator.appVersion;
+            if (ua.match(/MicroMessenger/i) == "micromessenger"||ua.match(/WeiBo/i) == "weibo"||tmpua.indexOf('QQ/') > -1) {
+                openClient();
+                return;
+            }else{
+                downbaourl = "https://itunes.apple.com/cn/app/ku-wo-yin-lepro/id588673713?l=en&mt=8";
+            }
+        }else{
+            openIosApp();
+            return;
+        }
+    } else {
+        var tmpua = navigator.appVersion;
+        if (tmpua.indexOf('QQ/') > -1 || tmpua.indexOf('MicroMessenger/') > -1) {
+            downbaourl = yyburl;
+        } else if (tmpua.indexOf("qqdownloader/") > -1){
+            window.location.href="jsb://getAppInfo/0/cbkgetAppInfo?packagenames=cn.kuwo.player";
+            return;
+        } else if (oldurl.indexOf("woshopd") > -1 || dtarurl == "") {
+            downbaourl = "//www.koowo.com/pa_mbox/shouji/android/KuwoPlayer_wo.apk?name=酷我音乐&type=2";
+        } else if (oldurl.indexOf("bdfrom=wnl") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_wnlmusic.apk";
+        } else if (oldurl.indexOf("from=sm") > -1 || oldurl.indexOf("from=shenma") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_smmusic.apk";
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_sky.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_shenma_h5_pv.jpg');
+        } else if (oldurl.indexOf("dq360") > -1 || oldurl.indexOf("=hsy360") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_haosou.apk";
+            //downbaourl = "http://mobile.kuwo.cn/mpage/apk/kwplayer_ar_haosou.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_dq360_h5_pv.jpg');
+        } else if (oldurl.indexOf("singer") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_Singer.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_singer_h5_pv.jpg');
+        } else if (oldurl.indexOf("tieba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tieba.apk";
+        } else if (oldurl.indexOf("=baidumv") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_baidumv.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baidumv_h5_pv.jpg');
+        } else if (oldurl.indexOf("xbaidu") > -1 || oldurl.indexOf("x360") > -1 || oldurl.indexOf("xsogou") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_X_FIRE.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_xfire_h5_pv.jpg');
+        } else if (oldurl.indexOf("baidu") > -1 || oldurl.indexOf("baiduysxs") > -1 ||oldurl.indexOf("=gwbaidu") > -1) {
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_shoubai.apk";
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tieba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baidu_h5_pv.jpg');
+        } else if (oldurl.indexOf("index_mtv123") > -1 || oldurl.indexOf("index_yue365") > -1 || oldurl.indexOf("index_yy8844") > -1) {
+            downbaourl = "//mobile.kuwo.cn/hzdown";
+        } else if (oldurl.indexOf("index_9ku") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_9ku.apk";
+        } else if (oldurl.indexOf("tuba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tuba_h5_pv.jpg');
+        } else if (oldurl.indexOf("ks") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kuaishou.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_kuaishou_h5_pv.jpg');
+        } else if (oldurl.indexOf("meipai") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_meipai.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_meipai_h5_pv.jpg');
+        } else if (oldurl.indexOf("=ydqhz") > -1){
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_pcauto.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_pcauto_h5_pv.jpg');
+            if(!window.YDJSInterface){
+            }else{
+                if("openAppDetail" in YDJSInterface){
+                    window.YDJSInterface.openAppDetail(349,'cn.kuwo.player','kwapp://open?t=6&u=280021&n=运动');
+                    return;
+                }
+            }
+        } else if (oldurl.indexOf("ydzx") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_1dian.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_ydzx_h5_pv.jpg');
+        } else if (oldurl.indexOf("okii") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_okii.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_okii_h5_pv.jpg');
+        } else if (oldurl.indexOf("tuzhan") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuzhan.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tuzhan_h5_pv.jpg');
+        } else if (oldurl.indexOf("huanyin") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_huanyin.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_huanyin_h5_pv.jpg');
+        } else if (oldurl.indexOf("gg1") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_gg1.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_gg1_h5_pv.jpg');
+        } else if (oldurl.indexOf("=sogou") > -1 || oldurl.indexOf("=gwsogou") > -1){
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_sogou.apk";
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_tuba.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_sogou_h5_pv.jpg');
+        } else if (oldurl.indexOf("=tt52") > -1 || oldurl.indexOf("=52tt") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_52TT.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_tt52_h5_pv.jpg');
+        } else if (oldurl.indexOf("=baobao") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_baobao.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_baobao_h5_pv.jpg');
+        } else if (oldurl.indexOf("=wanba") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_gg1.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_wanba_h5_pv.jpg');
+        } else if (oldurl.indexOf("=myapp") > -1) {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_myapp.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_myapp_h5_pv.jpg');
+        } else if ((pageType == "index") || (pageType == "bang") || (pageType == "category") || (pageType == "artistCategory")) {
+            sendLogCht("h5_log","0","ar");
+            window.location.href = '/static/page/downpage/downpage.html?dataSource=index&pageType='+pageType;
+            //downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m1.apk";m站顶部下载app也改成拉起app的逻辑
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_indexm1_h5_pv.jpg');
+            return;
+        } else if (pageType == "dqpage") {
+            sendLogCht("h5_log","1","ar");
+            downbaourl="//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m2.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_dqpagem2_h5_pv.jpg');
+        } else if(pageType =="plphbalbum"){
+            downbaourl="//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m3.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_plphbalbumm3_h5_pv.jpg');
+        } else if (pageType == "artist") {
+            sendLogCht("h5_log","4","ar");
+            //downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m4.apk";
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m5.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_artist_h5_pv.jpg');
+        } else if (pageType == "mvpage") {
+            downbaourl = "//down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m5.apk";
+            sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_mvpage_h5_pv.jpg');
+        }else {
+            sendLogCht("h5_log","0","ar");
+            downbaourl = dtarurl;
+        }
+        sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_hzall_h5_pv.jpg');
+    }
+    window.location.href = downbaourl;
+}
+try{
+	//分享弹框
+	$S('sharebtn').onclick = function(){
+		var tmpua = navigator.appVersion;
+		if(tmpua.indexOf('MicroMessenger/') == -1){   //非微信环境
+			$display('sharebox','block');
+		}else{          //微信环境
+			$display('wxtip','block');
+		}
+		
+	};
+	
+	var tmpua = navigator.appVersion;
+    if (!(tmpua.indexOf('QQ/') > -1 || tmpua.indexOf('MicroMessenger/') > -1)) {
+    	$display('sharebtn','block');
+    }
+	
+    if(oldurl.indexOf("=myapp")>-1){
+    	$display('sharebtn','none');
+    }
+	
+	$S('close').onclick = function(){
+		$display('sharebox','none');
+		$display('sharetip','none');
+	};
+	
+	//分享按钮
+	var fsbtns = $S('sharearea').getElementsByTagName('a');
+	for(var i=0;i<fsbtns.length;i++){
+		fsbtns[i].onclick = function(){
+			var $this = this;
+			var f = $this.getAttribute('data-fs');
+			var datajson = eval('('+$this.parentNode.getAttribute('data-json')+')');
+			var commName = datajson.comName;
+			var type = datajson.type;
+			var t = '';
+			if(type=='singles'){
+				t = '分享歌曲';
+			}else if(type=='album'){
+				t = '分享专辑';
+			}else if(type=='playList'){
+				t = '分享歌单';
+			}else if(type=='bang'){
+				t = '分享榜单';
+			}
+			var title = t+'《'+commName+'》 （来自@酷我音乐）。';
+			fsalbum(f,title);
+		};
+	}
+	
+	//分享链接
+	function fsalbum(f,title){
+		var url=window.location.href;
+		//console.log(dqfsurl);
+		if(dqfsurl!=''){
+			url=dqfsurl;
+		}
+		var fsurl="";
+		if(f=='wb'){
+			fsurl="//service.weibo.com/share/share.php?url="+encodeURIComponent(url)+"&title="+encodeURIComponent(title)+"&appkey=2972927130&searchPic=true";
+		}else if(f=='tt'){
+			fsurl="//share.v.t.qq.com/index.php?c=share&a=index&url="+encodeURIComponent(url)+"&title="+encodeURIComponent(title)+"&appkey=0017fe1eb93944849958c05b5c680eef";
+		}else if(f=='qz'){
+			fsurl="//sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+encodeURIComponent(url)+"&title="+encodeURIComponent(title)+"&desc=&summary=&site=";
+		}else if(f=='wx'){
+			$display('sharetip','block');
+			return;
+		}
+		$display('sharetip','none');
+		window.open(fsurl);	
+	}
+}catch(e){}
+
+function url2json(url){
+    var arr=url.split('&');
+    var json={};
+    for(var i=0;i<arr.length;i++){
+        var arr2=arr[i].split('=');
+        json[arr2[0]]=arr2[1];
+    }
+    return json;
+}
+
+//拉起ios客户端
+function openIosApp(){
+	var openstr='';
+	try{
+		var openAppObj=$S('openApp');
+		if(openAppObj){
+			var dataSource= openAppObj.getAttribute('data-from');
+			if(dataSource == 'sl'){
+				sendLogCht("h5_log","1","ip");
+				var musicId = openAppObj.getAttribute('data-id');
+		        var songName = openAppObj.getAttribute('data-songName');
+		        var artist = openAppObj.getAttribute('data-artist');
+				openstr='t=5&u='+musicId+'&n='+songName+'-'+artist;
+			}else if(dataSource == 'ar'){
+				sendLogCht("h5_log","4","ip");
+				var aid = openAppObj.getAttribute('data-aid');
+		        var aname = openAppObj.getAttribute('data-aname');
+		        openstr='t=4&u='+aid+'&n='+aname;
+			}else if(dataSource == 'pl'){
+				sendLogCht("h5_log","3","ip");
+				var pid = openAppObj.getAttribute('data-pid');
+		        var ptitle = openAppObj.getAttribute('data-ptitle');
+		        openstr='t=8&u='+pid+'&n='+ptitle;
+			}
+		}else{
+			sendLogCht("h5_log","0","ip");
+		}
+	}catch(e){}
+	
+	window.location.href='//kwmiosjump.kuwo.cn/kplayer.html?'+openstr;
+}
+
+/*打开APP*/
+try{
+    $S('openApp').onclick = function(){
+    	//悦动圈合作
+    	if (oldurl.indexOf("=ydqhz") > -1){
+	    	//downbaourl = "http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_pcauto.apk";
+	        sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/down_from_pcauto_h5_pv.jpg');
+	        if(!window.YDJSInterface){
+	        }else{
+	            if("openAppDetail" in YDJSInterface){
+	                window.YDJSInterface.openAppDetail(349,'cn.kuwo.player','kwapp://open?t=6&u=280021&n=运动');
+	                return;
+	            }
+	        }
+    	}else if(isios){
+    		openIosApp();
+    	}else{
+	        var mainUrl = window.location.href;
+	        var jsonObj;
+	        var paramsSrc = 'from';
+	        var fromStr = '';
+	        if(mainUrl.indexOf('from')>-1){
+	            jsonObj = url2json(mainUrl);
+	            paramsSrc = 'from';
+	            fromStr = jsonObj.from;
+	        }
+	        if(mainUrl.indexOf('bdfrom')>-1){
+	            jsonObj = url2json(mainUrl);
+	            paramsSrc = 'bdfrom';
+	            fromStr = jsonObj.bdfrom;
+	        }
+	        var dataSource= this.getAttribute('data-from');
+	        var paramsStr = '';
+	        if(dataSource == 'sl'){
+	            var isPay = this.getAttribute('data-ispay');
+	            var musicId = this.getAttribute('data-id');
+	            var songName = this.getAttribute('data-songName');
+	            var artist = this.getAttribute('data-artist');
+	            paramsStr = '&isPay='+isPay+'&musicId='+musicId+'&songName='+songName+'&artist='+artist;
+	        }else if(dataSource == 'ar'){
+	            var aid = this.getAttribute('data-aid');
+	            var aname = this.getAttribute('data-aname');
+	            paramsStr = '&aid='+aid+'&aname='+aname;
+	        }else if(dataSource == 'pl'){
+	            var pid = this.getAttribute('data-pid');
+	            var ptitle = this.getAttribute('data-ptitle');
+	            paramsStr = '&pid='+pid+'&ptitle='+ptitle;
+	        }
+	        window.location.href = '/static/page/downpage/downpage.html?'+paramsSrc+'='+fromStr+'&dataSource='+dataSource+''+paramsStr;
+    	}
+    };
+}catch(e){}
+
+
+sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/html5/html5_pv.jpg');
+if(oldurl.indexOf("baidu")>-1){
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_baidu_h5_pv.jpg');
+}else if(oldurl.indexOf("dq360")>-1){
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_dq360_h5_pv.jpg');
+}else if(oldurl.indexOf("from=sm") > -1 || oldurl.indexOf("shenma")>-1){
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_shenma_h5_pv.jpg');
+}else if(oldurl.indexOf("sogou")>-1){
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_sogou_h5_pv.jpg');
+}
+
+if(isios){
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_h5ios_pv.jpg');
+}else{
+	sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_h5android_pv.jpg');
+}
+
+//歌名歌手名过长处理
+function cutlongstr(obj){
+	var longnames = obj;
+	var num = 10;
+	for(var i=0;i<longnames.length;i++){		
+		var sn = longnames[i].innerHTML;
+		if(sn.length>num){
+			longnames[i].innerHTML = sn.substring(0,num) + "…";
+		}else{
+			longnames[i].style.width = sn.length*0.32 + 'rem';
+		}
+	}
+}
+function cutlongstr2(str){
+    var num = 10;
+    if(str.length>num){
+        return str.substring(0,num) + "…";
+    }else{
+        return str;
+    }
+}
+
+/*hongbao*/
+var b_tmpua = navigator.appVersion;
+if (!(b_tmpua.indexOf('QQ/') > -1 || b_tmpua.indexOf('MicroMessenger/') > -1)) {
+	if(false && oldurl.indexOf("=8e58bdkdfuqy") == -1 && oldurl.indexOf("=baidu") == -1){
+	//if(true){
+	    var oBribery1 = document.createElement('div');
+	    //var oBribery2 = document.createElement('div');
+	    //var b_close = document.createElement('div');
+	    oBribery1.className = 'bribery1';
+	    // oBribery2.className = 'bribery2';
+	    //b_close.className = 'b_close';
+	    //oBribery2.appendChild(b_close);
+	    document.body.appendChild(oBribery1);
+	    //document.body.appendChild(oBribery2);
+	    sendtime('//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_showred_pv.jpg');
+	
+	    oBribery1.onclick = function(){
+	        oBribery1.style.display = 'none';
+	        // oBribery2.style.display = 'block';
+            var playclick = new Image();
+            playclick.src = '//webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_clickred_pv.jpg';
+            window.location.href = '//m.kuwo.cn/newh5/channelred/memberCenterh5?channelId=gwhb&couponId=3&secrect=uQs9hHbeVpDx/coGZHLCx7Bf8HdoUkq6EHolb51scmyhWKglutTM5w==';
+	    }
+	
+	    // oBribery2.onclick = function(){
+	    //     if(isios){
+	    //         window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=cn.kuwo.player&g_f=997556';
+	    //     }else{
+	    //         window.location.href = 'http://down.shouji.kuwo.cn/star/mobile/kwplayer_ar_kwmusic_m4.apk';
+	    //     }
+        //
+	    //     sendtime('http://webstat.kuwo.cn/logtjsj/commsj/commjstj/bdhz/from_downred_pv.jpg');
+	    // }
+	
+	    // b_close.onclick = function(e){
+	    //     config.stopBubble(e);
+	    //     oBribery2.style.display = 'none';
+	    // }
+	}
+}
+
+var _HTTP = 'http://';
+var _HTTPS = 'https://';
+
+var newImgUrlList = [
+    'kwimg.kuwo.cn',
+    'kwimg1.kuwo.cn',
+    'kwimg2.kuwo.cn',
+    'kwimg3.kuwo.cn',
+    'kwimg4.kuwo.cn',
+    'kwimg5.kuwo.cn',
+    'kwimg6.kuwo.cn',
+    'kwimg7.kuwo.cn',
+    'kwimg8.kuwo.cn',
+    'kwimg9.kuwo.cn'
+];
+
+var oldImgUrlList = [
+    'img1.kwcdn.kuwo.cn',
+    'img2.kwcdn.kuwo.cn',
+    'img3.kwcdn.kuwo.cn',
+    'img4.kwcdn.kuwo.cn',
+    'imgxc1.kwcdn.kuwo.cn',
+    'imgxc3.kwcdn.kuwo.cn',
+    'imgxc4.kwcdn.kuwo.cn',
+    'img1.sycdn.kuwo.cn',
+    'img2.sycdn.kuwo.cn',
+    'img3.sycdn.kuwo.cn',
+    'img4.sycdn.kuwo.cn',
+    'applepushserver.kuwo.cn'
+];
+
+function replaceHttpsImg(imgUrl){
+
+    if(imgUrl == '' || imgUrl == undefined ){
+        return '';
+    }
+    var newImgUrl = imgUrl;
+    var mainUrl = window.location.href;
+    if(mainUrl && mainUrl.indexOf('https:')>-1){
+        try{
+            var domain = getImgUrlDomain(imgUrl);
+            var len = oldImgUrlList.length;
+            for(var i=0;i<len;i++){
+                if(oldImgUrlList[i] == domain){
+                    var oDate = new Date();
+                    var count = oDate.getTime()%newImgUrlList.length;
+                    newImgUrl = imgUrl.replace(domain,newImgUrlList[count]);
+                }
+                newImgUrl = newImgUrl.replace(_HTTP, _HTTPS);
+            }
+
+        }catch(e){
+            newImgUrl = imgUrl;
+        }
+    }
+    return newImgUrl;
+}
+
+// 把页面地址中的http替换成https
+function replaceHttpsUrl(url){
+    if(url == '' || url == undefined ){
+        return '';
+    }
+    var newUrl = url;
+    var mainUrl = window.location.href;
+    if(mainUrl && mainUrl.indexOf('https:')>-1){
+        newUrl  = newUrl.replace(_HTTP,_HTTPS);
+    }
+    return newUrl;
+}
+
+function getImgUrlDomain(weburl){
+    var urlReg = /http[s]?:\/\/([^\/]+)/i;
+    domain = weburl.match(urlReg);
+    //console.log(domain);
+    return ((domain != null && domain.length>0)?domain[1]:'');
+}

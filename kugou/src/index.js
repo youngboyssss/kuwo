@@ -7,6 +7,7 @@ import "./assets/css/Nav.css"
 import App from './App';
 import axios from "axios";
 import * as serviceWorker from './serviceWorker';
+import 'lib-flexible'
 import config from './common/config'
 import filters from './common/filters'
 import store from "./store"
@@ -25,10 +26,11 @@ Object.assign(
     )
 
 axios.interceptors.request.use(config=>{
-     //config.url = "/lagou/"+config.url;
+     //config.url = "/kugou"+config.url;
+     //console.log(config.url,999)
      return config;
 })
-axios.interceptors.response.use(({data})=>{
+axios.interceptors.response.use((data)=>{
     return data;
 })
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

@@ -5,7 +5,7 @@ import {
     withRouter
 } from "react-router-dom"
 import MyNav from "./MyNav"    //引入导航栏
-class GuardRouter extends React.Component{
+class GuardRouter extends React.Component{           //配置所有NavLink
     componentWillMount(){
         document.title=this.props.meta.title || "酷我音乐";   //修改标题
     }
@@ -15,9 +15,9 @@ class GuardRouter extends React.Component{
         let meta = {...(this.props.meta || {})};  //一级路由的meta标签是否为空
 
         return (
-           <div className={"header"}>
+           <div className={"App"}>
                {meta.isFooter?<MyNav navList={router.routers}></MyNav>:null}   {/*一级路由判断是否加导航栏*/}
-               <this.props.component children={children}/>           {/*写入该组件，并传入孩子内容*/}
+               <this.props.component/>           {/*写入该组件，并传入孩子内容*/}
            </div>
         )
     }

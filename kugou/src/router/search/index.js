@@ -9,9 +9,10 @@ export default [
         exact:true,
         context:"搜索",
         component:Search,
+        sbNav:false,
         font:Font_search,
         children:[
-            ...children
+            //...children
         ],
         meta:{
             title:"拉钩网",
@@ -24,6 +25,7 @@ export default [
         to:"/searchList",
         path:"/searchList",
         exact:true,
+        sbNav:false,
         context:"歌手/歌词/歌名",
         component:SearchList,
         children:[

@@ -1,0 +1,149 @@
+/**
+ * 1.0.0
+ * Created by wql on 2016/6/14.
+ */
+var mySwiper = new Swiper('.banner .swiper-container', {
+    mode: 'horizontal',
+    loop: true,
+    speed: 600,
+    autoplay: 3000,
+    autoplayDisableOnInteraction: false,
+    pagination: '.swiper-pagination',
+    onTouchStart: function () {
+        mySwiper.stopAutoplay();
+    },
+    onTouchMove: function () {
+    },
+    onTouchEnd: function () {
+        mySwiper.startAutoplay();
+    }
+});
+
+//歌单推荐
+var mySwiper2 = new Swiper('.gedan .swiper-container', {
+    mode: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20
+});
+
+//精彩节目
+var mySwiper3 = new Swiper('.program .swiper-container', {
+    mode: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20
+});
+
+//热门MV
+var mySwiper4 = new Swiper('.hotmv .swiper-container', {
+    mode: 'horizontal',
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 20
+});
+
+/*头尾动效
+var t = 2;
+if(document.body.clientWidth < 321){
+	t = 6;
+}
+var windowTop = 0;
+var headerBox = $query('.header')[0];
+var navBox = $query('.nav')[0];
+var headerHeight = headerBox.offsetHeight-t;
+var navHeight = navBox.offsetHeight-t;
+var footerBox = $query('.footerarea')[0];
+
+navBox.style.position = 'fixed';
+headerBox.style.position = 'fixed';
+navBox.style.top = headerHeight + 'px';
+window.onscroll = function() {
+	lazyLoad();
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+	if (scrollTop > windowTop) { //向上滑动
+		if(scrollTop>0 && scrollTop < headerHeight  ){
+			headerBox.style.transform = 'none';
+			navBox.style.transform = 'none';
+		}else{
+			headerBox.style.webkitTransition = 'all 0.3s';
+			headerBox.style.transition = 'all 0.3s';
+			headerBox.style.webkitTransform = 'translateY(' + (-headerHeight) + 'px)';
+			headerBox.style.transform = 'translateY(' + (-headerHeight) + 'px)';
+			navBox.style.webkitTransition = 'all 0.3s';
+			navBox.style.transition = 'all 0.3s';
+			navBox.style.webkitTransform = 'translateY(' + (-headerHeight) + 'px)';
+			navBox.style.transform = 'translateY(' + (-headerHeight) + 'px)';
+			footerBox.style.webkitTransition = 'all 0.3s';
+			footerBox.style.transition = 'all 0.3s';
+			footerBox.style.webkitTransform = 'translateY(' + (-navHeight) + 'px)';
+			footerBox.style.transform = 'translateY(' + (-navHeight) + 'px)';
+		}
+		windowTop = scrollTop;
+	} else if (scrollTop < windowTop) {
+		headerBox.style.transform = 'none';
+		navBox.style.transform = 'none';
+		footerBox.style.transform = 'none';
+		$query('.banner')[0].paddingTop = 0+'px';
+		windowTop = scrollTop;
+	}
+};
+*/
+var ng = navigator.appVersion;
+if (ng.indexOf('QQ') > -1 || ng.indexOf('MicroMessenger/') > -1) {
+	$query('.strip2')[0].style.display = 'none'; 
+}
+
+var headerbox = $query('.header')[0];
+var navbox = $query('.nav')[0];
+var footerbox =  $query('.footerarea')[0];
+var scrollPos=0,t=0;
+window.onscroll = function(){
+	
+	lazyLoad();
+//	scrollPos = document.documentElement.scrollTop || document.body.scrollTop || 0;
+//	if(t<=scrollPos){  //内容向下走
+//		headerbox.style.position = '';
+//		headerbox.style.webkitTransition = 'all linear 0.3s';
+//		headerbox.style.transition = 'all linear 0.3s';
+//		headerbox.style.webkitTransform = 'translateY(-0.88rem)';
+//		headerbox.style.transform = 'translateY(-0.88rem)';
+//	
+//		footerbox.style.webkitTransition = 'all linear 0.3s';
+//		footerbox.style.transition = 'all linear 0.3s';
+//		footerbox.style.webkitTransform = 'translateY(0)';
+//		footerbox.style.transform = 'translateY(0)';
+//		
+//		navbox.style.position='fixed';
+//		navbox.style.top=0+'px';
+//		navbox.style.zIndex=10;
+//		//$query('.banner')[0].style.marginTop = 0 + 'px';
+//		navbox.style.webkitTransition = 'all linear 0.3s';
+//		navbox.style.transition = 'all linear 0.3s';
+//		navbox.style.webkitTransform = 'translateY(-0.88rem)';
+//		navbox.style.transform = 'translateY(-0.88rem)';
+//	}else{ 
+//		console.log(123);//内容向上走
+//		headerbox.style.webkitTransition = 'all linear 0.3s';
+//		headerbox.style.transition = 'all linear 0.3s';
+//		headerbox.style.webkitTransform = 'translateY(0)';
+//		headerbox.style.transform = 'translateY(0)';
+//		
+//		footerbox.style.webkitTransition = 'all linear 0.3s';
+//		footerbox.style.transition = 'all linear 0.3s';
+//		footerbox.style.webkitTransform = 'translateY(40px)';
+//		footerbox.style.transform = 'translateY(40px)';
+//		$query('.banner')[0].style.marginTop = 1.64 + 'rem';
+//		navbox.style.webkitTransition = 'all linear 0.3s';
+//		navbox.style.transition = 'all linear 0.3s';
+//		navbox.style.webkitTransform = 'translateY(0)';
+//		navbox.style.transform = 'translateY(0)';
+//		var u = navigator.userAgent;
+//		var isios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+//		if(isios){
+//			$query('.banner')[0].style.marginTop = 0.8 + 'rem';
+//			$query('.main')[0].style.marginBottom = 0 + 'px';
+//		}
+//	}
+//	t = scrollPos;	
+};
