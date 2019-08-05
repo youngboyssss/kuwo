@@ -44,6 +44,7 @@ li{list-style:none;}
 }
 
 .yxl .link{
+    top:0;
     display: flex;
     box-sizing: border-box;
     justify-content: space-between;
@@ -64,18 +65,6 @@ li{list-style:none;}
     margin-right: 5px;
 }
 
-.singer{
-    display: flex;
-}
-
-.mv{
-    display: flex;
- }
-
-.recommend{
-    position: absolute;
-    margin-top: 77px;
-}
 
 
 

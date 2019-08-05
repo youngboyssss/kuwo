@@ -18,25 +18,11 @@ class Recommend extends React.Component{
     render(){
 
         return (
-            <div className={"recommend"}>
-                <div></div>
-                <div >
-                    77777ppppppp
-                    <div style={{width:"100px",height:"100px",background:"red"}} onClick={this.a.bind(this,1)}>
-
-                    </div>
-
-                    <div style={{width:"100px",height:"100px",background:"red",marginTop:"20px"}} onClick={this.a.bind(this,2)}>
-
-                    </div>
-
-                    <div style={{width:"100px",height:"100px",background:"red",marginTop:"20px"}} onClick={this.a.bind(this,5)}>
-
-                    </div>
-
-                    {/*<MyNav navList={this.props.children} sbNav={"true"} sbNav={"sbNav"}></MyNav>*/}
-                </div>
+            <div>
+                <div className={"recommend"}></div>
+                <div className={"a"}></div>
             </div>
+
         )
     }
 }

@@ -7,10 +7,10 @@ import MyNav from '../../router/DownloadAPP'
 export default class DownloadAPP extends React.Component{
     render(){
         return (
-            <div className={"downloadAPP"}>
-                下载APP
-                {/*{this.props.children?<MyNav navList={this.props.children } sbNav={"sbNav"}></MyNav>:null}*/}
+            <div>
+                <div className={"downloadAPP"}></div>
             </div>
+
         )
     }
 }

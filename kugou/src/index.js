@@ -4,6 +4,13 @@ import './assets/js/rem'
 import './index.css';
 import './assets/css/fonts.css'
 import "./assets/css/Nav.css"
+import "./assets/css/classify.css"
+import "./assets/css/downloadAPP.css"
+import "./assets/css/mv.css"
+import "./assets/css/ranking.css"
+import "./assets/css/recommend.css"
+import "./assets/css/search.css"
+import "./assets/css/singer.css"
 import App from './App';
 import axios from "axios";
 import * as serviceWorker from './serviceWorker';

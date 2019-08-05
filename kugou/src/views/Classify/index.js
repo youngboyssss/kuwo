@@ -14,9 +14,11 @@ export default class Classify extends React.Component{
 
     render(){
         return (
-            <div className={"classify"}>
+            <div>
+                <div className={"classify"}></div>
 
             </div>
+
         )
     }
 }

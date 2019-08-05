@@ -10,9 +10,10 @@ export default class Ranking extends React.Component{
     render(){
 
         return (
-            <div className={"ranking"}>
-
+            <div>
+                <div className={"ranking"}></div>
             </div>
+
         )
 
     }
