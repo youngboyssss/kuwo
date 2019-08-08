@@ -1,4 +1,4 @@
-import MvList from "../../views/Mv/MvList";
+import MvList from "../../views/Mv/MvList/MvList";
 
 export default [
     {

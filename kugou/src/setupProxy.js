@@ -8,6 +8,7 @@ module.exports = function (app) {
             "^/kugou":""
         }
     }))
+
     // app.get("/xixi",function (req,res) {
     //     console.log(2222222222);
     //     res.json({
