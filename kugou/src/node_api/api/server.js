@@ -29,6 +29,19 @@ app.get("/getClassify", function (req, res) {
 
 })
 
+app.get("/getMvList",function(req,res){
+    console.log(1111)
+    fs.readFile(__dirname+"/data/mvList.json",function(err,data){
+        const mvList = JSON.parse(data);
+        console.log(222,data)
+        res.json({
+            ok:1,
+            mvList
+        })
+
+    })
+})
+
 
 /*app.post("/login",function (req,res) {
     setTimeout(()=>{

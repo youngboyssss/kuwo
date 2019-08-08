@@ -1,6 +1,6 @@
-import MvPlay from "../../views/Mv/MvPlay";
+import MvPlay from "../../views/Mv/MvPlay/MvPlay";
 import Mv from "../../views/Mv"
-import MvList from "../../views/Mv/MvList";
+import MvList from "../../views/Mv/MvList/MvList";
 
 export default[
     {//MV
