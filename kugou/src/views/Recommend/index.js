@@ -4,8 +4,8 @@ import {
     Route,
     BrowserRouter as Router
 } from "react-router-dom";
-import "../../assets/css/recommend.css";
-import MyNav from '../../router/MyNav'
+import "../../assets/css/recommend.css"
+import MyNav from '../../router/MyNav';
 class Recommend extends React.Component{
     constructor(props){
         super(props);
@@ -98,7 +98,7 @@ class Recommend extends React.Component{
     render(){
         return (
             <div>
-			
+				<div className={"youdiv"}></div>
 				<h4>每日新歌</h4>
                 <div className="TuijianCss">
 					<p className="mrxg"><img src="http://img2.kwcdn.kuwo.cn/star/upload/7/7/1426644406311_.jpg" onClick={this.jump.bind(this,1082685104)}/></p>

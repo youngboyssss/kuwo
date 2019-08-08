@@ -1,0 +1,49 @@
+.typelistBoy .typelist{
+    display: flex;
+    border-bottom: 1px solid #e1e1e1;
+    height: 100px;
+    align-items: center;
+}
+
+.typelistBoy .typelist h3{
+    font-size: 16px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.typelistBoy .typelist span{
+    font-size: 12px;
+    color: #6c6c6c;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.typelistBoy .listHeader{
+    background: #ededed;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.typelistBoy .listHeader_left div{
+    margin-left: 30px;
+}
+
+.typelistBoy .on{
+    color: skyblue;
+}
+
+.typelistBoy .iconfont{
+    font-size: 30px;
+}
+
+.typelistBoy .listHeader_left{
+    display: flex;
+}
+
+.typelistBoy .classlistBody{
+    padding: 0 20px;
+}
+

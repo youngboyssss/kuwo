@@ -15,7 +15,8 @@ export default [
             // title:"搜索",
             keywored:"关键字",
             descrieption:"描述",
-            isFooter:true
+            isFooter:true,
+            isAuthorization:true
         }
     },
     {//rankinglist  ----------  排行列表
@@ -31,7 +32,8 @@ export default [
         meta:{
             keywored:"关键字",
             descrieption:"描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     }
 

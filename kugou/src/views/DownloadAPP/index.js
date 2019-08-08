@@ -10,7 +10,6 @@ export default class DownloadAPP extends React.Component{
             <div>
                 <div className={"downloadAPP"}></div>
             </div>
-
         )
     }
 }

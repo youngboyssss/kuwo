@@ -13,7 +13,6 @@ export default class Ranking extends React.Component{
             <div>
                 <div className={"ranking"}></div>
             </div>
-
         )
 
     }
