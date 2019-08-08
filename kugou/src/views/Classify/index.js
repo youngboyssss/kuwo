@@ -10,7 +10,7 @@ class Classify extends React.Component {
     }
 
     async componentDidMount() {
-        const {data} = await this.axios.get("http://127.0.0.1/getClassify")
+        const {data} = await this.axios.get("http://127.0.0.1:90/getClassify")
         console.log(data,66666);
         this.setState({
             infoList: data.infoList
@@ -39,6 +39,7 @@ class Classify extends React.Component {
                                                 )
                                         })
                                     }
+                                    <div className={"kongdiv"}></div>
                                 </div>
                             </div>
                         )

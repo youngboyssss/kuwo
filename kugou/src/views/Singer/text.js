@@ -30,7 +30,6 @@ export default class Single extends Component{
                                 </a>
                             </div>
                         )
-
                     })
                 }
             </div>

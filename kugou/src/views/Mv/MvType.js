@@ -7,7 +7,7 @@ export default class MvType extends React.Component{
     render(){
         return (
             <div>
-
+                66666
             </div>
         )
     }

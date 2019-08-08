@@ -9,10 +9,26 @@ module.exports = function (app) {
     }))
 
     app.use("/kuwo",proxy({
-        target:"http://kbangserver.kuwo.cn",
+        target:"http://artistlistinfo.kuwo.cn",
         changeOrigin:true,
         pathRewrite:{
             "^/kuwo":""
+        }
+    }))
+
+    app.use("/songlist",proxy({
+        target:"http://search.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/songlist":""
+        }
+    }));
+
+    app.use("/kuwoo",proxy({
+        target:"http://kbangserver.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/kuwoo":""
         }
     }))
 
@@ -23,12 +39,4 @@ module.exports = function (app) {
             "^/kuwos":""
         }
     }))
-
-
-    // app.get("/xixi",function (req,res) {
-    //     console.log(2222222222);
-    //     res.json({
-    //         ok:1
-    //     })
-    // })
 }

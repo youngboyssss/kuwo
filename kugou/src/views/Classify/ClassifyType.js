@@ -97,7 +97,7 @@ class ClassifyType extends React.Component {
     async componentDidMount() {
         console.log(this.props.match.params.id,"cccccccccccccccccccc")
         let that = this
-        const data = await this.axios.get("/kuwo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
+        const data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
         console.log(data.data,"rrrrrrrrrrrr")
         console.log(data,"kkkkkkkkkkk")
         data.data.musiclist = data.data.musiclist?data.data.musiclist:[]

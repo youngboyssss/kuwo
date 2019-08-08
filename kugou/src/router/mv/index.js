@@ -1,6 +1,7 @@
-import MvPlay from "../../views/Mv/MvPlay";
+import MvPlay from "../../views/Mv/MvPlay/MvPlay";
 import Mv from "../../views/Mv"
-import MvList from "../../views/Mv/MvList";
+import MvList from "../../views/Mv/MvList/MvList";
+import MvDetailPlay from "../../views/Mv/MvDetailPlay/MvDetailPlay";
 import children from './children'
 export default[
     {//MV
@@ -14,7 +15,7 @@ export default[
            // ...children
         ],
         meta: {
-            title: "拉钩网",
+            title: "酷我音乐",
             keywored: "关键字",
             descrieption: "描述",
             isFooter: true,
@@ -22,9 +23,9 @@ export default[
         }
     },
 
-    {//Mvlist  ----------  排行列表
-        to: "/MvList/:id",
-        path: "/MvList/:id",
+    {//MvList  ----------  二级页面
+        to: "/MvList/:pid",
+        path: "/MvList/:pid",
         exact: true,
         context: "首播",
         sbNav:false,
@@ -41,7 +42,7 @@ export default[
         to: "/mvplay/:id",
         path: "/mvplay/:id",
         exact: true,
-        context: "首播",
+        context: "播放",
         component: MvPlay,
         children: [],
         meta: {
@@ -49,6 +50,19 @@ export default[
             descrieption: "描述",
             isFooter: false,
             isAuthorization:true
+        }
+    },
+    {//MvDetailPlay  ----------  Mv下面列表
+        to: "/MvDetailPlay/:id",
+        path: "/MvDetailPlay/:id",
+        exact: true,
+        context: "MV播放",
+        component: MvDetailPlay,
+        children: [],
+        meta: {
+            keywored: "关键字",
+            descrieption: "描述",
+            isFooter: false
         }
     }
 ]
