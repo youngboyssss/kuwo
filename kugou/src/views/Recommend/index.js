@@ -2,11 +2,7 @@ import React from "react";
 import {
     withRouter,
     Route,
-    BrowserRouter as Router
 } from "react-router-dom";
-    Route,
-    BrowserRouter as Router
-} from "react-router-dom"
 import "../../assets/css/recommend.css"
 import MyNav from '../../router/MyNav'
 class Recommend extends React.Component{
