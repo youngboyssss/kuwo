@@ -1,4 +1,33 @@
 .classify{
     width: 100%;
     height: 84px;
+    box-sizing: border-box;
+}
+
+.clssgroup{
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.clssgroup h3{
+    text-align: left;
+    font: 16px "微软雅黑";
+    color: #46b4e6;
+    margin-top: 20px;
+}
+
+.clssgroup div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.clssgroup div span{
+    margin-top: 6px;
+    vertical-align: center;
+    font-size: 16px;
+    height: 28.88px;
+    line-height: 28.88px;
+    width: 26%;
+    border:1px solid #d0e3ee;
 }

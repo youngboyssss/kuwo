@@ -8,9 +8,6 @@ import {
 import GuardRouter from "./router/GuardRouter"
 import router from "./router"
 
-
-
-
 class App extends  React.Component{
     render(){
         return (
@@ -18,7 +15,7 @@ class App extends  React.Component{
                     {
                         router.routers.map((v,i)=>{        //配置所有的一级路由
                             return (
-                                <Route key={i} exact={v.exact} path={v.path} render={()=><GuardRouter {...v}/>}></Route>
+                                <Route key={i} exact={v.exact} path={v.path} render={()=><GuardRouter {...v}/>}></Route>  //给每个路由地址配置组件
                             )
                         })
                     }

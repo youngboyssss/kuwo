@@ -11,6 +11,11 @@ import "./assets/css/ranking.css"
 import "./assets/css/recommend.css"
 import "./assets/css/search.css"
 import "./assets/css/singer.css"
+import "./assets/css/classifylist.css"
+import "./assets/css/classifyType.css"
+import "./assets/css/login.css"
+import "./assets/css/register.css"
+import "./assets/css/areacode.css"
 import App from './App';
 import axios from "axios";
 import * as serviceWorker from './serviceWorker';

@@ -16,9 +16,12 @@ class MyNav extends React.Component {
                         this.props.navList.map((v, i) => {    //遍历navList
                             if (!v.meta.isFooter) return null;
                             if (v.context === "搜索") {
-                                return (<NavLink key={i} exact={v.exact} to={v.to} style={{color: "#333"}}
-                                                 activeStyle={{color: "#2095dd",borderBottom: "2px solid #2095dd"}}><v.font />
-                                </NavLink>)
+                                return (<div className={"search"} key={i}>
+                                    <NavLink key={i} exact={v.exact} to={v.to} style={{color: "#333"}}
+                                             activeStyle={{color: "#2095dd",borderBottom: "2px solid #2095dd"}}><v.font />
+                                    </NavLink><span className={"logo"}></span>
+                                    <NavLink to={"/login"} className={"login"}>登录</NavLink>
+                                    </div>)
                             }
                         })
                     }

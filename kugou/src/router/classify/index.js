@@ -1,5 +1,6 @@
 
 import ClassifyList from "../../views/Classify/ClassifyList"
+import ClassifyType from "../../views/Classify/ClassifyType"
 import Classify from "../../views/Classify";
 import children from "./children"
 export default [
@@ -16,12 +17,13 @@ export default [
             title: "我的",
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: true                   //显示导航栏
+            isFooter: true,                  //显示导航栏
+            isAuthorization:true
         }
     },
     {                                        //配置一级路由 配置ClassifyList页面  只是配置子页面路由
-        to: "/ClassifyList/:id",
-        path: "/ClassifyList/:id",
+        to: "/classifyList/:id",
+        path: "/classifyList/:id",
         sbNav:false,
         exact: true,
         context: "热门",
@@ -30,7 +32,23 @@ export default [
         meta: {
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: false                  //不显示导航栏
+            isFooter: false,                 //不显示导航栏
+            isAuthorization:true
+        }
+    },
+    {                                        //配置一级路由 配置ClassifyList页面  只是配置子页面路由
+        to: "/classifyType/:id",
+        path: "/classifyType/:id",
+        sbNav:false,
+        exact: true,
+        context: "热门",
+        component: ClassifyType,
+        children: [],
+        meta: {
+            keywored: "关键字",
+            descrieption: "描述",
+            isFooter: false,                 //不显示导航栏
+            isAuthorization:true
         }
     }
 ]

@@ -1,13 +1,30 @@
 const proxy = require("http-proxy-middleware");
 module.exports = function (app) {
-    console.log(1111111);
     app.use("/kugou",proxy({
-        target:"http://zhiboserver.kuwo.cn",
+        target:"http://qukudata.kuwo.cn",
         changeOrigin:true,
         pathRewrite:{
             "^/kugou":""
         }
     }))
+
+    app.use("/kuwo",proxy({
+        target:"http://kbangserver.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/kuwo":""
+        }
+    }))
+
+    app.use("/kuwos",proxy({
+        target:"http://nplserver.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/kuwos":""
+        }
+    }))
+
+
     // app.get("/xixi",function (req,res) {
     //     console.log(2222222222);
     //     res.json({

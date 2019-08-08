@@ -1,0 +1,103 @@
+.yxl_register{
+    padding-top: 81px;
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+.yxl_register div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.yxl_register .login_form{
+    text-align: left;
+    text-align: center;
+}
+
+.yxl_register .login_form p:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    border-bottom: 0.026667rem solid #E8E9EB;
+}
+
+.yxl_register .login_form p:nth-of-type(2){
+    border-bottom: 0.026667rem solid #E8E9EB;
+}
+
+.yxl_register .login_form .a_code{
+    align-items: center;
+    width: 1.3rem;
+    padding: .27rem .4rem .27rem 0;
+    font-size: .45rem;
+    line-height: .53rem;
+}
+
+.yxl_register .login_form .a_code div{
+
+    transform: translateY(-50%);
+    display: inline-block;
+    content: "";
+    border-style: solid;
+    border-width: .11rem .1rem 0;
+    margin-left: .13rem;
+    border-color: #ccc transparent transparent;
+    margin-top: 10px;
+}
+
+.yxl_register h3{
+    color: #333;
+    font-size: .51rem;
+    font-weight: 400;
+    margin: .13rem 0 1.07rem;
+}
+
+.yxl_register .login_form input{
+    font-size: 15px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline:medium;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.yxl_register .register{
+    font-size: .4rem;
+}
+
+.yxl_register .register a{
+    color: #00b38a;
+}
+
+.yxl_register .but{
+    width: 100%;
+    height: 1.17rem;
+    border-radius: 3px;
+    background-color: #00b38a;
+    color: #fff;
+    font-size: .45rem;
+    border: 0;
+    margin-top: 90px;
+}
+
+.yxl_register .iphoneLogin{
+    position: absolute;
+    color: #00b38a;
+    font-size: .4rem;
+    text-align: left;
+    bottom: 70px;
+}
+.yxl_register .login_form .vcode_link{
+    position: absolute;
+    right: 50px;
+    top: 205px;
+    z-index: 2;
+    width: 100px;
+    height: 1.09rem;
+    padding: 0;
+    font-size: .37rem;
+    color: #666;
+    border: 0;
+    background: 0 0;
+}
+

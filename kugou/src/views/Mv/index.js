@@ -10,7 +10,6 @@ export default class Mv extends React.Component{
             <div>
                 <div className={"mv"}></div>
             </div>
-
         )
 
     }

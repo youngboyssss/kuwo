@@ -17,7 +17,8 @@ export default [
             title:"拉钩网",
             keywored:"关键字",
             descrieption:"描述",
-            isFooter:true
+            isFooter:true,
+            isAuthorization:true
         }
     },
     {//artistlist  ---------- artist
@@ -33,7 +34,8 @@ export default [
         meta:{
             keywored:"关键字",
             descrieption:"描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     },
 

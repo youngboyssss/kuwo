@@ -17,7 +17,8 @@ export default[
             title: "拉钩网",
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: true
+            isFooter: true,
+            isAuthorization:true
         }
     },
 
@@ -32,12 +33,13 @@ export default[
         meta: {
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     },
     {//MvPlay  ----------  Mv播放列表
-        to: "/mvplay",
-        path: "/mvplay",
+        to: "/mvplay/:id",
+        path: "/mvplay/:id",
         exact: true,
         context: "首播",
         component: MvPlay,
@@ -45,7 +47,8 @@ export default[
         meta: {
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     }
 ]

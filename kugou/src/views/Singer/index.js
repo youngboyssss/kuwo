@@ -13,7 +13,6 @@ export default class Singer extends React.Component{
 
                 </div>
             </div>
-
         )
 
     }

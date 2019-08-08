@@ -1,7 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router-dom' ;
 import {
-
     Route,
     BrowserRouter as Router
 } from "react-router-dom"
@@ -22,7 +21,6 @@ class Recommend extends React.Component{
                 <div className={"recommend"}></div>
                 <div className={"a"}></div>
             </div>
-
         )
     }
 }
