@@ -32,7 +32,7 @@ class Xiangqing extends React.Component{
 				<div style={{height:"50px"}}></div>
 				
 				<div className="singerPic">
-					<span><img src="http://img4.kwcdn.kuwo.cn/star/userpl2015/95/40/1561351924618_254780995_700.jpg"/></span>
+					<span><img src="http://img1.kwcdn.kuwo.cn/star/userpl2015/98/82/1562136816572_121006198_150.jpg"/></span>
 					<div className="box-1">
 						<p className="quan">{this.state.data.info}</p>
 						<p className="bofang"><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"/></p>
@@ -40,7 +40,7 @@ class Xiangqing extends React.Component{
 				</div>
 				<div className="heder-1">
 					<a><img className="back" onClick={this.goBack.bind(this)} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/back.png"/></a>
-					<span className="context-1">华语</span>
+					<span className="context-1">粤语怀旧｜最拍突然听懂一首歌</span>
 					<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"/></a>
 				</div>
                 {

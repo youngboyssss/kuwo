@@ -7,7 +7,7 @@ import {
     BrowserRouter as Router,
 	withRouter
 } from "react-router-dom"
-class Xiangqing extends React.Component{
+class Xwangluo extends React.Component{
 	constructor(props) {
 	   super(props);
 	   console.log(this.props.match.params.id,3333333)
@@ -40,7 +40,7 @@ class Xiangqing extends React.Component{
 				</div>
 				<div className="heder-1">
 					<a><img className="back" onClick={this.goBack.bind(this)} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/back.png"/></a>
-					<span className="context-1">华语</span>
+					<span className="context-1">爵士</span>
 					<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"/></a>
 				</div>
                 {
@@ -80,7 +80,6 @@ class Xiangqing extends React.Component{
 	}
 	jiazai(){
 		axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&encode=utf-8&keyset=pl2012&identity=kuwo")
-				  
 		  .then(data=>{
 			  console.log(data)
 			 this.setState({
@@ -96,4 +95,4 @@ class Xiangqing extends React.Component{
 		
 	}
 }
-export default withRouter (Xiangqing)
+export default withRouter (Xwangluo)

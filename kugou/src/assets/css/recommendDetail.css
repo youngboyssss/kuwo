@@ -1,0 +1,220 @@
+*{margin:0;padding: 0;box-sizing: border-box;}
+html,body{height:100%;}
+/* html{
+	font-size:26.67vw;
+} */
+li{list-style:none;}
+img{ vertical-align: middle;}
+
+.heder-1{
+	width:100%;
+	height:50px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	padding:0 15px 0 15px;
+	background:lightgrey;
+	position:absolute;
+	top:0;
+	left:0;
+	position:fixed
+}
+.back{
+	width:30px;
+	height:30px;
+	
+}
+.search-1{
+	width:20.95px;
+	height:21.44px;
+}
+.singerPic{
+	width:100%;
+	height:130px;
+	background:#000;
+	opacity: .3;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:20px 50px  20px 15px ;
+}
+.bofang{
+	width:207px;
+	height:33px;
+	padding-left:100px;
+	margin:10px 0 0 0 ;
+}
+.bofang img{
+	width:33px;
+	height:33px;
+	
+}
+ .singerPic .quan{
+	 width:207px;
+	 height:70px;
+	 font-size:14px;
+	 color:#FFF;
+	 text-align: left;
+	 padding-top:15px;
+	 overflow:hidden;
+	 
+ }
+ .singerPic span:nth-child(1){
+	width:90px;
+	height:90px;
+	
+}
+.singerPic span:nth-child(1) img{
+	width:100%;
+	height:100%
+}
+.box-1{
+	width:207px;
+	height:118px;
+	
+}
+.context-1{
+	width:100%;
+	height:50px;
+	font-size:16px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	font-family: "微软雅黑";
+	color:#010101;
+	font-weight: bold;
+}
+.chagese{
+	width:100%;
+	height:61px;
+	padding:10px 15px;
+	
+	
+}
+.chagese-1{
+	width:100%;
+	height:61px;
+	padding:10px 0;
+	border-bottom:1px solid;
+	border-color:darkgrey;
+	padding:0 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	text-align: left;
+	
+}
+.Name-1{
+	width:258.75px;
+	height:20px;
+	font-size:16px;
+	color:#000;
+	font-family: "微软雅黑";
+	margin-bottom: 8px;
+	overflow: hidden;
+}
+.Name .img-1{
+	width:30px;
+	height:18px;
+	
+}
+.artist-album{
+	width:275px;
+	height:20px;
+	font-size:12px;
+	color:#636363;
+	overflow:hidden;
+	text-align: left;
+}
+.singerPics{
+	width:100%;
+	height:50px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	padding:0 15px 0 15px;
+	background:royalblue;
+	position:absolute;
+	bottom:0;
+	left:0;
+	position:fixed
+}
+.yinfu{
+	width:20px;
+	height:20px;
+}
+.tList{
+	width:378px;
+	height:101px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	padding: 0 40px 0 15px
+}
+.timg{
+	width:75px;
+	height:75px
+}
+.timg img{
+	width:100%;
+	height:100%;
+	margin-right:10px
+}
+.ttext{
+	width:239.27px;
+	height:75px;
+
+	}
+.ttext-1{
+	width:100%;
+	height:20px;
+	font-size:16px;
+	font-family: "微软雅黑";
+	color:#000;
+	text-align:left;
+	font-weight: bold;
+	padding:13px 0 0;
+}
+.ttext-2{
+	width:100%;
+	height:20px;
+	font-size:12px;
+	font-family: "微软雅黑";
+	color:#6C6C6C;
+	text-align:left;
+	padding:18px 0 0;
+}
+.jiazai{
+	width:100%;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	font-size:17.78px;
+	color:#888888
+}
+.heard-h{
+	height:50px;
+}
+.Huiyi{
+	width:100%px;
+	height:210.94px;
+}
+.Hvedio{
+	width:100%;
+	height:100%
+}
+.PlayOfnone{
+	width:100%;
+	height:46px;
+	border-bottom:1px solid;
+	line-height:44px
+}
+.PlayOfnone p{
+	width:34px;
+	height:34px;
+	float:left;
+}
+.PlayOfnone p img{
+	width:100%;
+	height:100%
+}

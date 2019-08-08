@@ -2,7 +2,7 @@ const proxy = require("http-proxy-middleware");
 module.exports = function (app) {
     console.log(1111111);
     app.use("/kugou",proxy({
-        target:"http://zhiboserver.kuwo.cn",
+        target:"http://qukudata.kuwo.cn",
         changeOrigin:true,
         pathRewrite:{
             "^/kugou":""
