@@ -61,7 +61,7 @@ class ArtistList extends React.Component {
     }
 
     async zyh_getArtistList(pn=0) {
-        const data = await axios.get("/kugou/mb.slist?stype=artistlist&pn="+pn+"&order=hot&rn=30", {params: {category: this.props.match.params.id}});
+        const data = await axios.get("/kuwo/mb.slist?stype=artistlist&pn="+pn+"&order=hot&rn=30", {params: {category: this.props.match.params.id}});
 
         // 将字符串转换成对象（不能用JSON.parse）
         const list = eval("("+data.data+")");

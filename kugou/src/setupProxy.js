@@ -1,10 +1,10 @@
 const proxy = require("http-proxy-middleware");
 module.exports = function (app) {
-    app.use("/kugou",proxy({
+    app.use("/kuwo",proxy({
         target:"http://artistlistinfo.kuwo.cn",
         changeOrigin:true,
         pathRewrite:{
-            "^/kugou":""
+            "^/kuwo":""
         }
     }));
     app.use("/songlist",proxy({
