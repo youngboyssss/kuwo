@@ -1,4 +1,283 @@
+img{
+    border:none
+}
+
+/*mv首页*/
 .mv{
     width: 100%;
-    height: 84px;
+    /*height: 84px;*/
+    padding:0 11.25px;
+    display:flex;
+    flex-wrap: wrap;
+    position:absolute;
+    top:84px;
+    margin-top:20px;
+    box-sizing:border-box;
+    justify-content: space-between;
+}
+
+.mvWrap{
+    width:89px;
+    height:133.44px;
+    margin:0 25px 9.92px 3px;
+}
+.mvWrap:nth-child(3),.mvWrap:nth-child(6),.mvWrap:nth-child(9),.mvWrap:nth-child(12){
+    margin-right:0;
+}
+.mvWrap:nth-child(14){
+    margin-right:127px;
+}
+.mvImg{
+    width:88px;
+    height:88px;
+    border:1px solid rgba(0,0,0,0.2);
+}
+.mvImg img{
+    width:100%;
+    height:88px;
+}
+.mvTit{
+    width:89.17px;
+    height:40px;
+    font-size:16px;
+    color:black;
+    margin-top:4.95px;
+    text-align:left;
+}
+
+/*mv二级页面*/
+.singerMvBox{
+    /*background:#f9f9f9;*/
+    display:flex;
+    flex-direction: column;
+}
+/*标题栏*/
+.singerMvTit,.detailTit{
+    width:92%;
+    height:50px;
+    background:#ededed;
+    padding:0 4%;
+    position:fixed;
+    top:0;
+    display: flex;
+    justify-content:space-between;
+}
+.backArrow,.backArrow2,.backArrow3{
+    width:30px;
+    height:30px;
+    color:#b1a5a0;
+    margin:10px 10px 0 0;
+}
+.playTit,.playTit2,.playTit3{
+    width:75%;
+    height:50px;
+    line-height:50px;
+    font-size: 16px;
+    font-bold:bolder;
+    color:#010101;
+    text-align:left;
+}
+.mvSearch,.mvPlaySearch,.mvSearch3{
+    color:#b1a5a0;
+    width:21px;
+    height:21px;
+    margin-top:10px;
+}
+
+/*歌手列表部分*/
+.singerListWrap{
+    margin-top:50px;
+}
+
+.singerMv{
+    width:335px;
+    height:100px;
+    vertical-align: middle;
+    padding:0 5px;
+    margin:0 auto;
+    display:flex;
+    border-bottom:1px solid #e1e1e1;
+    flex:1;
+}
+
+.singerMvImg{
+    width:135px;
+    height:75px;
+    border:1px solid #87818a;
+    margin:12px 10px 0 0;
+}
+.singerMvImg img{
+    width:100%;
+    height:75px;
+}
+
+/*右侧歌手名称部分*/
+.singerMvTex{
+    width:45%;
+    height:75px;
+    margin-top:13px;
+    text-align:left;
+
+}
+.singerMvName{
+    width:150.75px;
+    height:20px;
+    font-size:14px;
+    font-weight:bolder;
+    margin-top:18px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    color:black;
+}
+.singerMvName2{
+    width:100%;
+    height:20px;
+    font-size:12px;
+    color:#6c6c6c;
+    margin-top:3px;
+}
+/*获取更多按钮*/
+.getMoreBtn{
+    width:100%;
+    height:50px;
+    padding-bottom:48px;
+}
+.loadMore{
+    width:80px;
+    height:40px;
+    line-height:40px;
+    font-size:16px;
+    font-weight:bolder;
+    color:#888;
+    padding:5px 10px;
+    margin:0 auto;
+}
+
+/*三级页面*/
+.mvPlayBox{
+    display: flex;
+}
+/*标题栏*/
+.MvPlayTit{
+    width:92%;
+    height:50px;
+    background:#ededed;
+    padding:0 4%;
+    position:fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content:space-between;
+}
+/*主体部分*/
+.contentWrap{
+    flex:1;
+}
+/*视频框*/
+.videoPlay{
+    width:100%;
+    height:210.938px;
+    background:black;
+    margin-top:50px;
+}
+.videoId{
+    width:100%;
+    height:100%;
+}
+/*视频播放按钮*/
+
+.playBtn{
+    width:92%;
+    height:45px;
+    padding:0 4%;
+    border-bottom:1px solid #939393;
+    display: flex;
+    justify-content: space-between;
+}
+.mvBtn1{
+    width:34px;
+    height:34px;
+    margin-top:5px;
+}
+.playStartBtn,.playStopBtn,.playDownloadBtn{
+    width:34px;
+    height:34px;
+    margin-top:5px;
+}
+
+.playStartBtn{
+    position:absolute;
+    left:15px;
+    /*opacity: 0;*/
+}
+/*mv播放列表*/
+.playtex{
+    width:100%;
+    padding:15px;
+    font-size:16px;
+    color:#46b4e6;
+    text-align:left;
+}
+.listWrap{
+    width:100%;
+    margin:0 11.25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.defaultList{
+    width:158.094px;
+    margin:0 11% .62rem 0;
+    font-size:16px;
+    text-align: left;
+    position: relative;
+}
+/*.defaultList:nth-child(1),.defaultList:nth-child(3){*/
+    /*width:158.094px;*/
+    /*margin:0 11% .62rem 0;*/
+    /*font-size:16px;*/
+    /*text-align: left;*/
+/*}*/
+.defaultList:nth-child(2),.defaultList:nth-child(4){
+    /*width:158.094px;*/
+    /*margin:0 0 .62rem 0;*/
+    /*font-size:16px;*/
+    /*text-align: left;*/
+    margin-right:0;
+}
+.defaultList span{
+    color:black;
+}
+.bkimg{
+    width:155.344px;
+    height:87px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+}
+.playBtn2{
+    width:26px;
+    height:26px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:40px auto;
+}
+/*footer*/
+.mvDownloadApp{
+    width:100%;
+    height:45px;
+    line-height:45px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:#46b4e6;
+    font-size:18px;
+    color:#fff;
+    text-align:center;
+}
+.mvDownloadArrow{
+    width:20px;
+    height:20px;
+    vertical-align: middle;
 }
