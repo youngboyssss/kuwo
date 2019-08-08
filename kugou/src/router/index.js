@@ -5,6 +5,9 @@ import ranking from './ranking'
 import recommend from './recommend'
 import search from './search'
 import singer from './singer'
+import login from './login'
+import register from './Register'
+import areacode from './Areacode'
 
 const routers = [
     ...search,
@@ -12,7 +15,10 @@ const routers = [
     ...ranking,
     ...classify,
     ...singer,
-    ...mv
+    ...mv,
+    ...login,
+    ...register,
+    ...areacode
 ]
 export default {
     basename:"newh5",

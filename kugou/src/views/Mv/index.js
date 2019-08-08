@@ -11,7 +11,7 @@ export default class Mv extends React.Component{
         }
     }
     async componentDidMount(){
-        const {data} = await this.axios.get("http://127.0.0.1/getMvList")
+        const {data} = await this.axios.get("http://127.0.0.1:90/getMvList")
         if(data.ok===1){
             this.setState({
                 mvList:data.mvList.data
@@ -34,7 +34,6 @@ export default class Mv extends React.Component{
                     }
                 </div>
             </div>
-
         )
     }
 }

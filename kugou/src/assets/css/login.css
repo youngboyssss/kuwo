@@ -1,0 +1,61 @@
+.yxl_login{
+    padding-top: 81px;
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+.yxl_login div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.yxl_login .login_form{
+    text-align: left;
+    text-align: center;
+}
+
+.yxl_login h3{
+    color: #333;
+    font-size: .51rem;
+    font-weight: 400;
+    margin: .13rem 0 1.07rem;
+}
+
+.yxl_login .login_form input{
+    font-size: 15px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline:medium;
+    border-bottom: 1px solid #E8E9EB;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.yxl_login .register{
+    font-size: .4rem;
+}
+
+.yxl_login .register a{
+    color: #00b38a;
+}
+
+.yxl_login .but{
+    width: 100%;
+    height: 1.17rem;
+    border-radius: 3px;
+    background-color: #00b38a;
+    color: #fff;
+    font-size: .45rem;
+    border: 0;
+    margin-top: 90px;
+}
+
+.yxl_login .iphoneLogin{
+    position: absolute;
+    color: #00b38a;
+    font-size: .4rem;
+    text-align: left;
+    bottom: 70px;
+}
+

@@ -3,8 +3,8 @@ import SearchList from "../../views/Search/SearchList"
 import children from './children'
 import Font_search from '../../components/Fonts_search'
 export default [
-    {//搜索
-        to:"/search",
+    {//配置搜索
+        to:"/searchList",
         path:"/search",
         exact:true,
         context:"搜索",
@@ -18,7 +18,8 @@ export default [
             title:"拉钩网",
             keywored:"关键字",
             descrieption:"描述",
-            isFooter:true
+            isFooter:true,
+            isAuthorization:true
         }
     },
     {//SearchList  ----------  Mv播放列表
@@ -33,7 +34,8 @@ export default [
         meta:{
             keywored:"关键字",
             descrieption:"描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     }
 ]

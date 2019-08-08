@@ -18,7 +18,8 @@ export default[
             title: "酷我音乐",
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: true
+            isFooter: true,
+            isAuthorization:true
         }
     },
 
@@ -33,7 +34,8 @@ export default[
         meta: {
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     },
     {//MvPlay  ----------  Mv播放列表
@@ -46,7 +48,8 @@ export default[
         meta: {
             keywored: "关键字",
             descrieption: "描述",
-            isFooter: false
+            isFooter: false,
+            isAuthorization:true
         }
     },
     {//MvDetailPlay  ----------  Mv下面列表

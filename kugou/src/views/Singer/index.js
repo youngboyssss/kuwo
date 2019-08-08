@@ -34,7 +34,9 @@ export default class Singer extends React.Component{
                                     </Link>
                             )
                     })
+
                 }
+                <div className={"gediv"}></div>
                 </div>
             </div>
         )
