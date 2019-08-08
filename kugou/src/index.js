@@ -36,10 +36,10 @@ axios.interceptors.request.use(config=>{
      //config.url = "/kugou"+config.url;
      //console.log(config.url,999)
      return config;
-})
+});
 axios.interceptors.response.use((data)=>{
     return data;
-})
+});
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

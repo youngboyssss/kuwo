@@ -4,11 +4,9 @@ import {
     BrowserRouter as Router,
     NavLink,
     Route
-} from "react-router-dom"
-import GuardRouter from "./router/GuardRouter"
-import router from "./router"
-
-
+} from "react-router-dom";
+import GuardRouter from "./router/GuardRouter";
+import router from "./router";
 
 
 class App extends  React.Component{

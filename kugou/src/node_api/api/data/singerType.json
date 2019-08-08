@@ -1,0 +1,98 @@
+[
+  {
+    "source": 3,
+    "sourceId": 0,
+    "name": "热门歌手",
+    "id": 5409,
+    "parentId": 4,
+    "pic": "http://img4.kwcdn.kuwo.cn:81/star/upload/6/6/1348206807654_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 1,
+    "name": "华语男歌手",
+    "id": 73,
+    "parentId": 4,
+    "pic": "http://img3.kwcdn.kuwo.cn:81/star/upload/14/14/1354616464574_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 2,
+    "name": "华语女歌手",
+
+    "id": 5393,
+    "parentId": 4,
+    "pic": "http://img1.kwcdn.kuwo.cn:81/star/upload/9/9/1354616488073_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 3,
+    "name": "华语组合",
+    "id": 5394,
+    "parentId": 4,
+    "pic": "http://img4.kwcdn.kuwo.cn:81/star/upload/11/11/1354616497323_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 4,
+    "name": "日韩男歌手",
+    "id": 5395,
+    "parentId": 4,
+    "pic": "http://img2.kwcdn.kuwo.cn:81/star/upload/3/3/1354616549763_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 5,
+    "name": "热门歌手",
+    "id": 5409,
+    "parentId": 4,
+    "pic": "http://img2.kwcdn.kuwo.cn:81/star/upload/5/5/1354616506773_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 6,
+    "name": "日韩组合",
+    "id": 5397,
+    "parentId": 4,
+    "pic": "http://img1.kwcdn.kuwo.cn:81/star/upload/8/8/1354616569800_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 7,
+    "name": "欧美男歌手",
+    "id": 5398,
+    "parentId": 4,
+    "pic": "http://img2.kwcdn.kuwo.cn:81/star/upload/5/5/1354616506773_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 8,
+    "name": "欧美女歌手",
+    "id": 5399,
+    "parentId": 4,
+    "pic": "http://img2.kwcdn.kuwo.cn:81/star/upload/6/6/1354616520070_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 9,
+    "name": "欧美组合",
+    "id": 5400,
+    "parentId": 4,
+    "pic": "http://img1.kwcdn.kuwo.cn:81/star/upload/4/4/1354616529812_.jpg"
+  },
+  {
+    "source": 3,
+    "sourceId": 10,
+    "name": "其他",
+    "id": 5401,
+    "parentId": 4,
+    "pic": "http://img4.kwcdn.kuwo.cn:81/star/upload/6/6/1354616539478_.jpg"
+  }
+]
+
+
+
+
+
+
+

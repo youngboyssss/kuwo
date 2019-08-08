@@ -16,6 +16,7 @@ export default class Classify extends React.Component{
         return (
             <div>
                 <div className={"classify"}></div>
+                <div>666666</div>
 
             </div>
 

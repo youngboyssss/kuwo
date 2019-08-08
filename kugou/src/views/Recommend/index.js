@@ -1,10 +1,9 @@
 import React from "react";
-import {withRouter} from 'react-router-dom' ;
 import {
-
+    withRouter,
     Route,
     BrowserRouter as Router
-} from "react-router-dom"
+} from "react-router-dom";
 import MyNav from '../../router/MyNav'
 
 class Recommend extends React.Component{
