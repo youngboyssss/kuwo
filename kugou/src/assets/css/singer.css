@@ -9,22 +9,27 @@
 }
 
 .newMc {
-    width: 94%;
+    width: 100%;
     padding: 0 3%;
     overflow: hidden;
     padding-top: 100px;
 }
 
 .newList {
-    width: 110%;
-    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    padding:0 7px;
+
 }
 
 .newBs2 {
     width: 90px;
     overflow: hidden;
     position: relative;
-    margin: 0 8% .25rem 1%;
+    margin: 3px 8px 8px 8px;
     float: left;
     cursor: pointer;
 }
@@ -80,9 +85,12 @@
     z-index: 1000;
 }
 
+.playTit img{
+    vertical-align: top;
+}
 .back {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     float: left;
     overflow: hidden;
     margin: 10px 10px 0 0;
@@ -104,11 +112,12 @@
 }
 
 .seachBtn {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     /*float: right;*/
     overflow: hidden;
-    margin-top: 14px;
+    margin:14px 2px 0 0 ;
+    float:right;
 }
 
 
@@ -195,7 +204,6 @@
     margin-top: -170px;
     position: fixed;
     z-index: 900;
-    left:-5px;
 }
 
 .singerImg #filter{
@@ -204,7 +212,7 @@
 }
 .singerMinImg{
     width:100%;
-    height:110px;
+    height:130px;
     background:rgba(0,0,0,0.65);
     position: fixed;
     z-index:900;
@@ -215,7 +223,7 @@
 }
 
 .singDom4 {
-    width: 92%;
+    width: 100%;
     padding: 0 4%;
     overflow: hidden;
     height: 40px;
@@ -278,7 +286,7 @@
 
 .singBox {
     width: 100%;
-    height: 40px;
+    height: 60px;
     overflow: hidden;
     border-bottom: 1px solid #dfdfdf;
     padding: 10px 0;

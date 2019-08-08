@@ -35,6 +35,7 @@ export default class Singer extends React.Component{
                             )
                     })
                 }
+                <div className="newBs2"></div>
                 </div>
             </div>
         )
