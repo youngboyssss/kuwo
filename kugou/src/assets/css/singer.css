@@ -197,31 +197,35 @@
 }
 
 
-/*songlist*/
+/*SingerImg歌手图片 Don't change !!!*/
+
 .singerImg{
     width:100%;
-    height:150px;
-    margin-top: -170px;
-    position: fixed;
-    z-index: 900;
+    height:130px;
+    position:fixed;
+    z-index:900;
+    margin-top:50px;
+    top:-5px;
 }
 
-.singerImg #filter{
-    width:100%;
-    filter:blur(6px)
-}
-.singerMinImg{
+#filter{
+    filter:blur(6px);
     width:100%;
     height:130px;
-    background:rgba(0,0,0,0.65);
-    position: fixed;
-    z-index:900;
-    top:50px;
-    left:0.5px;
-    text-align: center;
-    padding-top:20px;
 }
 
+.singerMinImg{
+width:100%;
+height:130px;
+background:rgba(0,0,0,0.65);
+position: fixed;
+z-index:900;
+text-align: center;
+padding-top:20px;
+    top:50px;
+}
+
+/*******路由导航******/
 .singDom4 {
     width: 100%;
     padding: 0 4%;

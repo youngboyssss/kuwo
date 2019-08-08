@@ -8,8 +8,8 @@ export default class SingerImg extends Component{
     render(){
 
         return (
-            <div className="singerImg">
-                <img id="filter" style={{width: "375px", height: "130px"}}
+            <div className={"singerImg"}>
+                <img id="filter"
                      src={"http://img4.kwcdn.kuwo.cn/star/starheads/"+this.props.location.state.pic} alt=""/>
                 <span className="singerMinImg">
                         <img style={{width: "90px", height: "90px", borderRadius: "2px"}}
