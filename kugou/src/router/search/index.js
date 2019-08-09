@@ -37,5 +37,69 @@ export default [
             isFooter: false,
             isAuthorization:true
         }
+    },
+    {//searchSong  ----------  歌曲播放列表
+        to:"/searchList/searchSong",
+        path:"/searchList/searchSong",
+        exact:true,
+        sbNav:false,
+        context:"歌手",
+        component:SearchList,
+        children:[
+        ],
+        meta:{
+            keywored:"关键字",
+            descrieption:"描述",
+            isFooter: false,
+            isAuthorization:true
+        }
+    },
+    {//searchMV  ----------  MV播放列表
+        to:"/searchList/searchMV",
+        path:"/searchList/searchMV",
+        exact:true,
+        sbNav:false,
+        context:"MV",
+        component:SearchList,
+        children:[
+        ],
+        meta:{
+            keywored:"关键字",
+            descrieption:"描述",
+            isFooter: false,
+            isAuthorization:true
+        }
+    },
+    {//searchSinger  ----------  歌手播放列表
+        to:"/searchList/searchSinger",
+        path:"/searchList/searchSinger",
+        exact:true,
+        sbNav:false,
+        context:"歌手",
+        component:SearchList,
+        children:[
+        ],
+        meta:{
+            keywored:"关键字",
+            descrieption:"描述",
+            isFooter: false,
+            isAuthorization:true
+        }
+    },
+    {//searchAlbum  ----------  专辑播放列表
+        to:"/searchList/searchAlbum",
+        path:"/searchList/searchAlbum",
+        exact:true,
+        sbNav:false,
+        context:"专辑",
+        component:SearchList,
+        children:[
+        ],
+        meta:{
+            keywored:"关键字",
+            descrieption:"描述",
+            isFooter: false,
+            isAuthorization:true
+        }
     }
 ]

@@ -2,7 +2,6 @@ import React,{Component} from "react";
 export default class SingerImg extends Component{
     constructor(props){
         super(props);
-        console.log(66666666,this.props);
     }
 
     render(){

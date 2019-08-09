@@ -21,7 +21,7 @@ class SongList extends React.Component {
     render() {
         return (
             <div className={"songList"}>
-                <PlayTit {...this.props}></PlayTit>
+                {/*<PlayTit {...this.props}></PlayTit>*/}
 
                 <SongListNav {...this.props}></SongListNav>
             </div>
