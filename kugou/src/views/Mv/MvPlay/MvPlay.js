@@ -25,7 +25,7 @@ class MvPlay extends React.Component{
                     </div>
                 </div>
                 <div className={"contentWrap"}>
-                    <div className={"kongdiv"}></div>
+                    <div className={"kongdediv"}></div>
                     <div className={"videoPlay"}>
                         <video className={"videoId"} controls={"controls"} autoPlay={"autoPlay"} src={"http://antiserver.kuwo.cn/anti.s?rid=MUSIC_"+this.props.match.params.id+"&response=res&format=mp4&type=convert_url"}></video>
                     </div>
