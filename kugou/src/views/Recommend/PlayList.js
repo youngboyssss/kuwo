@@ -12,7 +12,6 @@ class Xiangqing extends React.Component{
 	   super(props);
 	   console.log(this.props.match.params.id,3333333)
 	   this.state={
-		 
 		   id:"",
 		 
 		 data:{
@@ -21,7 +20,6 @@ class Xiangqing extends React.Component{
 			 }
 		 }
 	   }
-	
 	goBack(){
 		window.history.go(-1)
 	}
@@ -66,29 +64,16 @@ class Xiangqing extends React.Component{
 					})
 					
 				}
-				
-				<div className="singerPics">
-					<audio controls autoPlay 
-						src={"http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_"+this.state.id+"&type=convert_url&response=res"}>
-					</audio>
-				</div>
  				<div style={{height:"50px"}}></div>
              </div>
         )	
     }
-	kaiguan(){
-		console.log(1121313)
-		this.setState({
-			 isShow:false,
-		})
-	}
 	changpage(id){
 		console.log(id)
 		this.setState({
 			id:id,
 			
 		})
-	
 	}
 	jiazai(){
 		axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&encode=utf-8&keyset=pl2012&identity=kuwo")  
