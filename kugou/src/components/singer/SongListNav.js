@@ -17,8 +17,6 @@ class SongListNav extends React.Component{
     }
     render(){
         return(
-
-
             <Router basename={"newh5"}>
                 <div className={"singDom4"} id={"artopbtnallid"}>
                     <div className={"singLe5"}>
