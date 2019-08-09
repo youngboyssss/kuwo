@@ -3,6 +3,7 @@ import {
     withRouter,
     Route,
 } from "react-router-dom";
+import Loop from "./Loop/Loop"
 import "../../assets/css/recommend.css"
 import MyNav from '../../router/MyNav'
 class Recommend extends React.Component{
@@ -98,6 +99,7 @@ class Recommend extends React.Component{
         return (
             <div>
 				<div className={"youdiv"}></div>
+				<Loop></Loop>
 				<h4>每日新歌</h4>
                 <div className="TuijianCss">
 					<p className="mrxg"><img src="http://img2.kwcdn.kuwo.cn/star/upload/7/7/1426644406311_.jpg" onClick={this.jump.bind(this,1082685104)}/></p>

@@ -9,51 +9,6 @@ html,body{height:100%;}
 } */
 li{list-style:none;}
 img{ vertical-align: middle;}
-/* loop */
-.loop{
-	width:100%;
-	height:157px;
-	position:relative;
-}
-.loop-k{
-	width:100%;
-	height:157px;
-	position:absolute;
-	top:0;
-	left:0;	
-}
-.loop-k li{
-	width:100%;
-	height:157px;
-	float: left;
-	position:absolute;
-	top:0;
-	left:0
-}
-.loop-k li img{
-	width:100%;
-	height:100%
-}
-.dian{
-	width:100%;
-	height:21px;
-	position:absolute;
-	top:135px;
-	left:0;
-	padding-left:70%;
-	padding-top: 10px;
-
-}
-.dian a{
-	display: block;
-	width:5px;
-	height:5px;
-	float: left;
-	background:white;
-	margin-right:15px;
-	
-}
-
 /* context */
 .TuijianCss{
 	width:100%;
@@ -166,4 +121,16 @@ h4{
 	font-family: "微软雅黑";
 	margin:0 10px;
 	text-align: left;
+}
+.swiper-container {
+    width:100%;
+    height:156px;
+}  
+.swiper-slide{
+	width:375px;
+	height:156px;
+}
+.swiper-slide img{
+	width:375px;
+	height:156px;
 }

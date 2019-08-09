@@ -12,7 +12,9 @@ class Xiangqing extends React.Component{
 	   super(props);
 	   console.log(this.props.match.params.id,3333333)
 	   this.state={
+		 
 		   id:"",
+		 
 		 data:{
 				 info:"",
 				musiclist:[], 
@@ -50,7 +52,7 @@ class Xiangqing extends React.Component{
 						
 							<div className="chagese-1">
 								<div onClick={this.changpage.bind(this,v.id)}>
-									<p className="Name-1"><img className="yinfu"src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDt.png"/>{v.name} <img style={{width:"30px",height:"18px"}} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singWs.png"/></p>
+									<p className="Name-1"  ><img className="yinfu" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDt.png"/>{v.name}<img style={{width:"30px",height:"18px"}} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singWs.png"/></p>
 									<p className="artist-album">{v.artist}--{v.album}</p>
 								</div>
 								<div>
@@ -64,23 +66,32 @@ class Xiangqing extends React.Component{
 					})
 					
 				}
+				
 				<div className="singerPics">
-					<audio controls autoPlay src={"http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_"+this.state.id+"&type=convert_url&response=res"}></audio>
+					<audio controls autoPlay 
+						src={"http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_"+this.state.id+"&type=convert_url&response=res"}>
+					</audio>
 				</div>
  				<div style={{height:"50px"}}></div>
              </div>
         )	
     }
+	kaiguan(){
+		console.log(1121313)
+		this.setState({
+			 isShow:false,
+		})
+	}
 	changpage(id){
 		console.log(id)
 		this.setState({
-			id:id
+			id:id,
+			
 		})
 	
 	}
 	jiazai(){
-		axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&encode=utf-8&keyset=pl2012&identity=kuwo")
-				  
+		axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&encode=utf-8&keyset=pl2012&identity=kuwo")  
 		  .then(data=>{
 			  console.log(data)
 			 this.setState({
@@ -93,7 +104,6 @@ class Xiangqing extends React.Component{
 	}
 	componentDidMount(){
 		this.jiazai()
-		
 	}
 }
 export default withRouter (Xiangqing)
