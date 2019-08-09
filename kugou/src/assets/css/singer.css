@@ -1,10 +1,10 @@
-.singer{
+.singer {
     width: 100%;
     height: 84px;
 }
 
-.zyh_singerType{
-    height:800px;
+.zyh_singerType {
+    height: 800px;
     margin-top: 10px;
 }
 
@@ -18,10 +18,10 @@
 .newList {
     width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap:wrap;
-    padding:0 7px;
+    flex-wrap: wrap;
+    padding: 0 7px;
 
 }
 
@@ -37,8 +37,8 @@
 .newBs2 img {
     overflow: hidden;
     display: block;
-    border: 1px solid rgba(0,0,0,0.2);
-    width:88px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 88px;
 }
 
 .newTopline2 {
@@ -75,7 +75,7 @@
 /*playTit*/
 
 .playTit {
-    width:100%;
+    width: 100%;
     height: 50px;
     background: #ededed;
     overflow: hidden;
@@ -85,9 +85,10 @@
     z-index: 1000;
 }
 
-.playTit img{
+.playTit img {
     vertical-align: top;
 }
+
 .back {
     width: 25px;
     height: 25px;
@@ -95,7 +96,6 @@
     overflow: hidden;
     margin: 10px 10px 0 0;
 }
-
 
 
 .backTex {
@@ -116,8 +116,8 @@
     height: 20px;
     /*float: right;*/
     overflow: hidden;
-    margin:14px 2px 0 0 ;
-    float:right;
+    margin: 14px 2px 0 0;
+    float: right;
 }
 
 
@@ -126,7 +126,7 @@
     width: 92%;
     margin: 0 auto;
     overflow: hidden;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 .singerMv {
@@ -135,6 +135,7 @@
     border-bottom: 1px solid #e1e1e1;
     padding: 0 5px;
 }
+
 .singerMv p {
     display: block;
     margin-block-start: 0.5em;
@@ -152,8 +153,8 @@
     margin: 12px 5px 0 0;
 }
 
-.singerZjImg img{
-    width:75px;
+.singerZjImg img {
+    width: 75px;
 }
 
 .singerRiTex2 {
@@ -166,7 +167,7 @@
     color: #000;
     font-weight: bold;
     text-align: left;
-    padding-left:10px;
+    padding-left: 10px;
 }
 
 .singerRiName {
@@ -190,39 +191,39 @@
 }
 
 .pullUpLabel p {
-    font-size:18px;
-    color:gray;
+    font-size: 18px;
+    color: gray;
     font-weight: bold;
-    margin:10px 0;
+    margin: 10px 0;
 }
 
 
 /*SingerImg歌手图片 Don't change !!!*/
 
-.singerImg{
-    width:100%;
-    height:130px;
-    position:fixed;
-    z-index:900;
-    margin-top:50px;
-    top:-5px;
+.singerImg {
+    width: 100%;
+    height: 130px;
+    position: fixed;
+    z-index: 900;
+    margin-top: 50px;
+    top: -5px;
 }
 
-#filter{
-    filter:blur(6px);
-    width:100%;
-    height:130px;
+#filter {
+    filter: blur(6px);
+    width: 100%;
+    height: 130px;
 }
 
-.singerMinImg{
-width:100%;
-height:130px;
-background:rgba(0,0,0,0.65);
-position: fixed;
-z-index:900;
-text-align: center;
-padding-top:20px;
-    top:50px;
+.singerMinImg {
+    width: 100%;
+    height: 130px;
+    background: rgba(0, 0, 0, 0.65);
+    position: fixed;
+    z-index: 900;
+    text-align: center;
+    padding-top: 20px;
+    top: 50px;
 }
 
 /*******路由导航******/
@@ -233,8 +234,8 @@ padding-top:20px;
     height: 40px;
     background: #343534;
     position: fixed;
-    z-index:900;
-    top:180px;
+    z-index: 900;
+    top: 180px;
 }
 
 .singLe5 {
@@ -254,6 +255,7 @@ padding-top:20px;
     float: left;
     height: 30px;
     line-height: 30px;
+    text-align: center;
 }
 
 .singLea a.def {
@@ -282,7 +284,7 @@ padding-top:20px;
 
 .zyh_singList {
     width: 92%;
-    margin:0 15px;
+    margin: 0 15px;
     overflow: hidden;
     margin-top: 220px;
 
@@ -316,7 +318,7 @@ padding-top:20px;
     font: 16px "微软雅黑";
     color: #000;
     position: relative;
-    line-height:20px;
+    line-height: 20px;
     font-weight: bold;
 }
 
@@ -348,12 +350,121 @@ padding-top:20px;
 }
 
 .zyh_mv {
-    position:relative
+    position: relative
 }
 
-.zyh_mv img{
-    width:18px;
-    position:absolute;
-    left:290px;
-    top:-28px;
+.zyh_mv img {
+    width: 18px;
+    position: absolute;
+    left: 290px;
+    top: -28px;
+}
+
+
+/******Album专辑******/
+.SingerAlbumList{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 185px;
+}
+
+.SingerAlbum {
+    width: 100%;
+    height: 100px;
+    /*overflow: hidden;*/
+    border-bottom: 1px solid #e1e1e1;
+    padding:12px 0 0 20px;
+
+}
+.SingerAlbumImg{
+    width:77px;
+    height:77px;
+    float: left;
+}
+
+.SingerAlbumImg img {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #e1e1e1;
+    float: left;
+}
+
+.SingerAlbumInfo{
+    display: block;
+    float:left;
+}
+
+.SingerAlbumInfo #zyh_html{
+    font-weight: bold;
+    font-size: 16px;
+    width:100%;
+    height:20px;
+    margin:12px 0 5px 5px;
+}
+
+.SingerAlbumInfo #zyh_pub {
+    width: 100%;
+    height: 15px;
+    font-weight: normal;
+    font: 12px "微软雅黑";
+    color: #6c6c6c;
+    float: left;
+    text-align: left;
+    margin:5px 0 5px 5px;
+}
+
+/*****mv******/
+.SingerMvList{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 235px;
+    padding-left: 20px;
+}
+
+.SingerMv{
+    width:100%;
+    height:100px;
+
+}
+
+.SingerMvImg{
+    width:137px;
+    height:77px;
+    border:1px solid #e1e1e1;
+    float: left;
+}
+
+.SingerMvImg img{
+    width:135px;
+    height:75px;
+    float: left;
+}
+
+.SingerMvContext{
+    display: block;
+    float:left;
+}
+
+.SingerMvContext #zyh_mvname{
+    font-weight: bold;
+    font-size: 16px;
+    width:100%;
+    height:20px;
+    text-align: left;
+    margin:12px 0 5px 5px;
+}
+
+.SingerMvContext #zyh_mvcontext{
+    width: 150px;
+    height: 15px;
+    display: block;
+    font-weight: normal;
+    font: 12px "微软雅黑";
+    color: #6c6c6c;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    margin:5px 0 5px 5px;
 }

@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router,withRouter} from "react-router-dom";
 import SingerImg from "../../components/singer/SingerImg";
+import PlayTit from "../../components/singer/PlayTit";
 
-export default class Single extends Component {
+class Single extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +16,7 @@ export default class Single extends Component {
     render() {
         return (
             <div>
+                <PlayTit {...this.props}></PlayTit>
                 <SingerImg {...this.props}></SingerImg>
                 <div className={"zyh_singList"}>
                     {
@@ -34,6 +36,7 @@ export default class Single extends Component {
                                         <p className={"singName"}>
                                             {v.artist.replace(/&nbsp;/g, " ")}
                                             {v.album ? "-" + v.album.replace(/&nbsp;/g, " ") : ""}
+
                                         </p>
                                     </div>
                                     <a href="javascript:;" style={{textAlign: "right", lineHeight: "40px",}}>
@@ -67,5 +70,6 @@ export default class Single extends Component {
     componentDidMount() {
         this.zyh_getSongList();
     }
-
 }
+
+export default withRouter(Single);
