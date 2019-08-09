@@ -1,3 +1,7 @@
+*{
+    margin:0;
+    padding:0;
+}
 img{
     border:none
 }
@@ -24,9 +28,9 @@ img{
 .mvWrap:nth-child(3),.mvWrap:nth-child(6),.mvWrap:nth-child(9),.mvWrap:nth-child(12){
     margin-right:0;
 }
-.mvWrap:nth-child(14){
-    margin-right:127px;
-}
+/*.mvWrap:nth-child(14){*/
+    /*margin-right:127px;*/
+/*}*/
 .mvImg{
     width:88px;
     height:88px;
@@ -62,33 +66,44 @@ img{
     display: flex;
     justify-content:space-between;
 }
-.backArrow,.backArrow2,.backArrow3{
+.backArrow,.backArrow2{
     width:30px;
     height:30px;
     color:#b1a5a0;
     margin:10px 10px 0 0;
+    position: relative;
+    z-index:9999;
 }
-.playTit,.playTit2,.playTit3{
-    width:75%;
+.backArrow2{
+    margin:10px 10px 0 0;
+}
+
+.playTit{
+    /*width:75%;*/
     height:50px;
     line-height:50px;
     font-size: 16px;
     font-bold:bolder;
     color:#010101;
     text-align:left;
+    margin-left:25px;
 }
 .mvSearch,.mvPlaySearch,.mvSearch3{
     color:#b1a5a0;
     width:21px;
     height:21px;
     margin-top:10px;
+    position: relative;
+    z-index:1000;
 }
 
 /*歌手列表部分*/
-.singerListWrap{
-    margin-top:50px;
+/*.singerListWrap{*/
+    /*margin-top:50px;*/
+/*}*/
+.emptyDiv{
+    height:50px;
 }
-
 .singerMv{
     width:335px;
     height:100px;
@@ -117,7 +132,6 @@ img{
     height:75px;
     margin-top:13px;
     text-align:left;
-
 }
 .singerMvName{
     width:150.75px;
@@ -138,6 +152,9 @@ img{
     color:#6c6c6c;
     margin-top:3px;
     margin-left: 10px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 /*获取更多按钮*/
 .getMoreBtn{
@@ -170,6 +187,15 @@ img{
     left:0;
     display: flex;
     justify-content:space-between;
+}
+.playTit2{
+    width:75%;
+    height:50px;
+    line-height:50px;
+    font-size: 16px;
+    font-bold:bolder;
+    color:#010101;
+    text-align:left;
 }
 /*主体部分*/
 .contentWrap{
@@ -207,9 +233,16 @@ img{
 }
 
 .playStartBtn{
-    position:absolute;
-    left:15px;
-    /*opacity: 0;*/
+    /*position:absolute;*/
+    /*left:15px;*/
+    /*display: none;*/
+}
+.playStopBtn{
+    float:left;
+}
+.playDownloadBtn{
+    position: absolute;
+    right:15px;
 }
 /*mv播放列表*/
 .playtex{
@@ -219,11 +252,30 @@ img{
     color:#46b4e6;
     text-align:left;
 }
+.playTit3{
+    width:75%;
+    height:50px;
+    line-height:50px;
+    font-size: 16px;
+    font-bold:bolder;
+    color:#010101;
+    text-align:left;
+}
+.backArrow3{
+    width:30px;
+    height:30px;
+    color:#b1a5a0;
+    margin:10px 10px 0 0;
+    position: relative;
+    z-index:9999;
+}
 .listWrap{
     width:100%;
-    margin:0 11.25px;
+    /*margin:0 11.25px;*/
+    /*padding:0 11.25px;*/
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .defaultList{
     width:158.094px;
@@ -231,18 +283,17 @@ img{
     font-size:16px;
     text-align: left;
     position: relative;
+    /*padding:0 11.25px;*/
 }
 /*.defaultList:nth-child(1),.defaultList:nth-child(3){*/
-    /*width:158.094px;*/
-    /*margin:0 11% .62rem 0;*/
-    /*font-size:16px;*/
-    /*text-align: left;*/
+    /*margin:0 11% .62rem 11.25px;*/
 /*}*/
 .defaultList:nth-child(2),.defaultList:nth-child(4){
     /*width:158.094px;*/
     /*margin:0 0 .62rem 0;*/
     /*font-size:16px;*/
     /*text-align: left;*/
+    /*margin:0 11.25px .62rem 0;*/
     margin-right:0;
 }
 .defaultList span{
@@ -262,6 +313,9 @@ img{
     right:0;
     bottom:0;
     margin:40px auto;
+}
+.titName{
+    margin-top:5px;
 }
 /*footer*/
 .mvDownloadApp{
