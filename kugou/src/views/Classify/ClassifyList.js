@@ -13,7 +13,6 @@ class ClassifyList extends React.Component {
 
     async componentDidMount() {
         const {data} = await this.axios.get("/kugou" + "/q.k" + this.props.location.search)
-        console.log(data,9999)
         this.setState({
             infoList: data
         })
@@ -28,14 +27,18 @@ class ClassifyList extends React.Component {
     }
 
     render() {
-        if (!this.state.infoList) return null
+        if (!this.state.infoList.child[0]) return  (
+            <div className={"wait"}>
+                {<this.component.Wait/>}
+            </div>
+        )
+        this.state.infoList.ninfo = this.state.infoList.ninfo?this.state.infoList.ninfo:{}
         return (<>
             <div className={"typelistBoy"}>
                 <div className={"listHeader"}>
                     <div className={"listHeader_left"}>
                         <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
-                        {/*<div>{this.state.infoList}</div>*/}
-                        <div>777 {/*{this.state.ninfo.name}*/} </div>
+                        <div className={"listName"}>{this.state.infoList.ninfo.name}</div>
                     </div>
                     <span className="iconfont on">&#xe615;</span>
                 </div>
@@ -44,13 +47,13 @@ class ClassifyList extends React.Component {
                     {
                         this.state.infoList.child.map((v, i) => {
                             return (
-                                <div key={i} className={"typelist"} onClick={this.typeDetails.bind(this,v.sourceid)}>
+                                <div key={i} className={"typelist"} onClick={v.info?this.typeDetails.bind(this,v.sourceid):null}>
                                     <p style={{width: "75px", height: "75px"}}>
                                         <img src={v.pic} alt="" style={{width: "100%", height: "100%"}}/>
                                     </p>
                                     <div>
                                         <h3>{v.disname}</h3>
-                                        <span>共{v.info}首歌曲</span>
+                                        <span>共{v.info?v.info:0}首歌曲</span>
                                     </div>
                                 </div>
                             )
