@@ -28,6 +28,7 @@ class MvList extends React.Component{
                     <span className={'playTit'}>{this.state.title}</span>
                     <Link to={"/searchList"}><img className={'mvSearch'} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"}/></Link>
                 </div>
+                <div className={"emptyDiv"}></div>
                 <div  className={"singerListWrap"}>
                     {
                         this.state.singerList.map((item,index)=>{
@@ -38,7 +39,7 @@ class MvList extends React.Component{
                                             item.mvpic?<div className={"singerMv"}>
                                                 <p className={"singerMvImg"}><img src={"http://img3.kwcdn.kuwo.cn/wmvpic/"+item.mvpic}/></p>
                                                 <p className={"singerMvTex"}>
-                                                    <span className={"singerMvName"}>{item.name}</span>
+                                                    {item.name?<span className={"singerMvName"}>{item.name}</span>:null}
                                                     <span className={"singerMvName2"}>{item.artist}</span>
                                                 </p>
                                             </div>:null
@@ -49,7 +50,7 @@ class MvList extends React.Component{
                         })
                     }
                 </div>
-                <div className={"getMoreBtn"} onClick={this.getMore.bind(this,++this.state.pn)}>
+                <div className={"getMoreBtn"} onClick={this.getMore.bind(this,this.state.pn++)}>
                     <div className={"loadMore"}>
                         <span>获取更多</span>
                     </div>
@@ -59,7 +60,9 @@ class MvList extends React.Component{
         )
     }
     getMore(pn){
-            this.axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.pid+"&pn="+pn/1+"&rn=30&keyset=padmvpl")
+        console.log(1111,pn)
+            this.axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.pid+"&pn="+pn/1+"&pn=2&rn=30&encode=utf-8&keyset=padmvpl&identity=kuwo&r=1565255792489")
+                                // http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.pid+"&pn="+pn/1+"&pn=2&rn=30&encode=utf-8&keyset=padmvpl&identity=kuwo&r=1565255792489
                 .then(({data})=>{
                     console.log(333,data)
                     this.setState({

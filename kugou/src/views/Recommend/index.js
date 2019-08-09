@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Loop from "./Loop/Loop"
 import "../../assets/css/recommend.css"
-import MyNav from '../../router/MyNav'
+import MyNav from '../../router/MyNav';
 class Recommend extends React.Component{
     constructor(props){
         super(props);

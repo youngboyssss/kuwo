@@ -28,7 +28,9 @@ export default class Mv extends React.Component{
                             return (
                                 <div className={"mvWrap"} key={item.pid}>
                                     <Link to={"/mvList/"+item.pid}><p className={"mvImg"}><img src={item.pic}/></p><p className={"mvTit"}>{item.title}</p></Link>
+                                    <div></div>
                                 </div>
+
                             )
                         })
                     }
