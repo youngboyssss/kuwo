@@ -52,11 +52,18 @@ class Audiog extends Component{
         },1000)
     }
 
+    playStopOrHide(){
+        this.play_Control=true
+        this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
+        this.audio.pause()
+        clearInterval(this.timer)
+    }
+
     playControl(){                            //控制样式  播放状态
         this.play_Control = !this.play_Control
         this.play_Control?this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png":this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
         this.play_Control?this.audio.pause():this.audio.play()
-        //this.computingTime.call(this);
+        this.computingTime.call(this);
         if(this.play_Control){
             clearInterval(this.timer)
         }
@@ -65,9 +72,8 @@ class Audiog extends Component{
     computingTime(){
         let that = this;
         var cu_minute, cu_second, du_minute, du_second
-        //that.play_Control?that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png":that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         clearInterval(that.timer);
-        that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name    //--------
+        //that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
 
         that.timer = setInterval(() => {
             du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
@@ -124,14 +130,11 @@ class Audiog extends Component{
     componentWillReceiveProps(nextProps, nextContext) {
         //组件创建时传递 不允许此钩子
         console.log("componentWillReceiveProps",this)
-        if(!nextProps.infoList){
-            this.playControl.call(this)
-            nextProps = this.props
-        }
     }
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         if(!nextProps.infoList){
+            this.playStopOrHide.call(this)
             nextProps = this.props
         }
         return true
