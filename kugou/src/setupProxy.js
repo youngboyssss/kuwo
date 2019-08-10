@@ -46,4 +46,14 @@ module.exports = function (app) {
             "^/kuwos":""
         }
     }))
+
+    //请求每首歌的图片
+    app.use("/kuwoc",proxy({
+        target:"http://mobile.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/kuwoc":""
+        }
+    }))
+
 }

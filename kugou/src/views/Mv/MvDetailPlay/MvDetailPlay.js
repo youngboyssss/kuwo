@@ -62,7 +62,6 @@ class MvDetailPlay extends React.Component{
     componentDidMount(){
         this.axios.get("http://mobile.kuwo.cn/mpage/html5/getmvinfo?mid="+this.props.match.params.id+"")
             .then(({data})=>{
-                // console.log(999,data)
                 this.setState({
                     title:data.title,
                     detailMusicList:data.musiclist

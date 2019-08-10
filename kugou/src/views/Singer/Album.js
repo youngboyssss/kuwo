@@ -3,11 +3,11 @@ import SingerImg from "../../components/singer/SingerImg";
 import axios from "axios";
 import PlayTit from "../../components/singer/PlayTit";
 import {Link, withRouter} from "react-router-dom";
+import SongListNav from "./SongList";
 
 class Album extends Component {
     constructor(props) {
         super(props);
-        // console.log(45678900,this.props);
         this.state={
             albumlist:[]
         }
@@ -18,21 +18,13 @@ class Album extends Component {
             <div>专辑
                 <PlayTit {...this.props}></PlayTit>
                 <SingerImg {...this.props}></SingerImg>
+                <SongListNav {...this.props}></SongListNav>
                 <div className={"SingerAlbumList"}>
                 {
                     this.state.albumlist.map((v,i)=>{
 
                         return(
-                            <Link key={i} to={
-                                {
-                                    pathname:"/albuminfo",
-                                    state:{
-                                        id:v.id,
-                                        pic:v.pic,
-                                        name:v.name
-                                    }
-                                }
-                            }>
+                            <Link key={i} to={"/albuminfo/"+v.id}>
                             <div className={"SingerAlbum"} key={i}>
                                 <p className={"SingerAlbumImg"}>
                                     <img src={"http://img1.kwcdn.kuwo.cn/star/albumcover/"+v.pic} alt=""/>
@@ -57,17 +49,28 @@ class Album extends Component {
         const data = await axios.get("/songlist/r.s?pn=0&rn=30&stype=albumlist",
             {
             params: {
-                "artistid": this.props.location.state.id
+                "artistid":this.props.match.params.id
+
             }
         });
         const list = eval("(" + data.data + ")");
         this.setState({
             albumlist: this.state.albumlist.concat(list.albumlist)
         });
+        localStorage.albumlist = JSON.stringify(this.state.albumlist);
+        console.log(89,list);
     }
 
     componentDidMount() {
-        this.zyh_getAlubmList();
+        //         console.log(55555555);
+        // if(localStorage.albumlist){
+        //     this.setState({
+        //         albumlist:JSON.parse(localStorage.albumlist)
+        //     })
+        // }else{
+        console.log(11111);
+            this.zyh_getAlubmList();
+        // }
     }
 }
 

@@ -45,60 +45,48 @@ export default [
         }
     },
     {//SongList
-        to:"/songlist",
-        path:"/songlist",
+        to:"/album/:id",
+        path:"/album/:id",
         exact:true,
-        context:"歌手-歌单",
-        component:SongList,
+        context:"专辑",
+        component:Album,
         sbNav:false,
         children:[
-            {
-                to:"/songlist/id",
-                path:"/songlist/id",
-                exact:true,
-                context:"单曲",
-                component:Single,
-                sbNav:true,
-                meta:{
-                    keywored:"关键字",
-                    descrieption:"描述",
-                    isFooter: false
-                }
-            },
-            {
-                to:"/songlist/album/id",
-                path:"/songlist/album/id",
-                exact:true,
-                context:"专辑",
-                component:Album,
-                sbNav:true,
-                meta:{
-                    keywored:"关键字",
-                    descrieption:"描述",
-                    isFooter: false
-                }
-            },
-            {
-                to:"/songlist/mv/id",
-                path:"/songlist/mv/id",
-                exact:true,
-                context:"mv",
-                component:Mv,
-                sbNav:true,
-                meta:{
-                    keywored:"关键字",
-                    descrieption:"描述",
-                    isFooter: false
-                }
-            },
         ],
         meta:{
-            keywored:"关键字",
+            keywored:"歌手",
             descrieption:"描述",
             isFooter: false
         }
-    }
-
-
-
+    },
+    {//SongList
+        to:"/mv/:id",
+        path:"/mv/:id",
+        exact:true,
+        context:"mv",
+        component:Mv,
+        sbNav:false,
+        children:[
+        ],
+        meta:{
+            keywored:"歌手",
+            descrieption:"描述",
+            isFooter: false
+        }
+    },
+    {//SongList
+        to:"/single/:id",
+        path:"/single/:id",
+        exact:true,
+        context:"专辑",
+        component:Single,
+        sbNav:false,
+        children:[
+        ],
+        meta:{
+            keywored:"歌手",
+            descrieption:"描述",
+            isFooter: false
+        }
+    },
 ]

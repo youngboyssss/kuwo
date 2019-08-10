@@ -1,4 +1,5 @@
 import React from "react";
+import pubsub from 'pubsub-js'
 import {
     Link,
     withRouter
@@ -12,6 +13,7 @@ class MvPlay extends React.Component{
             mvMusicList:[],
             isShow:true,
             src:"http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtnstop.png",
+            isShow_Audio: false
         }
     }
 
@@ -68,7 +70,6 @@ class MvPlay extends React.Component{
     }
     // 播放按钮
     ctrlmvbtn(isShow,src){
-       console.log(111111)
         this.setState({
             isShow:!this.state.isShow,
             src:'http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtn.png'
@@ -77,13 +78,23 @@ class MvPlay extends React.Component{
     componentDidMount(){
         this.axios.get("http://mobile.kuwo.cn/mpage/html5/getmvinfo?mid="+this.props.match.params.id+"")
             .then(({data})=>{
-                // console.log(888,data)
                 this.setState({
                     songInfo:data.songinfo,
                     mvMusicList:data.musiclist,
                     isShow:data.musiclist.isshow,
                 })
             })
+        pubsub.publish("player",{a:this.state})
     }
+
+    componentWillUnmount() {
+        this.setState({
+            isShow_Audio:true
+        },()=>{
+            //pubsub.publish("player",{a:this.state})
+        })
+    }
+
+
 }
 export default withRouter(MvPlay)

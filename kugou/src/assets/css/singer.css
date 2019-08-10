@@ -74,7 +74,7 @@
 
 /*playTit*/
 
-.playTit {
+.zyh_playTit {
     width: 100%;
     height: 50px;
     background: #ededed;
@@ -85,7 +85,7 @@
     z-index: 1000;
 }
 
-.playTit img {
+.zyh_playTit img {
     vertical-align: top;
 }
 
@@ -401,6 +401,8 @@
     width:100%;
     height:20px;
     margin:12px 0 5px 5px;
+    text-align: left;
+    color:#000;
 }
 
 .SingerAlbumInfo #zyh_pub {

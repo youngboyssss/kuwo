@@ -15,8 +15,16 @@
     color: skyblue;
 }
 
+.listHeader_left{
+    display: flex;
+}
+
 .classifyTypeBoy .listHeader_left div{
     margin-left: 30px;
+}
+
+.listHeader_left div:nth-of-type(1){
+    font-size: 20px;
 }
 
 .classifyTypeBoy .play{
@@ -78,6 +86,14 @@
     text-align: left;
 }
 
+.classifyTypeBoy .songList_1 p{
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
 .classifyTypeBoy .songList_1 p:nth-of-type(1) img{
     width: 30px;
     height: 18px;
@@ -89,6 +105,8 @@
 
 .classifyTypeBoy .songList_2{
     display: flex;
+    width: 20px;
+    height: 20px;
 }
 
 .classifyTypeBoy .songList_2 img{
@@ -105,7 +123,7 @@
     box-sizing: border-box;
 }
 
-.classifyTypeBoy .audio{
+.audio{
     width: 375px;
     height: 48px;
     background: #46b4e6;
@@ -113,7 +131,7 @@
     bottom: 0px;
 }
 
-.classifyTypeBoy .audio_body{
+.audio .audio_body{
     width: 100%;
     display: flex;
     padding: 0 10px 0 10px;
@@ -122,37 +140,44 @@
     justify-content: space-between;
 }
 
-.classifyTypeBoy .audio_body_1{
+.audio .audio_body_1{
     width: 100%;
     display: flex;
     font-size: 12px;
     text-align: left;
 }
 
-.classifyTypeBoy .audio_body_1 div:nth-of-type(1){
-    margin-left: 10px;
+.audio .audio_body_1 p:nth-of-type(1){
+    width: 35px;
 }
 
-.classifyTypeBoy .audio_body_1 img{
+.audio .audio_body_1 div:nth-of-type(1){
+    margin-left: 10px;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.audio .audio_body_1 img{
     width: 35px;
     height: 35px;
 }
 
-.classifyTypeBoy .audio_body_2{
+.audio .audio_body_2{
     display: flex;
-   margin-top: 5px;
 }
 
-.classifyTypeBoy .audio_body_2  p{
+.audio .audio_body_2  p{
     margin-left: 30px;
 }
 
-.classifyTypeBoy .audio_body_2 img:nth-of-type(1){
+.audio .audio_body_2 img:nth-of-type(1){
     width: 30px;
     height: 30px;
 }
 
-.classifyTypeBoy .audio_body_2 img:nth-of-type(2){
+.audio .audio_body_2 img:nth-of-type(2){
     width: 25px;
     height: 25px;
 }
