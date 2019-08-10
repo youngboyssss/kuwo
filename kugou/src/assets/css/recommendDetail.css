@@ -221,3 +221,38 @@ img{ vertical-align: middle;}
 .youdiv{
 	height: 80px;
 }
+.singerPics{
+	position:relative;
+	position:fixed
+}
+.singerPics p{
+	width:29.91px;
+	height:29.91px;
+	position:absolute;
+	
+}
+.singerPics p:nth-child(1){
+	width:34.88px;
+	height:34.88px;
+}
+.singerPics p:nth-child(2){
+	left:50%;
+	top:7px;
+}
+.singerPics p:nth-child(3){
+	left:60%;
+	top:7px
+}
+.singerPics p:nth-child(4){
+	left:67%;
+	top:7px;
+}
+.singerPics p:nth-child(5){
+	left:85%;
+	top:5px;
+}
+.singerPics p img{
+	width:29.91px;
+	height:29.91px;
+}
+

@@ -4,6 +4,7 @@ import SongList from "../../views/Singer/SongList";
 import Mv from "../../views/Singer/Mv";
 import Single from "../../views/Singer/Single";
 import Album from "../..//views/Singer/Album";
+import AlbumInfo from "../..//views/Singer/AlbumInfo";
 import SongListNav from "../../components/singer/SongListNav";
 import children from './children'
 export default [
@@ -52,8 +53,8 @@ export default [
         sbNav:false,
         children:[
             {
-                to:"/songlist",
-                path:"/songlist",
+                to:"/songlist/id",
+                path:"/songlist/id",
                 exact:true,
                 context:"单曲",
                 component:Single,
@@ -65,9 +66,9 @@ export default [
                 }
             },
             {
-                to:"/songlist/album",
-                path:"/songlist/album",
-                exact:false,
+                to:"/songlist/album/id",
+                path:"/songlist/album/id",
+                exact:true,
                 context:"专辑",
                 component:Album,
                 sbNav:true,
@@ -78,9 +79,9 @@ export default [
                 }
             },
             {
-                to:"/songlist/mv",
-                path:"/songlist/mv",
-                exact:false,
+                to:"/songlist/mv/id",
+                path:"/songlist/mv/id",
+                exact:true,
                 context:"mv",
                 component:Mv,
                 sbNav:true,
@@ -96,6 +97,8 @@ export default [
             descrieption:"描述",
             isFooter: false
         }
-    },
+    }
+
+
 
 ]

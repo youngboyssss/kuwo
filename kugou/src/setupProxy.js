@@ -1,5 +1,12 @@
 const proxy = require("http-proxy-middleware");
 module.exports = function (app) {
+    app.use("/kugouu",proxy({
+        target:"http://search.kuwo.cn",
+        changeOrigin:true,
+        pathRewrite:{
+            "^/kugouu":""
+        }
+    }))
     app.use("/kugou",proxy({
         target:"http://qukudata.kuwo.cn",
         changeOrigin:true,

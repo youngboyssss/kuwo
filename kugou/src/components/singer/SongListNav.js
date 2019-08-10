@@ -13,16 +13,13 @@ import Album from "../../views/Singer/Album";
 class SongListNav extends React.Component{
     constructor(props){
         super(props);
-        console.log(777777,this.props);
+        // console.log(777777,this.props);
     }
     render(){
         return(
-
-
             <Router basename={"newh5"}>
                 <div className={"singDom4"} id={"artopbtnallid"}>
                     <div className={"singLe5"}>
-
                         <NavLink exact={true} to={{
                             pathname:"/songlist",
                             state:{
@@ -56,8 +53,8 @@ class SongListNav extends React.Component{
                 </div>
 
                 <Route exact={true} path={"/songlist"} component={Single}></Route>
-                <Route path={"/songlist/mv"} component={Mv}></Route>
-                <Route path={"/songlist/album"} component={Album}></Route>
+                <Route exact={true} path={"/songlist/mv"} component={Mv}></Route>
+                <Route exact={true} path={"/songlist/album"} component={Album}></Route>
             </Router>
 
         )

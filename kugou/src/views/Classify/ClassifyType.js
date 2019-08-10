@@ -41,7 +41,6 @@ class ClassifyType extends React.Component {
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
         setTimeout(()=>{
             this.Child.isShow();
-
         },500)
     }
 
@@ -104,7 +103,6 @@ class ClassifyType extends React.Component {
                         })
                     }
                 </div>
-                {/*{<this.component.Audio {...this.state} onRef={this.onRef}/>}*/}
             </div>
         </>)
     }
