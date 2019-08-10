@@ -16,7 +16,6 @@ class MvList extends React.Component{
         }
     }
     a(a){
-        console.log(  this.props.history)
         this.props.history.push('/ClassifyList/'+a)
     }
 
@@ -60,11 +59,9 @@ class MvList extends React.Component{
         )
     }
     getMore(pn){
-        console.log(1111,pn)
             this.axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.pid+"&pn="+pn/1+"&pn=2&rn=30&encode=utf-8&keyset=padmvpl&identity=kuwo&r=1565255792489")
                                 // http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.pid+"&pn="+pn/1+"&pn=2&rn=30&encode=utf-8&keyset=padmvpl&identity=kuwo&r=1565255792489
                 .then(({data})=>{
-                    console.log(333,data)
                     this.setState({
                         singerList:[...this.state.singerList,...data.musiclist],
                         title:data.title,

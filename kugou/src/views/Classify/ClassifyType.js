@@ -32,7 +32,6 @@ class ClassifyType extends React.Component {
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
 
         setTimeout(()=>{
-            console.log(this.Child,"ffffffffffffffffffffff")
             this.Child.play(i)
         },500)
     }
@@ -45,7 +44,6 @@ class ClassifyType extends React.Component {
     }
 
     async componentDidMount() {
-        console.log("classifyType")
         let that = this
         let musiclist = null;
         let data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")

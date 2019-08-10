@@ -7,8 +7,7 @@ import {
 } from "react-router-dom"
 
 class Audiog extends Component{
-
-    constructor(props) {
+    constructor(props) {                        //构造器：创建父元素传来的数据是通过继承得到的
         super(props)
         this.songList=[]
         this.audio = ""
@@ -16,6 +15,7 @@ class Audiog extends Component{
         this.timer = ""
         this.play_Control=false
         this.songIndex = 0
+        console.log("constructor",props)
     }
 
     playMv(id){
@@ -67,9 +67,9 @@ class Audiog extends Component{
         var cu_minute, cu_second, du_minute, du_second
         //that.play_Control?that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png":that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         clearInterval(that.timer);
-        console.log(that.props.infoList.musiclist,"tttttttttttttttttttttttttttt")
+        that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name    //--------
+
         that.timer = setInterval(() => {
-            that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
             du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
             du_second = parseInt(that.audio.duration - du_minute * 60).toString().padStart(2, "0")
             cu_minute = parseInt(that.audio.currentTime / 60).toString().padStart(2, "0")
@@ -86,6 +86,7 @@ class Audiog extends Component{
         this.play_Control = true;       //控制播放按钮样式
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         that.songIndex = i;
+        console.log("that.play",that.props)
         that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.props.infoList.musiclist[that.songIndex].id + "&type=convert_url&response=res";
 
         that.audio.load()
@@ -121,16 +122,37 @@ class Audiog extends Component{
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        console.log(nextProps,nextContext,"aaaaaaaaaaaaaa")
-        console.log(this.props,"aaaaaaaaaaaaaa")
+        //组件创建时传递 不允许此钩子
+        console.log("componentWillReceiveProps",this)
+        if(!nextProps.infoList){
+            this.playControl.call(this)
+            nextProps = this.props
+        }
+    }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        if(!nextProps.infoList){
+            nextProps = this.props
+        }
+        return true
+    }
+
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        console.log("componentWillUpdate",this)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("componentDidUpdate",prevProps,this)
     }
 
     componentWillUnmount() {       //组件销毁   停止播放音乐   清空定时器
         this.audio.pause()
         clearInterval(this.timer)
+        console.log("componentWillUnmount")
     }
 
     async componentDidMount() {
+        console.log("componentDidMount")
         let that = this    //复制this
         this.audio  = document.createElement("audio");  //创建audio
         this.audio.autoplay = "ture";    //自动播放
@@ -150,9 +172,8 @@ class Audiog extends Component{
     }
 
     render(){
+        console.log("render")
         this.props.onRef?this.props.onRef(this):console.log()
-        console.log("[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[")
-        console.log(this.props,"bbbbbbbbbbbbbbbbbbbbbbbbb")
         return (
             <div className={"audio"} style={{display:this.props.isShow_Audio? "block":"none"}}>
                 <div className={"audio_body"}>
