@@ -84,15 +84,12 @@ class MvPlay extends React.Component{
                     isShow:data.musiclist.isshow,
                 })
             })
-        pubsub.publish("player",{a:this.state})
+        pubsub.publish("player",{a:{isShow_Audio: false}})
+
     }
 
     componentWillUnmount() {
-        this.setState({
-            isShow_Audio:true
-        },()=>{
-            //pubsub.publish("player",{a:this.state})
-        })
+        pubsub.publish("player",{a:{isShow_Audio: true}})
     }
 
 
