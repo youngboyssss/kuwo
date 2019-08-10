@@ -3,6 +3,7 @@ import axios from "axios";
 import {BrowserRouter as Router,withRouter} from "react-router-dom";
 import SingerImg from "../../components/singer/SingerImg";
 import PlayTit from "../../components/singer/PlayTit";
+import SongListNav from "./SongList";
 
 class Single extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Single extends Component {
         this.state = {
             songList: []
         };
-        console.log(898989, this.props)
+        // console.log(898989, this.state.songList);
     }
 
     render() {
@@ -18,6 +19,8 @@ class Single extends Component {
             <div>
                 <PlayTit {...this.props}></PlayTit>
                 <SingerImg {...this.props}></SingerImg>
+                <SongListNav {...this.props}></SongListNav>
+
                 <div className={"zyh_singList"}>
                     {
                         this.state.songList.map((v, i) => {
@@ -36,7 +39,6 @@ class Single extends Component {
                                         <p className={"singName"}>
                                             {v.artist.replace(/&nbsp;/g, " ")}
                                             {v.album ? "-" + v.album.replace(/&nbsp;/g, " ") : ""}
-
                                         </p>
                                     </div>
                                     <a href="javascript:;" style={{textAlign: "right", lineHeight: "40px",}}>
@@ -56,11 +58,7 @@ class Single extends Component {
     }
 
     async zyh_getSongList() {
-        const data = await axios.get("/songlist/r.s?stype=artist2music&pn=0&rn=30", {
-            params: {
-                "artistid": this.props.location.state.id
-            }
-        });
+        const data = await axios.get("/songlist/r.s?stype=artist2music&pn=0&rn=30&artistid="+this.props.match.params.id);
         const musiclist = eval("(" + data.data + ")");
         this.setState({
             songList: this.state.songList.concat(musiclist.musiclist)

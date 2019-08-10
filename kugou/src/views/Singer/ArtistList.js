@@ -1,8 +1,6 @@
 import React from "react";
 import {
-    Route,
     Link,
-    BrowserRouter as Router,
     withRouter
 } from "react-router-dom";
 import axios from "axios";
@@ -28,16 +26,7 @@ class ArtistList extends React.Component {
                     {
                         this.state.artistlist.map((v,i)=>{
                             return(
-                                <Link key={i} to={
-                                    {
-                                        pathname:"/songlist",
-                                        state:{
-                                            id:v.id,
-                                            pic:v.pic,
-                                            name:v.name
-                                        }
-                                    }
-                                }>
+                                <Link key={i} to={"/single/"+v.id}>
                                     <div className={"singerMv"} >
                                         <p className={"singerZjImg"}>
                                             <img src={"http://img4.kwcdn.kuwo.cn/star/starheads/"+v.pic} alt=""/>

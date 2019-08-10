@@ -10,12 +10,13 @@ class AlbumInfo extends Component {
         this.state={
             albumlist:[]
         }
+        console.log(123,this.props);
     }
 
     render() {
         return (
-            <div>专辑
-                <PlayTit {...this.props}></PlayTit>
+            <div>
+                {/*<PlayTit {...this.props}></PlayTit>*/}
                 <div className={"AlbumInfo"}>
                     {
                         this.state.albumlist.map((v,i)=>{
@@ -56,21 +57,30 @@ class AlbumInfo extends Component {
     }
 
     async zyh_getAlubmList() {
-        const data = await axios.get("/songlist/r.s?stype=albumlist&rn=30&pn=0",
+        const data = await axios.get("/songlist/r.s?stype=albuminfo&rn=30&pn=0",
             {
                 params: {
-                    "artistid": this.props.location.state.id
+                    "albumid": this.props.match.params.id
                 }
             });
         const list = eval("(" + data.data + ")");
         this.setState({
             albumlist: this.state.albumlist.concat(list.albumlist)
         });
+        console.log(456,data);
     }
 
     componentDidMount() {
         this.zyh_getAlubmList();
+        console.log(888,this.state.albumlist)
     }
 }
 
 export default withRouter(AlbumInfo);
+
+
+
+
+
+// http://localhost:3000/songlist/r.s?stype=albumlist&rn=30&pn=0&albumid=10412080
+// http://search.kuwo.cn         /r.s?stype=albuminfo&albumid=10412080
