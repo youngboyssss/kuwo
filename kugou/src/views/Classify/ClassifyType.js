@@ -1,4 +1,5 @@
 import React from "react";
+import pubsub from 'pubsub-js'
 import {
     withRouter,
     Link
@@ -9,7 +10,7 @@ class ClassifyType extends React.Component {
         super(props)
         this.state = {
             infoList: [],
-            isShow_Audio: false
+            isShow_Audio: true
         }
         this.songList=[]
     }
@@ -19,7 +20,6 @@ class ClassifyType extends React.Component {
     }
 
     return(){
-        console.log("return")
         this.props.history.go(-1);
     }
 
@@ -28,37 +28,40 @@ class ClassifyType extends React.Component {
         this.Child = ref;
     }
 
-    play(i) {
-        this.Child.play(i)                        //调用子组件方法
+    play(i) {       //调用子组件方法
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+
+        setTimeout(()=>{
+            console.log(this.Child,"ffffffffffffffffffffff")
+            this.Child.play(i)
+        },500)
     }
 
     isShow(){
-        this.Child.isShow()                    //调用子组件方法
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        setTimeout(()=>{
+            this.Child.isShow();
+
+        },500)
     }
 
     async componentDidMount() {
+        console.log("classifyType")
         let that = this
         let musiclist = null;
         let data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
         musiclist = data.data.musiclist?data.data.musiclist:[]
-
         if(!musiclist.length){
             data = await this.axios.get("/kuwos/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&keyset=pl2012&identity=kuwo&r=1565231235511")
             musiclist = data.data.musiclist?data.data.musiclist:[]
             //this.props.history.go(-1)
         }
-
         for(let i = 0 ; i < musiclist.length ; i++ ){
             this.songList.push(musiclist[i].id)
         }
-
         this.setState({
             infoList: data.data
-        },()=>{
-            if(this.state.infoList.musiclist.length <= 0)
-            this.props.history.go(-1)
         })
-        //播放器控件事件
     }
 
     render() {
@@ -68,12 +71,11 @@ class ClassifyType extends React.Component {
                 <div className={"listHeader"}>
                     <div className={"listHeader_left"}>
                         <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
-                        <div></div>
+                        <div>{this.state.infoList.leader}</div>
                         <div></div>
                     </div>
                     <span className="iconfont on">&#xe615;</span>
                 </div>
-
                 <div className={"playInfo"}>
                     <div className={"playInfo_1"}>
                         <span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/defpic_240.png" alt=""/></span>
@@ -82,7 +84,6 @@ class ClassifyType extends React.Component {
                     <span className={"play"}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"
                                                   alt="" onClick={this.isShow.bind(this)}/></span>
                 </div>
-
                 <div className={"totalSongList"}>
                     {
                         this.state.infoList.musiclist.map((v, i) => {
@@ -94,17 +95,16 @@ class ClassifyType extends React.Component {
                                                         alt=""/></p>
                                         <p>{v.artist + "-" + v.album}</p>
                                     </div>
-
                                     <div className={"songList_2"}>
                                         <p><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
-                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
+                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
                                     </div>
                                 </div>
                             )
                         })
                     }
                 </div>
-                    {<this.component.Audio {...this.props}  {...this.state} onRef={this.onRef}/>}
+                {/*{<this.component.Audio {...this.state} onRef={this.onRef}/>}*/}
             </div>
         </>)
     }

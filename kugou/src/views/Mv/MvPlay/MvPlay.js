@@ -1,4 +1,5 @@
 import React from "react";
+import pubsub from 'pubsub-js'
 import {
     Link,
     withRouter
@@ -10,7 +11,8 @@ class MvPlay extends React.Component{
         this.state = {
             songInfo:[],
             mvMusicList:[],
-            isShow:0
+            isShow:0,
+            isShow_Audio: false
         }
     }
 
@@ -80,6 +82,8 @@ class MvPlay extends React.Component{
                     isShow:data.musiclist.isshow,
                 })
             })
+
+        pubsub.publish("player",{a:this.state})
     }
 }
 export default withRouter(MvPlay)

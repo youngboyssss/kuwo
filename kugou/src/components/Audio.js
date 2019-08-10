@@ -1,12 +1,15 @@
-import React,{Component} from "react";
-export default class Audio extends Component{
+import React,{
+    Component
+} from "react";
+
+import {
+    withRouter
+} from "react-router-dom"
+
+class Audiog extends Component{
 
     constructor(props) {
         super(props)
-        this.state = {
-            infoList: [],
-            isShow_Audio: false
-        }
         this.songList=[]
         this.audio = ""
         this.songInfo = ""
@@ -21,12 +24,11 @@ export default class Audio extends Component{
 
     isShow(){
         let that = this
+
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
-        this.setState({
-            isShow_Audio:true
-        })
         var cu_minute="00", cu_second="00", du_minute="00", du_second="00"
-        that.refs.songName.innerHTML = that.state.infoList.musiclist[that.songIndex].name
+        that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
+
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
         du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
@@ -38,22 +40,23 @@ export default class Audio extends Component{
         this.play_Control = true;
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
-        setTimeout(()=>{
+        setTimeout( async ()=>{
             this.computingTime.call(this);
             this.play_Control = false;
             this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
             that.songIndex = 0
-            that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.songList[that.songIndex] + "&type=convert_url&response=res";
+            that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.props.songList[that.songIndex] + "&type=convert_url&response=res";
             that.audio.load()
             that.audio.play()
+            const data = await that.axios.get("/kuwoc/mpage/html5/songinfoandlrc?mid="+that.props.songList[that.songIndex])
         },1000)
     }
 
-    playControl(){
+    playControl(){                            //控制样式  播放状态
         this.play_Control = !this.play_Control
         this.play_Control?this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png":this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
         this.play_Control?this.audio.pause():this.audio.play()
-        this.computingTime.call(this);
+        //this.computingTime.call(this);
         if(this.play_Control){
             clearInterval(this.timer)
         }
@@ -64,6 +67,7 @@ export default class Audio extends Component{
         var cu_minute, cu_second, du_minute, du_second
         //that.play_Control?that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png":that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         clearInterval(that.timer);
+        console.log(that.props.infoList.musiclist,"tttttttttttttttttttttttttttt")
         that.timer = setInterval(() => {
             that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
             du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
@@ -77,15 +81,13 @@ export default class Audio extends Component{
         }, 50)
     }
 
-    play(i) {
-        let that = this;
-        this.play_Control = true;
+    async play(i) {
+        let that = this;                 //复制this
+        this.play_Control = true;       //控制播放按钮样式
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
-        this.setState({
-            isShow_Audio:true
-        })
         that.songIndex = i;
         that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.props.infoList.musiclist[that.songIndex].id + "&type=convert_url&response=res";
+
         that.audio.load()
         that.computingTime.call(this)
         that.audio.play()
@@ -93,79 +95,69 @@ export default class Audio extends Component{
             that.play_Control = false;
             that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
         },1000)
+        //请求每首歌的图片
+        const {data} = await that.axios.get("/kuwoc/mpage/html5/songinfoandlrc?mid="+that.props.infoList.musiclist[that.songIndex].id)
+        that.refs.songPic.src = "http://img1.kwcdn.kuwo.cn/star/albumcover/"+(eval("("+data+")").songinfo.artpic)
     }
 
-    switchSong(){
+    switchSong(){                        //切换歌曲
         let that = this
         this.play_Control = true;
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         this.songIndex = ++this.songIndex;
-        if(this.songIndex >= this.songList.length) this.songIndex = 0
+        if(this.songIndex >= this.props.songList.length) this.songIndex = 0
         that.computingTime.call(this);
-        setTimeout(()=>{
+        setTimeout(async ()=>{
             this.play_Control = false;
             this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
-            that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.songList[that.songIndex] + "&type=convert_url&response=res";
+            that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.props.songList[that.songIndex] + "&type=convert_url&response=res";
             that.audio.load()
             that.computingTime.call(this);
             that.audio.play()
+            const {data} = await that.axios.get("/kuwoc/mpage/html5/songinfoandlrc?mid="+that.props.songList[that.songIndex])
+            that.refs.songPic.src = "http://img1.kwcdn.kuwo.cn/star/albumcover/"+eval("("+data+")").songinfo.artpic
         },1000)
+
     }
 
-    componentWillUnmount() {
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log(nextProps,nextContext,"aaaaaaaaaaaaaa")
+        console.log(this.props,"aaaaaaaaaaaaaa")
+    }
+
+    componentWillUnmount() {       //组件销毁   停止播放音乐   清空定时器
         this.audio.pause()
         clearInterval(this.timer)
     }
 
     async componentDidMount() {
-        let that = this
-        this.props.onRef(this)
-        const data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
-        data.data.musiclist = data.data.musiclist?data.data.musiclist:[]
-
-        if(!data.data.musiclist.length){
-            console.log("第二次请求")
-            const data = await this.axios.get("/kuwos/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&keyset=pl2012&identity=kuwo&r=1565231235511")
-            console.log(data,"ppppppppppppppppppppp")
-            data.data.musiclist = data.data.musiclist?data.data.musiclist:[]
-            console.log(data.data.musiclist)
-            //this.props.history.go(-1)
-        }
-
-        for(let i = 0 ; i < data.data.musiclist.length ; i++ ){
-            this.songList.push(data.data.musiclist[i].id)
-        }
-        this.setState({
-            infoList: data.data
-        })
-
-        //this.audio = new Audio('source.mp3');
-        this.audio  = document.createElement("audio");
-        this.audio.autoplay = "ture";
+        let that = this    //复制this
+        this.audio  = document.createElement("audio");  //创建audio
+        this.audio.autoplay = "ture";    //自动播放
         this.audio.preload = "auto"
-        document.body.appendChild(this.audio);
-        this.audio.onended=function () {
+        document.body.appendChild(this.audio);    //把audio放入body中
+        this.audio.onended=function () {          //播放完毕钩子---自动播放下一首
             this.play_Control = true;
-            this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
-            clearInterval(that.timer)
+            this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png";
+            clearInterval(that.timer);
             that.switchSong.call(that)
         }
+        if(!this.props.isShow_Audio){
+            this.playControl.call(this)
+            return null;
+        }
+        this.props.onRef(this)   //给父元素提供this   供子元素调用this
     }
-
-    componentWillReceiveProps(nextProps, nextContext) {
-        console.log(nextProps,nextContext,this.props,"ppppppppppp")
-    }
-
-
-
-
 
     render(){
+        this.props.onRef?this.props.onRef(this):console.log()
+        console.log("[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[")
+        console.log(this.props,"bbbbbbbbbbbbbbbbbbbbbbbbb")
         return (
-            <div className={"audio"} style={{display:this.state.isShow_Audio? "block":"none"}}>
+            <div className={"audio"} style={{display:this.props.isShow_Audio? "block":"none"}}>
                 <div className={"audio_body"}>
                     <div className={"audio_body_1"}>
-                        <p><img src="http://img1.kwcdn.kuwo.cn/star/albumcover/240/65/11/3291181677.jpg" alt=""/>
+                        <p><img src="http://img1.kwcdn.kuwo.cn/star/albumcover/240/65/11/3291181677.jpg" alt="" ref={"songPic"}/>
                         </p>
                         <div>
                             <p ref={"songName"}></p>
@@ -181,5 +173,6 @@ export default class Audio extends Component{
             </div>
         )
     }
-
 }
+
+export default withRouter(Audiog)
