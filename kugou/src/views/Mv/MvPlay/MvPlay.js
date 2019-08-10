@@ -1,4 +1,5 @@
 import React from "react";
+import pubsub from 'pubsub-js'
 import {
     Link,
     withRouter
@@ -12,6 +13,7 @@ class MvPlay extends React.Component{
             mvMusicList:[],
             isShow:true,
             src:"http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtnstop.png",
+            isShow_Audio: false
         }
     }
 
@@ -27,7 +29,7 @@ class MvPlay extends React.Component{
 
                 </div>
                 <div className={"contentWrap"}>
-                    <div className={"kongdediv"}></div>
+                    <div className={"mvkongdiv"}></div>
                     <div className={"videoPlay"}>
                         <video className={"videoId"} controls={"controls"} autoPlay={"autoPlay"} src={"http://antiserver.kuwo.cn/anti.s?rid=MUSIC_"+this.props.match.params.id+"&response=res&format=mp4&type=convert_url"}></video>
                     </div>
@@ -84,6 +86,8 @@ class MvPlay extends React.Component{
                     isShow:data.musiclist.isshow,
                 })
             })
+
+        pubsub.publish("player",{a:this.state})
     }
 }
 export default withRouter(MvPlay)

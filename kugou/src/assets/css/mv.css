@@ -276,6 +276,7 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    overflow:hidden;
 }
 .defaultList{
     width:158.094px;
@@ -335,6 +336,6 @@ img{
     height:20px;
     vertical-align: middle;
 }
-.kongddeiv{
+.mvkongdiv{
     height: 50px;
 }
