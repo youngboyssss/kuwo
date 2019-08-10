@@ -8,7 +8,9 @@ export default class Huiyi extends React.Component{
 	goBack(){
 		window.history.go(-1)
 	}
-	
+	jumpSearch(){
+		this.props.history.push("/searchList")
+	}
     render(){
 	
         return (
@@ -17,7 +19,7 @@ export default class Huiyi extends React.Component{
 					<div className="heder-1">
 						<a><img className="back" onClick={this.goBack.bind(this)} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/back.png"/></a>
 						<span className="context-1">回忆的沙漏(10周年版-GEM...)</span>
-						<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"/></a>
+						<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png" onClick={this.jumpSearch.bind(this)}/></a>
 					</div>
 					<div className="Huiyi">
 						<video className="Hvedio" autoPlay controls  src="http://antiserver.kuwo.cn/anti.s?rid=MUSIC_57569623&response=res&format=mp4&type=convert_url"></video>
