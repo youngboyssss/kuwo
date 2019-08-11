@@ -1,5 +1,6 @@
 import Search from "../../views/Search";
 import SearchList from "../../views/Search/SearchList"
+import ScreachDetails from "../../views/Search/ScreachDetails"
 import children from './children'
 import Font_search from '../../components/Fonts_search'
 export default [
@@ -38,61 +39,13 @@ export default [
             isAuthorization:true
         }
     },
-    {//searchSong  ----------  歌曲播放列表
-        to:"/searchList/searchSong",
-        path:"/searchList/searchSong",
+    {//Searchdetails  ----------  搜索详情
+        to:"/searchdetails",
+        path:"/searchdetails",
         exact:true,
         sbNav:false,
-        context:"歌手",
-        component:SearchList,
-        children:[
-        ],
-        meta:{
-            keywored:"关键字",
-            descrieption:"描述",
-            isFooter: false,
-            isAuthorization:true
-        }
-    },
-    {//searchMV  ----------  MV播放列表
-        to:"/searchList/searchMV",
-        path:"/searchList/searchMV",
-        exact:true,
-        sbNav:false,
-        context:"MV",
-        component:SearchList,
-        children:[
-        ],
-        meta:{
-            keywored:"关键字",
-            descrieption:"描述",
-            isFooter: false,
-            isAuthorization:true
-        }
-    },
-    {//searchSinger  ----------  歌手播放列表
-        to:"/searchList/searchSinger",
-        path:"/searchList/searchSinger",
-        exact:true,
-        sbNav:false,
-        context:"歌手",
-        component:SearchList,
-        children:[
-        ],
-        meta:{
-            keywored:"关键字",
-            descrieption:"描述",
-            isFooter: false,
-            isAuthorization:true
-        }
-    },
-    {//searchAlbum  ----------  专辑播放列表
-        to:"/searchList/searchAlbum",
-        path:"/searchList/searchAlbum",
-        exact:true,
-        sbNav:false,
-        context:"专辑",
-        component:SearchList,
+        context:"歌手/歌词/歌名",
+        component:ScreachDetails,
         children:[
         ],
         meta:{
@@ -102,4 +55,4 @@ export default [
             isAuthorization:true
         }
     }
-]
+    ]
