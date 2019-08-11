@@ -226,12 +226,19 @@ img{
     height:34px;
     margin-top:5px;
 }
-.playStartBtn,.playStopBtn,.playDownloadBtn{
+#ctrlBtn{
     width:34px;
     height:34px;
     margin-top:5px;
 }
-
+.playStartBtn,.playStopBtn,.playDownloadBtn{
+    width:34px;
+    height:34px;
+    /*margin-top:5px;*/
+}
+.playDownloadBtn{
+    margin-top:5px;
+}
 .playStartBtn{
     /*position:absolute;*/
     /*left:15px;*/
