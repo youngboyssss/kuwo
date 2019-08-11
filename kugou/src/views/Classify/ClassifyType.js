@@ -30,6 +30,8 @@ class ClassifyType extends React.Component {
 
     play(i) {       //调用子组件方法
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        localStorage.infoList = JSON.stringify(this.state)
+        localStorage.songList = JSON.stringify(this.songList)
 
         setTimeout(()=>{
             this.Child.play(i)
@@ -38,6 +40,9 @@ class ClassifyType extends React.Component {
 
     isShow(){
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        localStorage.infoList = this.state
+        localStorage.songList = this.songList
+
         setTimeout(()=>{
             this.Child.isShow();
         },500)
@@ -66,12 +71,14 @@ class ClassifyType extends React.Component {
         return (<>
             <div className={"classifyTypeBoy"}>
                 <div className={"listHeader"}>
-                    <div className={"listHeader_left"}>
-                        <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
-                        <div>{this.state.infoList.leader}</div>
-                        <div></div>
+                    <div className={"listHeader_cen"}>
+                        <div className={"listHeader_left"}>
+                            <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
+                            <div>{this.state.infoList.leader}</div>
+                            <div></div>
+                        </div>
+                        <span className="iconfont on">&#xe615;</span>
                     </div>
-                    <span className="iconfont on">&#xe615;</span>
                 </div>
                 <div className={"playInfo"}>
                     <div className={"playInfo_1"}>
@@ -93,15 +100,17 @@ class ClassifyType extends React.Component {
                                         <p>{v.artist + "-" + v.album}</p>
                                     </div>
                                     <div className={"songList_2"}>
-                                        <p><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
-                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
+                                        <p style={{display:v.mp4sig1?"block":"none"}}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
+                                        <p onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
                                     </div>
                                 </div>
                             )
                         })
                     }
+                    <div className={"audio_div"}></div>
                 </div>
             </div>
+
         </>)
     }
 }

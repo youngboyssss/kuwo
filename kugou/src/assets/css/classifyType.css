@@ -60,7 +60,10 @@
 
 .classifyTypeBoy .playInfo_1 p:nth-of-type(1){
     width: 200px;
+    height: 110px;
     margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .classifyTypeBoy .playInfo_1 img{
@@ -105,8 +108,6 @@
 
 .classifyTypeBoy .songList_2{
     display: flex;
-    width: 20px;
-    height: 20px;
 }
 
 .classifyTypeBoy .songList_2 img{
@@ -124,7 +125,7 @@
 }
 
 .audio{
-    width: 375px;
+    width: 100%;
     height: 48px;
     background: #46b4e6;
     position:fixed;
@@ -134,7 +135,6 @@
 .audio .audio_body{
     width: 100%;
     display: flex;
-    padding: 0 10px 0 10px;
     box-sizing: border-box;
     margin-top: 5px;
     justify-content: space-between;
@@ -189,6 +189,11 @@
 
 .classifyTypeBoy .songList_1 span{
     height: 20px;
+}
+
+.audio_div{
+    width: 100%;
+    height: 48px;
 }
 
 .wait{
