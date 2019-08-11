@@ -60,7 +60,9 @@ class ClassifyType extends React.Component {
             infoList: data.data
         })
     }
-
+jumpSearch(){
+		this.props.history.push("/searchList")
+	}
     render() {
         if (!this.state.infoList.musiclist) return <div className={"wait"}>{<this.component.Wait/>}</div>
         return (<>
@@ -71,8 +73,9 @@ class ClassifyType extends React.Component {
                         <div>{this.state.infoList.leader}</div>
                         <div></div>
                     </div>
-                    <span className="iconfont on">&#xe615;</span>
+                    <span className="iconfont on" onClick={this.jumpSearch.bind(this)}>&#xe615;</span>
                 </div>
+				<div className="xixi"></div>
                 <div className={"playInfo"}>
                     <div className={"playInfo_1"}>
                         <span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/defpic_240.png" alt=""/></span>
@@ -100,6 +103,7 @@ class ClassifyType extends React.Component {
                             )
                         })
                     }
+					<div className="xixi"></div>
                 </div>
             </div>
         </>)
