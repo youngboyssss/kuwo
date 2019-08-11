@@ -13,14 +13,13 @@ li{list-style:none;}
 .yxl{
     position: fixed;
     width: 100%;
-	z-index:1
+	z-index:10
 }
 
 .yxl .header{
     top: 0px;
     left: 0px;
 }
-
 .yxl .iconfont{
     width: 21px;
     height: 21px;
@@ -52,7 +51,7 @@ li{list-style:none;}
     background: white;
     box-sizing: border-box;
     justify-content: space-between;
-	background:lightgrey
+	background:lightgrey;
 }
 
 .yxl .link a{

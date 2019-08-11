@@ -11,7 +11,6 @@ export default class Loop extends React.Component{
 						<div className="swiper-slide"><img src="http://img4.kwcdn.kuwo.cn/star/upload/4/4/1480909297444_.jpg"/></div>
 						<div className="swiper-slide"><img src="http://img1.kwcdn.kuwo.cn/star/upload/10/10/1482312358874_.jpg"/></div>
 						<div className="swiper-slide"><img src="http://img4.kwcdn.kuwo.cn/star/upload/14/14/1482482412398_.jpg"/></div>
-					
 					</div>
 					<div className="swiper-pagination"></div>
 				</div>

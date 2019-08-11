@@ -27,6 +27,8 @@ class Audiog extends Component{
 
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
         var cu_minute="00", cu_second="00", du_minute="00", du_second="00"
+				const n = that.props.infoList.musiclist?that.props.infoList.musiclist:that.props.infoList
+        that.refs.songName.innerHTML = n[that.songIndex].name
 
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
         du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
@@ -74,7 +76,8 @@ class Audiog extends Component{
         let that = this;
         var cu_minute, cu_second, du_minute, du_second
         clearInterval(that.timer);
-        console.log(that.props.infoList,"wowowoowowow")
+				const n = that.props.infoList.musiclist?that.props.infoList.musiclist:that.props.infoList
+        that.refs.songName.innerHTML = n[that.songIndex].name    
         that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
         that.timer = setInterval(() => {
 
@@ -95,7 +98,9 @@ class Audiog extends Component{
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         that.songIndex = i;
         console.log("that.play",that.props)
-        that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + that.props.infoList.musiclist[that.songIndex].id + "&type=convert_url&response=res";
+		console.log(that.props.infoList,"uuuuuuuuuuuuuuuuuuuuuuuuuu")
+		const n = that.props.infoList.musiclist?that.props.infoList.musiclist:that.props.infoList
+        that.audio.src = "http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_" + n[that.songIndex].id + "&type=convert_url&response=res";
 
         that.audio.load()
         that.computingTime.call(this)
@@ -105,7 +110,7 @@ class Audiog extends Component{
             that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
         },1000)
         //请求每首歌的图片
-        const {data} = await that.axios.get("/kuwoc/mpage/html5/songinfoandlrc?mid="+that.props.infoList.musiclist[that.songIndex].id)
+        const {data} = await that.axios.get("/kuwoc/mpage/html5/songinfoandlrc?mid="+n[that.songIndex].id)
         that.refs.songPic.src = "http://img1.kwcdn.kuwo.cn/star/albumcover/"+(eval("("+data+")").songinfo.artpic)
     }
 
@@ -165,13 +170,14 @@ class Audiog extends Component{
         this.audio.preload = "auto"
         document.body.appendChild(this.audio);    //把audio放入body中
         this.audio.onended=function () {          //播放完毕钩子---自动播放下一首
-            this.play_Control = true;
-            this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png";
+            that.play_Control = true;
+            console.log(that.refs.playControl)
+            that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png";
             clearInterval(that.timer);
             that.switchSong.call(that)
         }
-        if(!this.props.isShow_Audio){
-            this.playControl.call(this)
+        if(!that.props.isShow_Audio){
+            that.playControl.call(that)
             return null;
         }
         this.props.onRef(this)   //给父元素提供this   供子元素调用this
