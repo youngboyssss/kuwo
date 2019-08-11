@@ -1,0 +1,38 @@
+{
+  "ARTISTPIC": "",
+  "HIT": "2",
+  "HITMODE": "",
+  "HIT_BUT_OFFLINE": "0",
+  "MSHOW": "0",
+  "NEW": "0",
+  "PN": "0",
+  "RN": "10",
+  "SHOW": "2",
+  "TOTAL": "2",
+  "abslist": [
+    {
+      "AARTIST": "Jay&nbsp;Chou",
+      "ALBUMNUM": "32",
+      "ARTIST": "周杰伦",
+      "ARTISTID": "336",
+      "COUNTRY": "中国台湾",
+      "FARTIST": "",
+      "MVNUM": "363",
+      "PICPATH": "120/61/99/2461721588.jpg",
+      "SONGNUM": "1032",
+      "isstar": "0"
+    },
+    {
+      "AARTIST": "",
+      "ALBUMNUM": "0",
+      "ARTIST": "周杰伦战队",
+      "ARTISTID": "2445670",
+      "COUNTRY": "中国",
+      "FARTIST": "",
+      "MVNUM": "0",
+      "PICPATH": "120/44/71/1031487827.jpg",
+      "SONGNUM": "4",
+      "isstar": "0"
+    }
+  ]
+}
