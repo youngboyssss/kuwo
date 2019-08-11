@@ -89,19 +89,24 @@ class MvPlay extends React.Component{
                 })
             })
         //pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
-        pubsub.publish("player",{a:{
-                infoList: localStorage.infoList,
-                isShow_Audio: false
-            },b:this.onRef,c:localStorage.songList})
+        // pubsub.publish("player",{a:{
+        //         infoList: localStorage.infoList,
+        //         isShow_Audio: false
+        //     },b:this.onRef,c:localStorage.songList})
+        //
+        // setTimeout(()=>{
+        //     this.Child.playStopOrHide()
+        // },500)
     }
 
-    componentWillUnmount() {
-        //pubsub.publish("player",{a:{isShow_Audio: true}})
-        pubsub.publish("player",{a:{
-                infoList: localStorage.infoList,
-                isShow_Audio: true
-            },b:this.onRef,c:localStorage.songList})
-    }
+    // componentWillUnmount() {
+    //     //pubsub.publish("player",{a:{isShow_Audio: true}})
+    //     pubsub.publish("player",{a:{
+    //             infoList: localStorage.infoList,
+    //             isShow_Audio: true
+    //         },b:this.onRef,c:localStorage.songList})
+    //
+    // }
 
 
 }
