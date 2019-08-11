@@ -9,7 +9,7 @@ class ClassifyType extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            infoList: [],
+            infoList: [], //gongge
             isShow_Audio: true
         }
         this.songList=[]

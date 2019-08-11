@@ -1,100 +1,109 @@
-import axios from "axios"
 import React from "react";
-import "../../assets/css/recommendDetail.css"
+import pubsub from 'pubsub-js'
 import {
-    Route,
-    Link,
-    BrowserRouter as Router,
-	withRouter
+    withRouter,
+    Link
 } from "react-router-dom"
-class Xliuxing extends React.Component{
-	constructor(props) {
-	   super(props);
-	   console.log(this.props.match.params.id,3333333)
-	   this.state={
-		   id:"",
-		 data:{
-				 info:"",
-				musiclist:[], 
-			 }
-		 }
-	   }
-	
-	goBack(){
-		window.history.go(-1)
-	}
-	jumpSearch(){
-		this.props.history.push("/searchList")
-	}
-    render(){
-	
-        return (
-            <div>
-			
-				<div style={{height:"50px"}}></div>
-				
-				<div className="singerPic">
-					<span><img src="http://img4.kwcdn.kuwo.cn/star/userpl2015/95/40/1561351924618_254780995_700.jpg"/></span>
-					<div className="box-1">
-						<p className="quan">{this.state.data.info}</p>
-						<p className="bofang"><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"/></p>
-					</div>
-				</div>
-				<div className="heder-1">
-					<a><img className="back" onClick={this.goBack.bind(this)} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/back.png"/></a>
-					<span className="context-1">爵士</span>
-					<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png" onClick={this.jumpSearch.bind(this)}/></a>
-				</div>
-                {
-					this.state.data.musiclist.map((v,i)=>{
-						return(
-						<div key={i} className="chagese">
-						
-							<div className="chagese-1">
-								<div onClick={this.changpage.bind(this,v.id)}>
-									<p className="Name-1"><img className="yinfu"src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDt.png"/>{v.name} <img style={{width:"30px",height:"18px"}} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singWs.png"/></p>
-									<p className="artist-album">{v.artist}--{v.album}</p>
-								</div>
-								<div>
-									<img  style={{width:"20px",height:"20px"}} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/>
-								</div>
-							</div>
-				
-						</div>
-							
-						)
-					})
-					
-				}
-				<div className="singerPics">
-					<audio controls autoPlay src={"http://antiserver.kuwo.cn/anti.s?format=aac|mp3&rid=MUSIC_"+this.state.id+"&type=convert_url&response=res"}></audio>
-				</div>
- 				<div style={{height:"50px"}}></div>
-             </div>
-        )	
+
+class ClassifyType extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            infoList: [], //gongge
+            isShow_Audio: true
+        }
+        this.songList=[]
     }
-	changpage(id){
-		console.log(id)
-		this.setState({
-			id:id
-		})
-	
-	}
-	jiazai(){
-		axios.get("http://nplserver.kuwo.cn/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&encode=utf-8&keyset=pl2012&identity=kuwo")
-		  .then(data=>{
-			  console.log(data)
-			 this.setState({
-				 data:data.data,
-				 
-			 },()=>{
-				 console.log(this.state.data.musiclist,9999)
-			 })
-		  })
-	}
-	componentDidMount(){
-		this.jiazai()
-		
-	}
+
+    playMv(id){
+        this.props.history.push("/mvplay/"+id);
+    }
+
+    return(){
+        this.props.history.go(-1);
+    }
+
+    //定义一个事件 接收this
+    onRef = (ref)=>{
+        this.Child = ref;
+    }
+
+    play(i) {       //调用子组件方法
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+
+        setTimeout(()=>{
+            this.Child.play(i)
+        },500)
+    }
+
+    isShow(){
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        setTimeout(()=>{
+            this.Child.isShow();
+        },500)
+    }
+
+    async componentDidMount() {
+        let that = this
+        let musiclist = null;
+        let data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
+        musiclist = data.data.musiclist?data.data.musiclist:[]
+        if(!musiclist.length){
+            data = await this.axios.get("/kuwos/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&keyset=pl2012&identity=kuwo&r=1565231235511")
+            musiclist = data.data.musiclist?data.data.musiclist:[]
+            //this.props.history.go(-1)
+        }
+        for(let i = 0 ; i < musiclist.length ; i++ ){
+            this.songList.push(musiclist[i].id)
+        }
+        this.setState({
+            infoList: data.data
+        })
+    }
+
+    render() {
+        if (!this.state.infoList.musiclist) return <div className={"wait"}>{<this.component.Wait/>}</div>
+        return (<>
+            <div className={"classifyTypeBoy"}>
+                <div className={"listHeader"}>
+                    <div className={"listHeader_left"}>
+                        <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
+                        <div>{this.state.infoList.leader}</div>
+                        <div></div>
+                    </div>
+                    <span className="iconfont on">&#xe615;</span>
+                </div>
+                <div className={"playInfo"}>
+                    <div className={"playInfo_1"}>
+                        <span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/defpic_240.png" alt=""/></span>
+                        <p>{this.state.infoList.info}</p>
+                    </div>
+                    <span className={"play"}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"
+                                                  alt="" onClick={this.isShow.bind(this)}/></span>
+                </div>
+                <div className={"totalSongList"}>
+                    {
+                        this.state.infoList.musiclist.map((v, i) => {
+                            const arr = v.params?v.params.split(";"):v.param.split(";")
+                            return (
+                                <div className={"songList"} key={i} onClick={this.play.bind(this,i)}>
+                                    <div className={"songList_1"}>
+                                       {/*<span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDt.png" alt=""/></span>*/} <p>{arr[0]}<img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singWs.png"
+                                                        alt=""/></p>
+                                        <p>{v.artist + "-" + v.album}</p>
+                                    </div>
+                                    <div className={"songList_2"}>
+                                        <p><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
+                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </>)
+    }
 }
-export default withRouter (Xliuxing)
+
+export default withRouter(ClassifyType)
