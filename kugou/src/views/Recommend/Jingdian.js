@@ -21,7 +21,9 @@ import {
 	goBack(){
 		window.history.go(-1)
 	}
-	
+	jumpSearch(){
+		this.props.history.push("/searchList")
+	}
     render(){
 		console.log(this.state.child)
 
@@ -31,7 +33,7 @@ import {
 				<div className="heder-1">
 					<a><img className="back" onClick={this.goBack.bind(this)} src="http://image.kuwo.cn/mpage/html5/2015/tuijian/back.png"/></a>
 					<span className="context-1">经典</span>
-					<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"/></a>
+					<a><img  className="search-1" src="http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png" onClick={this.jumpSearch.bind(this)}/></a>
 				</div>
 					<div>
 						{

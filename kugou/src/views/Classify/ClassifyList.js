@@ -36,11 +36,18 @@ class ClassifyList extends React.Component {
         return (<>
             <div className={"typelistBoy"}>
                 <div className={"listHeader"}>
-                    <div className={"listHeader_left"}>
-                        <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
-                        <div className={"listName"}>{this.state.infoList.ninfo.name}</div>
+                    <div className={"listHeader_cen"}>
+                        <div className={"listHeader_left"}>
+                            <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
+                            <div className={"listName"}>{this.state.infoList.ninfo.name}</div>
+                        </div>
+                        <span className="iconfont on">&#xe615;</span>
                     </div>
-                    <span className="iconfont on">&#xe615;</span>
+
+                </div>
+
+                <div className={"classlistBody_div"}>
+
                 </div>
 
                 <div className={"classlistBody"}>
