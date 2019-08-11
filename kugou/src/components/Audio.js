@@ -42,6 +42,8 @@ class Audiog extends Component{
         this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png"
         that.refs.songTime.innerHTML = cu_minute + ":" + cu_second + "-" + du_minute + ":" + du_second
         setTimeout( async ()=>{
+
+            that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
             this.computingTime.call(this);
             this.play_Control = false;
             this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/stop1.png"
@@ -76,10 +78,9 @@ class Audiog extends Component{
         clearInterval(that.timer);
 				const n = that.props.infoList.musiclist?that.props.infoList.musiclist:that.props.infoList
         that.refs.songName.innerHTML = n[that.songIndex].name    
-        //that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
-
-
+        that.refs.songName.innerHTML = that.props.infoList.musiclist[that.songIndex].name
         that.timer = setInterval(() => {
+
             du_minute = parseInt(that.audio.duration / 60).toString().padStart(2, "0")
             du_second = parseInt(that.audio.duration - du_minute * 60).toString().padStart(2, "0")
             cu_minute = parseInt(that.audio.currentTime / 60).toString().padStart(2, "0")
@@ -133,32 +134,33 @@ class Audiog extends Component{
 
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
-        //组件创建时传递 不允许此钩子
-        console.log("componentWillReceiveProps",this)
-    }
+    // componentWillReceiveProps(nextProps, nextContext) {
+    //     //组件创建时传递 不允许此钩子
+    //     nextProps = this.props
+    //     console.log("componentWillReceiveProps",nextProps,this.props)
+    // }
 
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        if(!nextProps.infoList){
-            this.playStopOrHide.call(this)
-            nextProps = this.props
-        }
-        return true
-    }
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     if(!nextProps.infoList){
+    //         this.playStopOrHide.call(this)
+    //         nextProps = this.props
+    //     }
+    //     return true
+    // }
 
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log("componentWillUpdate",this)
-    }
+    // componentWillUpdate(nextProps, nextState, nextContext) {
+    //     console.log("componentWillUpdate",this)
+    // }
+    //
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     console.log("componentDidUpdate",prevProps,this)
+    // }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log("componentDidUpdate",prevProps,this)
-    }
-
-    componentWillUnmount() {       //组件销毁   停止播放音乐   清空定时器
-        this.audio.pause()
-        clearInterval(this.timer)
-        console.log("componentWillUnmount")
-    }
+    // componentWillUnmount() {       //组件销毁   停止播放音乐   清空定时器
+    //     this.audio.pause()
+    //     clearInterval(this.timer)
+    //     console.log("componentWillUnmount")
+    // }
 
     async componentDidMount() {
         console.log("componentDidMount")
@@ -168,13 +170,14 @@ class Audiog extends Component{
         this.audio.preload = "auto"
         document.body.appendChild(this.audio);    //把audio放入body中
         this.audio.onended=function () {          //播放完毕钩子---自动播放下一首
-            this.play_Control = true;
-            this.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png";
+            that.play_Control = true;
+            console.log(that.refs.playControl)
+            that.refs.playControl.src="http://image.kuwo.cn/mpage/html5/2015/tuijian/newplay.png";
             clearInterval(that.timer);
             that.switchSong.call(that)
         }
-        if(!this.props.isShow_Audio){
-            this.playControl.call(this)
+        if(!that.props.isShow_Audio){
+            that.playControl.call(that)
             return null;
         }
         this.props.onRef(this)   //给父元素提供this   供子元素调用this

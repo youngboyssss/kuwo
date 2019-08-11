@@ -20,7 +20,8 @@ class App extends  React.Component{
 
     componentWillMount(){
         pubsub.subscribe("player",(msgName,{a,b,c})=>{
-            console.log("触发订阅")
+            if(!a) return null
+            console.log("触发订阅",a,b,c)
             this.setState({
                 a,
                 b,
