@@ -37,9 +37,7 @@ import {
 				</div>
 					<div>
 						{
-	
 							this.state.child.map((v,i)=>{
-								
 								return(
 								<Link  key={i} to={"/XdJ/"+v.sourceid}>
 									<div key={i} className="tList">

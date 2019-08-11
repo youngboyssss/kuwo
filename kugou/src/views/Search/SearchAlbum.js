@@ -1,4 +1,5 @@
 import React from 'react'
+import Title from './searchTitle'
 export default class SearchSong extends React.Component{
     render() {
         return(
