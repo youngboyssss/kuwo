@@ -27,7 +27,7 @@ export default [
             isAuthorization:true
         }
     },
-    {//artistlist  ---------- artist
+    {//ArtistList  ---------- artist
         to:"/artistlist/:id/:name",
         path:"/artistlist/:id/:name",
         exact:true,
@@ -44,7 +44,7 @@ export default [
             isAuthorization:true
         }
     },
-    {//SongList
+    {//Album
         to:"/album/:id",
         path:"/album/:id",
         exact:true,
@@ -59,7 +59,7 @@ export default [
             isFooter: false
         }
     },
-    {//SongList
+    {//Mv
         to:"/mv/:id",
         path:"/mv/:id",
         exact:true,
@@ -74,7 +74,7 @@ export default [
             isFooter: false
         }
     },
-    {//SongList
+    {//Single
         to:"/single/:id",
         path:"/single/:id",
         exact:true,
@@ -89,7 +89,7 @@ export default [
             isFooter: false
         }
     },
-    {//SongList
+    {//AlbumInfo
         to:"/albuminfo/:id",
         path:"/albuminfo/:id",
         exact:true,

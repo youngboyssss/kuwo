@@ -9,7 +9,7 @@ export default class PlayTit extends React.Component{
             artistInfo:{},
             albumInfo:[]
         };
-        console.log(999,this.props)
+        // console.log(999,this.props)
     }
 
     render() {
@@ -32,7 +32,7 @@ export default class PlayTit extends React.Component{
         const data = await axios.get("/songlist/r.s?stype=artistinfo&artistid="+this.props.match.params.id);
         // 将字符串转换成对象（不能用JSON.parse）
         const list = eval("("+data.data+")");
-        console.log(333777,list);
+        // console.log(333777,list);
         this.setState({
             // 数组拼接
             name:list.name

@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import SingerImg from "../../components/singer/SingerImg";
 import axios from "axios";
 import {
+    Link,
     withRouter
 } from "react-router-dom";
 import PlayTit from "../../components/singer/PlayTit";
@@ -35,7 +36,8 @@ class Mv extends Component{
                 {
                     this.state.mvlist.map((v,i)=>{
                         return(
-                            <div className={"SingerMv"} key={i}>
+                            <Link to={"/mvplay/"+v.musicid} key={i}>
+                            <div className={"SingerMv"}>
                                 <p className={"SingerMvImg"}>
                                     <img src={"http://img4.kwcdn.kuwo.cn:81/wmvpic/"+v.pic} alt=""/>
                                 </p>
@@ -44,6 +46,7 @@ class Mv extends Component{
                                     <span id={"zyh_mvcontext"} dangerouslySetInnerHTML={{__html:v.artist}}></span>
                                 </p>
                             </div>
+                            </Link>
                         )
                     })
                 }

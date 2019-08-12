@@ -61,7 +61,7 @@
 .newBtex {
     width: 100%;
     overflow: hidden;
-    font: 18px "微软雅黑";
+    font: 16px "微软雅黑";
     color: #000;
     /*overflow: hidden;*/
     /*text-overflow: ellipsis;*/
@@ -350,7 +350,8 @@
 }
 
 .zyh_mv {
-    position: relative
+    position: relative;
+    display:block;
 }
 
 .zyh_mv img {
@@ -403,6 +404,8 @@
     margin:12px 0 5px 5px;
     text-align: left;
     color:#000;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
 
 .SingerAlbumInfo #zyh_pub {
@@ -472,6 +475,51 @@
     left: 265px;
     top: -28px;
 }
+
+.albumInfo_context{
+    width: 55%;
+    height: 98px;
+    overflow: hidden;
+    float: left;
+    position: fixed;
+    left:146px;
+    top:72px;
+    z-index: 950;
+}
+
+
+.albumInfo_context p{
+    width:100%;
+    height:60px;
+    display: block;
+    overflow: hidden;
+    font: 14px "微软雅黑";
+    text-overflow:ellipsis;
+    position: absolute;
+    color: #fff;
+    z-index: 900;
+
+}
+
+.album_play{
+    display: block;
+    /*background: url("http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png")no-repeat center;*/
+    position: fixed;
+    top:135px;
+    left:310px;
+    width: 33px;
+    height: 33px;
+    overflow: hidden;
+    z-index: 901;
+
+}
+
+.album_play img{
+    display: block;
+    width:33px;
+    height:33px;
+    position: relative;
+}
 /*****mv******/
 .SingerMvList{
     width:100%;
@@ -484,6 +532,8 @@
 .SingerMv{
     width:100%;
     height:100px;
+    float: left;
+    position:relative;
 
 }
 
@@ -501,8 +551,13 @@
 }
 
 .SingerMvContext{
+    width:150px;
+    height:40px;
     display: block;
-    float:left;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    left:142px;
 }
 
 .SingerMvContext #zyh_mvname{
@@ -512,6 +567,10 @@
     height:20px;
     text-align: left;
     margin:12px 0 5px 5px;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#000;
 }
 
 .SingerMvContext #zyh_mvcontext{
