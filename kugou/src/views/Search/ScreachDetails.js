@@ -11,7 +11,7 @@ import {
     withRouter
 } from "react-router-dom";
 import axios from 'axios';
-import Title from './searchTitle'
+//import Title from './searchTitle'
 class screachDetails extends React.Component{
     constructor(props){
         super(props);
@@ -23,7 +23,7 @@ class screachDetails extends React.Component{
     render() {
         return(
             <div>
-                <Title></Title>
+                {/*<Title></Title>*/}
                 <div className={"searchInput"}>
                     <input ref={"all"} type="text" placeholder={"歌手/歌名/歌词"}/>
                     <input type="button" onClick={this.search.bind(this)} value={"搜索"}/>
