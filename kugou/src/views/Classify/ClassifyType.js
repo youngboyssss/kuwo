@@ -15,8 +15,12 @@ class ClassifyType extends React.Component {
         this.songList=[]
     }
 
-    playMv(id){
+    // <Link to={"/mvplay/"+item.id} key={index}>
+    playMv(id,e){
         this.props.history.push("/mvplay/"+id);
+        e.nativeEvent.stopImmediatePropagation()
+        // 阻止合成事件间的冒泡
+        e.stopPropagation()
     }
 
     return(){
@@ -28,9 +32,12 @@ class ClassifyType extends React.Component {
         this.Child = ref;
     }
 
-    play(i) {       //调用子组件方法
+    play(i,e) {       //调用子组件方法
+        e.nativeEvent.stopImmediatePropagation()
+        // 阻止合成事件间的冒泡，不会往最外层的div的test方法冒了，如果不加这句代码，就会冒泡至外层div，执行test方法。
+        e.stopPropagation()
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
-        localStorage.infoList = JSON.stringify(this.state)
+        localStorage.infoList = JSON.stringify(this.state.infoList)
         localStorage.songList = JSON.stringify(this.songList)
 
         setTimeout(()=>{
@@ -40,8 +47,8 @@ class ClassifyType extends React.Component {
 
     isShow(){
         pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
-        localStorage.infoList = this.state
-        localStorage.songList = this.songList
+        localStorage.infoList = JSON.stringify(this.state.infoList)
+        localStorage.songList = JSON.stringify(this.songList)
 
         setTimeout(()=>{
             this.Child.isShow();
@@ -100,8 +107,8 @@ class ClassifyType extends React.Component {
                                         <p>{v.artist + "-" + v.album}</p>
                                     </div>
                                     <div className={"songList_2"}>
-                                        <p style={{display:v.mp4sig1?"block":"none"}}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
-                                        <p onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
+                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
+                                        <p ><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
                                     </div>
                                 </div>
                             )

@@ -13,7 +13,6 @@ class GuardRouter extends React.Component{           //配置所有NavLink
     }
 
     render(){
-        console.log("lu")
         let children = [...(this.props.children || [])]   //一级路由的children是否存在
         let meta = {...(this.props.meta || {})};  //一级路由的meta标签是否为空
         return (

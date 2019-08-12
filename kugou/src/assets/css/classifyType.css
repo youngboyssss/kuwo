@@ -61,7 +61,7 @@
 .classifyTypeBoy .playInfo_1 p:nth-of-type(1){
     width: 200px;
     height: 80px;
-    margin-left: 10px;
+    margin-left:10px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
