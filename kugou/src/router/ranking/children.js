@@ -1,16 +1,18 @@
-import Ranking from "../../views/Ranking";
+import Rank2 from "./../../views/Ranking/Rank2"
+
+
+
 export default [
-    {
-        to:"/rankinglist",
-        path:"/rankinglist",
+   {// 首页
+        to:"/Rank2",
         exact:true,
-        context:"酷我飙升榜",
-        component:Ranking,
-        sbNav:true,
+        
+        component:Rank2,
         meta:{
+            title:"歌手",
             keywored:"关键字",
             descrieption:"描述",
-            isFooter:true
+            isFooter:false
         }
     }
 ]

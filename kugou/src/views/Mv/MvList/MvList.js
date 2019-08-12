@@ -28,33 +28,36 @@ class MvList extends React.Component{
                     <Link to={"/searchList"}><img className={'mvSearch'} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/seach.png"}/></Link>
                 </div>
                 <div className={"emptyDiv"}></div>
-                <div  className={"singerListWrap"}>
-                    {
-                        this.state.singerList.map((item,index)=>{
-                            return (
-                                <Link to={"/mvplay/"+item.id} key={index}>
-                                    <div>
-                                        {
-                                            item.mvpic?<div className={"singerMv"}>
-                                                <p className={"singerMvImg"}><img src={"http://img3.kwcdn.kuwo.cn/wmvpic/"+item.mvpic}/></p>
-                                                <p className={"singerMvTex"}>
-                                                    {item.name?<span className={"singerMvName"}>{item.name}</span>:null}
-                                                    <span className={"singerMvName2"}>{item.artist}</span>
-                                                </p>
-                                            </div>:null
-                                        }
-                                    </div>
-                                </Link>
-                            )
-                        })
-                    }
-                </div>
-                <div className={"getMoreBtn"} onClick={this.getMore.bind(this,this.state.pn++)}>
-                    <div className={"loadMore"}>
-                        <span>获取更多</span>
+                <div className={"singerMvConBox"}>
+                    <div  className={"singerListWrap"}>
+                        {
+                            this.state.singerList.map((item,index)=>{
+                                return (
+                                    <Link to={"/mvplay/"+item.id} key={index}>
+                                        <div>
+                                            {
+                                                item.mvpic?<div className={"singerMv"}>
+                                                    <p className={"singerMvImg"}><img src={"http://img3.kwcdn.kuwo.cn/wmvpic/"+item.mvpic}/></p>
+                                                    <p className={"singerMvTex"}>
+                                                        {item.name?<span className={"singerMvName"}>{item.name}</span>:null}
+                                                        <span className={"singerMvName2"}>{item.artist}</span>
+                                                    </p>
+                                                </div>:null
+                                            }
+                                        </div>
+                                    </Link>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className={"getMoreBtn"} onClick={this.getMore.bind(this,this.state.pn++)}>
+                        <div className={"loadMore"}>
+                            <span>获取更多</span>
+                        </div>
                     </div>
                 </div>
 
+                <div className={"mvListFooter"}></div>
             </div>
         )
     }
