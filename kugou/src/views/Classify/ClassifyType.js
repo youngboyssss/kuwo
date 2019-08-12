@@ -107,7 +107,7 @@ class ClassifyType extends React.Component {
                                         <p>{v.artist + "-" + v.album}</p>
                                     </div>
                                     <div className={"songList_2"}>
-                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt=""/></p>
+                                        <p style={{display:v.mp4sig1?"block":"none"}} onClick={this.playMv.bind(this,v.id)}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singMv.png" alt="" style={{background:"block"}}/></p>
                                         <p ><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singDom.png"/></p>
                                     </div>
                                 </div>

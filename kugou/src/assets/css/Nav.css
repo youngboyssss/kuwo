@@ -24,8 +24,8 @@ li{list-style:none;}
     width: 21px;
     height: 21px;
     color: #ffffff;
-    margin-top: 14px;
     margin-left: 5px;
+    font-size: 24px;
 }
 
 .yxl .search{
@@ -64,7 +64,7 @@ li{list-style:none;}
 }
 
 .login{
-    font-size: 0.3rem;
+    font-size: 16px;
     color: skyblue;
     margin-right: 5px;
 }

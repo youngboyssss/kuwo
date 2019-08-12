@@ -9,6 +9,7 @@
 
 .classifyTypeBoy .listHeader .iconfont{
     font-size: 30px;
+    color: black;
 }
 
 .on{
@@ -168,6 +169,10 @@
     display: flex;
 }
 
+.classifyTypeBoy img{
+    background: black;
+}
+
 .audio .audio_body_2  p{
     margin-left: 30px;
 }
@@ -203,6 +208,10 @@
     font-size: 20px;
     justify-content: center;
     align-items: center;
+}
+
+.typelist img{
+    background: black;
 }
 
 .App{
