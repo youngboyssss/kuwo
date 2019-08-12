@@ -1,6 +1,6 @@
 import React from "react"
 import Swiper from "swiper"
-import "Swiper/dist/css/swiper.min.css"
+import "swiper/dist/css/swiper.min.css"
 export default class Loop extends React.Component{
 	render(){
 		return(
