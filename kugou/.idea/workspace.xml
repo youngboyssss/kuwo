@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="48ac5ca9-f03b-4a42-917b-760ff1a9b28c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Search/ScreachDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search/ScreachDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Search/SearchAlbum.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search/SearchAlbum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Search/SearchList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search/SearchList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Search/SearchSinger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search/SearchSinger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Search/SearchMV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Search/SearchSinger.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Search/SearchSong.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Search/SearchSong.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Search/SearchList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+            <state relative-caret-position="253">
+              <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSong.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-649">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -53,22 +51,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Search/ScreachDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="340">
+              <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSinger.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="32" column="53" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+            <state relative-caret-position="-483">
+              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -86,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/111111.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="460">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -96,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/src/setupProxy.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -115,6 +101,8 @@
       <find>SearchList</find>
       <find>加载更多</find>
       <find>'</find>
+      <find>abslist</find>
+      <find>searchSinger</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -139,11 +127,11 @@
         <option value="$PROJECT_DIR$/src/views/Search/SearchAlbum.js" />
         <option value="$PROJECT_DIR$/src/views/Search/SearchList.js" />
         <option value="$PROJECT_DIR$/src/views/Search/SearchMV.js" />
-        <option value="$PROJECT_DIR$/src/views/Search/ScreachDetails.js" />
-        <option value="$PROJECT_DIR$/src/views/Search/SearchSong.js" />
-        <option value="$PROJECT_DIR$/src/assets/css/search.css" />
         <option value="$PROJECT_DIR$/src/111111.json" />
+        <option value="$PROJECT_DIR$/src/views/Search/ScreachDetails.js" />
+        <option value="$PROJECT_DIR$/src/assets/css/search.css" />
         <option value="$PROJECT_DIR$/src/views/Search/SearchSinger.js" />
+        <option value="$PROJECT_DIR$/src/views/Search/SearchSong.js" />
       </list>
     </option>
   </component>
@@ -159,6 +147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -175,13 +164,25 @@
               <item name="kugou" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="F:\第三阶段\kuwo\kugou" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="kugou" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="F:\第三阶段\kuwo\kugou" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="kugou" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="F:\第三阶段\kuwo\kugou" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Search" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,23 +259,24 @@
       <workItem from="1565429951603" duration="5448000" />
       <workItem from="1565446451829" duration="12588000" />
       <workItem from="1565503285572" duration="12835000" />
+      <workItem from="1565572973040" duration="19150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65210000" />
+    <option name="totallyTimeSpent" value="84360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8344262" visible="true" weight="0.17931548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8319328" visible="true" weight="0.21130952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.16557378" side_tool="true" visible="true" weight="0.17931548" />
+      <window_info id="npm" order="2" sideWeight="0.16806723" side_tool="true" visible="true" weight="0.21130952" />
       <window_info id="Favorites" order="3" sideWeight="0.38865545" side_tool="true" weight="0.19791667" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21967213" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21967213" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,13 +314,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Audio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="45" column="77" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Wait.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -379,16 +374,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Ranking/RankingType.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Classify/ClassifyType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="101" column="38" lean-forward="true" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router/recommend/children.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -592,30 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node_api/api/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="350" lean-forward="true" selection-start-line="350" selection-end-line="350" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Search/SearchMV.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -623,44 +584,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/111111.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/setupProxy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSong.js">
+    <entry file="file://$PROJECT_DIR$/src/node_api/api/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-649">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="259">
+          <caret line="338" column="3" lean-forward="true" selection-start-line="338" selection-start-column="3" selection-end-line="338" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Audio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Classify/ClassifyType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="95" column="100" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="100" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/111111.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSinger.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Search/ScreachDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="340">
+          <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSinger.js">
+    <entry file="file://$PROJECT_DIR$/src/views/Search/SearchSong.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="32" column="53" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+        <state relative-caret-position="198">
+          <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
