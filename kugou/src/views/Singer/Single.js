@@ -4,15 +4,72 @@ import {BrowserRouter as Router,withRouter} from "react-router-dom";
 import SingerImg from "../../components/singer/SingerImg";
 import PlayTit from "../../components/singer/PlayTit";
 import SongListNav from "./SongList";
+import pubsub from "pubsub-js";
 
 class Single extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            songList: []
-        };
-        // console.log(898989, this.state.songList);
+            infoList: [], //gongge
+            isShow_Audio: true,
+            zyh_songList: []
+        }
+        this.songList=[]
     }
+
+    playMv(id){
+        this.props.history.push("/mvplay/"+id);
+    }
+
+    return(){
+        this.props.history.go(-1);
+    }
+
+    //定义一个事件 接收this
+    onRef = (ref)=>{
+        this.Child = ref;
+    }
+
+    play(i) {       //调用子组件方法
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        localStorage.infoList = JSON.stringify(this.state)
+        localStorage.songList = JSON.stringify(this.songList)
+
+        setTimeout(()=>{
+            this.Child.play(i)
+        },500)
+    }
+
+    isShow(){
+        pubsub.publish("player",{a:this.state,b:this.onRef,c:this.songList})
+        localStorage.infoList = this.state
+        localStorage.songList = this.songList
+
+        setTimeout(()=>{
+            this.Child.isShow();
+        },500)
+    }
+
+    async componentDidMount() {
+        let that = this
+        let musiclist = null;
+        let data = await this.axios.get("/kuwoo/ksong.s?from=pc&fmt=json&type=bang&pn=0&rn=50&data=content&id=" + this.props.match.params.id + "&r=20190807.js")
+        musiclist = data.data.musiclist?data.data.musiclist:[]
+        if(!musiclist.length){
+            data = await this.axios.get("/kuwos/pl.svc?op=getlistinfo&pid="+this.props.match.params.id+"&pn=0&rn=30&vipver=1&keyset=pl2012&identity=kuwo&r=1565231235511")
+            musiclist = data.data.musiclist?data.data.musiclist:[]
+            //this.props.history.go(-1)
+        }
+        for(let i = 0 ; i < musiclist.length ; i++ ){
+            this.songList.push(musiclist[i].id)
+        }
+        this.setState({
+            infoList: data.data
+        })
+    }
+
+
+
 
     render() {
         return (
@@ -23,9 +80,9 @@ class Single extends Component {
 
                 <div className={"zyh_singList"}>
                     {
-                        this.state.songList.map((v, i) => {
+                        this.state.infoList.map((v, i) => {
                             return (
-                                <div className={"singBox"} key={i}>
+                                <div className={"singBox"} key={i} onClick={this.play.bind(this,i)}>
                                     <div className={"singTex"}>
                                         <div className={"singTexUp"}>
                                             <p className={"singTexUp2"}>
@@ -61,7 +118,8 @@ class Single extends Component {
         const data = await axios.get("/songlist/r.s?stype=artist2music&pn=0&rn=30&artistid="+this.props.match.params.id);
         const musiclist = eval("(" + data.data + ")");
         this.setState({
-            songList: this.state.songList.concat(musiclist.musiclist)
+            zyh_songList: this.state.zyh_songList.concat(musiclist.musiclist),
+            infoList:this.state.infoList.concat(musiclist.musiclist)
         })
     }
 
