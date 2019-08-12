@@ -64,10 +64,7 @@
 .searchName{
     width: 100%;
     height: 30px;
-    display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid #57bbe8;
-    overflow: hidden;
     font-size: 15px;
     margin-top: 50px;
 }
@@ -81,9 +78,9 @@
     margin-left: 28px;
 }
 .searchName .searchsong{
-    width: 45px;
+    width: 100%;
     height: 28px;
-    font: 14px/28px "微软雅黑";
+    font: 16px "微软雅黑";
     color: #46b4e6;
     text-align: center;
     display: block;
@@ -137,28 +134,35 @@
     border-bottom: 3px solid #46b4e6;
 }
 .sl_searchsong{
-    width: 100%;
+    width: 96%;
+    margin-left: 2%;
     height: 60px;
     float: left;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 13px;
 }
-.sl_searchsong p:nth-of-type(1){
-    width: 200px;
+.sl_searchsong div:nth-of-type(1){
+    width: 150px;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
-    font-size: 18px;
+    font-size: 16px;
+    margin-left: 10px;
+    float: left;
 }
-.sl_searchsong p:nth-of-type(2){
+.sl_searchsong div:nth-of-type(2){
     font-size: 12px;
     width: 200px;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 .sl_searchsong img{
     width: 20px;
     float: right;
     margin-top: -30px;
     margin-right: 20px;
+}
+.loadMore{
+    font-size: 16px;
 }
 
