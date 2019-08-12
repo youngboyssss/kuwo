@@ -1,0 +1,77 @@
+.Rankmain{
+    width:100%;
+    height:85vh;
+
+    display:flex;
+    flex-direction:column;
+}
+.Rankmain>a{
+    text-decoration:none;
+    outline:none;
+    -webkit-tap-highlight-color: transparent;
+}
+.Rankmain>a>div{
+    display:flex;
+    flex-direction:row;
+    height:30vh;
+    width:100%;
+    overflow:hidden;
+    background:lightgoldenrodyellow;
+    margin-bottom:3vh;
+
+}
+.Rankmain>a>div>span{
+    height:100%;
+
+}
+.Rankmain>a>div>.left{
+    width:40vw;
+    
+    background-size:100% 100%;
+
+
+
+}
+.Rankmain>a>div>.left>img{
+    width:100%;
+    height:100%;
+}
+.Rankmain>a>div>.middle{
+    display:flex;
+    flex-direction:column ;
+    width:50vw;
+    font-size:3vw;
+    color:#000;
+    
+}
+.Rankmain>a>div>.middle>span>h4{
+
+    text-align:left;
+    padding-left:4vw;
+}
+.Rankmain>a>div>.middle>span>span{
+    
+    margin:0 auto;
+    text-align:left;
+    display:block;
+    padding-left:4vw;
+}
+.Rankmain>a>div>.middle>span>span>i{
+
+    text-align:center;
+   font-style:normal;
+    color:grey;
+    display:inline-block;
+}
+.Rankmain>a>div>.middle>span>span>.left_i{
+    width:3vw;
+}
+.Rankmain>a>div>.middle>span>span>.right_i{
+    width:13vw;
+}
+.Rankmain>a>div>.right{
+    width:10vw;
+    color:lightgrey;
+    line-height:30vh;
+    font-size:6vw;
+}

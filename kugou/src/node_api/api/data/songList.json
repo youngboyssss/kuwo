@@ -1,0 +1,901 @@
+[
+    {
+        "id":1,
+        "pic":"https://kwimg7.kuwo.cn/star/upload/8/8/1543919795640_.png",
+         "rankName":"酷我飙升榜",
+         "songs":[
+              { 
+                "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+                  "songName":"隐形的翅膀",
+                  "songer":"张韶涵",
+                  "addTime":"2017-08-09",
+                  "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+              },
+              {
+                "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+                 "songName":"隐形的翅膀",
+                "songer":"张韶涵",
+                "addTime":"2017-08-09",
+                "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+            },
+            {
+                "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+                 "songName":"隐形的翅膀",
+                "songer":"张韶涵",
+                "addTime":"2017-08-09",
+                "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+            }
+         ]
+    },
+    {
+        "id":2,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/9/9/1543919747769_.png",
+         "rankName":"酷我新歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":3,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/2/2/1543919658018_.png",
+         "rankName":"酷我热歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":4,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/6/6/1554970547302_.png",
+         "rankName":"酷我抖音热歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+
+         ]
+    }
+    ,
+    {
+        "id":5,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/3/3/1558696517827_.png",
+         "rankName":"酷我ACG神曲",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+
+         ]
+    }
+    ,
+    {
+        "id":6,
+        "pic":"http://img3.kwcdn.kuwo.cn/star/upload/15/15/1558696739359_.png",
+         "rankName":"酷我最强翻唱",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":7,
+        "pic":"http://img2.kwcdn.kuwo.cn/star/upload/9/9/1543918986041_.png",
+         "rankName":"酷我经典怀旧榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":8,
+        "pic":"http://img2.kwcdn.kuwo.cn/star/upload/13/13/1543919058861_.png",
+         "rankName":"酷我华语榜",
+         "songs":[
+            
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":9,
+        "pic":"http://img3.kwcdn.kuwo.cn/star/upload/7/7/1552567178983_.png",
+         "rankName":"酷我粤语榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":10,
+        "pic":"http://img2.kwcdn.kuwo.cn/star/upload/11/11/1543918843691_.png",
+         "rankName":"酷我欧美榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":11,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/5/5/1558696815381_.png",
+         "rankName":"酷我韩语榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":12,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/8/8/1558695640280_.png",
+         "rankName":"酷我日语榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":13,
+        "pic":"http://img3.kwcdn.kuwo.cn/star/upload/1/1/1554695862673_.png",
+         "rankName":"酷我会员畅听榜",
+         "songs":[
+          
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":14,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/15/15/1543920166735_.png",
+         "rankName":"酷我网红新歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":15,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/9/9/1549010297209_.png",
+         "rankName":"酷我影视金曲榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":16,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/9/9/1543805792217_.png",
+         "rankName":"酷我DJ嗨歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+   
+         ]
+    }
+    ,
+    {
+        "id":17,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/3/3/1550229385059_.png",
+         "rankName":"酷我儿歌榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":18,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/5/5/1543920413717_.png",
+         "rankName":"酷我真声音",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":19,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/7/7/1543920767111_.png",
+         "rankName":"酷我美国公告榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":20,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/6/6/1543920830102_.png",
+         "rankName":"酷我iTunes音乐榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":21,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/0/0/1548990226481_.png",
+         "rankName":"酷我beatport电子舞曲榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":22,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/4/4/1543920895540_.png",
+         "rankName":"酷我英国UK榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":23,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/7/7/1543921876743_.png",
+         "rankName":"酷我百大DJ榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":24,
+        "pic":"http://img2.kwcdn.kuwo.cn/star/upload/6/6/1543921106854_.png",
+         "rankName":"酷我韩国M-net榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":25,
+        "pic":"http://img2.kwcdn.kuwo.cn/star/upload/9/9/1543921202361_.png",
+         "rankName":"酷我香港电台榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":26,
+        "pic":"http://img4.kwcdn.kuwo.cn/star/upload/11/11/1543921161339_.png",
+         "rankName":"酷我日本公信榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":27,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/10/10/1543920995674_.png",
+         "rankName":"酷我台湾hito榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+    ,
+    {
+        "id":28,
+        "pic":"http://img1.kwcdn.kuwo.cn/star/upload/0/0/1543920567728_.png",
+         "rankName":"酷我腾讯音乐人原创榜",
+         "songs":[
+          { 
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+              "songName":"隐形的翅膀",
+              "songer":"张韶涵",
+              "addTime":"2017-08-09",
+              "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+          },
+          {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        },
+        {
+            "pic":"url('http://img4.kwcdn.kuwo.cn/wmvpic/324/19/57/3060328884.jpg')",
+             "songName":"隐形的翅膀",
+            "songer":"张韶涵",
+            "addTime":"2017-08-09",
+            "audioUrl":"http://ip.h5.nf03.sycdn.kuwo.cn/ba254f5877ee81b39c357b859a068988/5d4b75e9/resource/a3/7/35/3827896007.aac"
+
+        }
+         ]
+    }
+]

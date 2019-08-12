@@ -36,11 +36,14 @@ class MvPlay extends React.Component{
                 <div className={"contentWrap"}>
                     <div className={"mvkongdiv"}></div>
                     <div className={"videoPlay"}>
-                        <video className={"videoId"} controls={"controls"} autoPlay={"autoPlay"} src={"http://antiserver.kuwo.cn/anti.s?rid=MUSIC_"+this.props.match.params.id+"&response=res&format=mp4&type=convert_url"}></video>
+                        <video className={"videoId"} id={"videoId"} controls={"controls"} autoPlay={"autoPlay"} src={"http://antiserver.kuwo.cn/anti.s?rid=MUSIC_"+this.props.match.params.id+"&response=res&format=mp4&type=convert_url"}></video>
                     </div>
                     <div className={"playBtn"}>
-                        <img className={"playStopBtn"} style={{display:this.state.display}} onClick={this.ctrlmvbtn.bind(this,this.state.isShow)} src={this.state.src}/>
-                        {/*<img className={"playStartBtn"} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtn.png"}/>*/}
+                        <p id={"ctrlBtn"} onClick={this.changeBtn.bind(this)}>
+                            <img className={"playStopBtn"} id={"playStopBtn"} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtnstop.png"}/>
+                            <img className={"playStartBtn"} id={"playStartBtn"} style={{display:"none"}} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtn.png"}/>
+                        </p>
+
                         <img className={"playDownloadBtn"} src={"http://image.kuwo.cn/mpage/html5/2015/tuijian/mvdownbtn.png"}/>
                     </div>
                     <p className={"playtex"}>相关推荐</p>
@@ -73,11 +76,22 @@ class MvPlay extends React.Component{
         this.props.history.go(-1)
     }
     // 播放按钮
-    ctrlmvbtn(isShow,src){
-        this.setState({
-            isShow:!this.state.isShow,
-            src:'http://image.kuwo.cn/mpage/html5/2015/tuijian/hsmvbtn.png'
-        })
+    changeBtn(){
+        let videL = document.getElementById("videoId");
+        let playStopBtn = document.getElementById("playStopBtn");
+        let playStartBtn = document.getElementById("playStartBtn");
+        let ctrlBtn = document.getElementById("ctrlBtn");
+        ctrlBtn.onclick = function () {
+            if (videL.paused) {
+                videL.play();
+                playStopBtn.style.display = "block";
+                playStartBtn.style.display = "none";
+            } else {
+                videL.pause();
+                playStartBtn.style.display = "block";
+                playStopBtn.style.display = "none";
+            }
+        }
     }
     componentDidMount(){
         this.axios.get("http://mobile.kuwo.cn/mpage/html5/getmvinfo?mid="+this.props.match.params.id+"")

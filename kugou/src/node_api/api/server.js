@@ -348,6 +348,77 @@ app.get("/singer",function(req,res){
 // });
 
 
+
+
+/**************************************************************************************************************/
+  app.get("/Rank1",function(req,res){
+    console.log("1232143242453245325r4544354665");
+   fs.readFile(__dirname+"/data/songList.json","utf-8",function(err,data){
+        if(err===null){
+            console.log(eval('('+data+')'));
+            res.json({
+                ok:1,
+                data:eval('('+data+')')
+            });
+        }else{
+            console.log(1111,err);
+            console.log("adddddddd");
+            res.json({
+                ok:-1,
+                data:"获取数据失败"
+            });
+        }
+   });
+   
+ 
+
+})
+app.get("/Rank2/:id",function(req,res){
+ let arr=[];
+ console.log(111111,req.params.id);
+fs.readFile(__dirname+"/data/songList.json","utf-8",function(err,data){
+   console.log(121312312,eval('('+data+')'));
+   arr=eval('('+data+')');
+   if(err===null){
+       console.log("11111111");
+       for(let i=0; i<arr.length;i++){
+          console.log(232,typeof arr[i].id);
+           console.log(typeof (parseInt(req.params.id)+1));
+           console.log(2222222,arr[i].id===(parseInt(req.params.id)+1))
+
+           if(arr[i].id===(parseInt(req.params.id)+1)){
+                console.log(3333,arr[i]);
+               res.json({
+                   ok:1,
+                   data:arr[i]
+               });
+               break;
+   
+           }
+
+       }
+       
+   }else{
+       console.log(1111,err);
+       console.log("adddddddd");
+       res.json({
+           ok:-1,
+           data:"获取数据失败"
+       });
+   }
+});
+
+})
+
+
+
+
+
+
+
+
+
+
 app.listen(90,function () {
     console.log("success")
 });
