@@ -89,4 +89,19 @@ export default [
             isFooter: false
         }
     },
+    {//SongList
+        to:"/albuminfo/:id",
+        path:"/albuminfo/:id",
+        exact:true,
+        context:"专辑详情",
+        component:AlbumInfo,
+        sbNav:false,
+        children:[
+        ],
+        meta:{
+            keywored:"专辑详情",
+            descrieption:"描述",
+            isFooter: false
+        }
+    },
 ]

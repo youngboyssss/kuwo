@@ -1,0 +1,23 @@
+{
+  "name": "kuwo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youngboyssss/kuwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youngboyssss/kuwo/issues"
+  },
+  "homepage": "https://github.com/youngboyssss/kuwo#readme",
+  "dependencies": {
+    "pubsub-js": "^1.7.0",
+    "swiper": "^4.5.0"
+  }
+}
