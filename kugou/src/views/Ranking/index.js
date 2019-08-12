@@ -11,7 +11,9 @@ export default class Ranking extends React.Component{
 
         return (
             <div>
+                
                 <div className={"ranking"}></div>
+                wertysdfghsertyh
             </div>
         )
 
