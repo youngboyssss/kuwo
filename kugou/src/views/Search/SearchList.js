@@ -1,66 +1,60 @@
-import React from "react";
+import React from 'react'
+import SearchSong from './SearchSong'
+import SearchMV from './SearchMV'
+import SearchSinger from './SearchSinger'
+import SearchAlbum from './SearchAlbum'
+import pubsub from 'pubsub-js'
 import {
-    Route,
-    Link,
     NavLink,
+    Route,
     BrowserRouter as Router,
     withRouter
 } from "react-router-dom";
 import axios from 'axios';
-import Title from './searchTitle'
-
-class SearchList extends React.Component{
+import Tiiitle from './searchTitle'
+class screachDetails extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data:[],
-            abslist:[],
+            abslist:{},
             all:""
         }
     }
-    render(){
-        return (
-            <div className={"searchTitle"}>
-                <Title></Title>
+    render() {
+        return(
+            <div>
+                <Tiiitle></Tiiitle>
                 <div className={"searchInput"}>
                     <input ref={"all"} type="text" placeholder={"歌手/歌名/歌词"}/>
                     <input type="button" onClick={this.search.bind(this)} value={"搜索"}/>
                 </div>
-                <div></div>
-                <div className={"searchConent"}>
+                <div className={"searchSum"}>
                     {
-                        this.state.data.map((v,i)=>{
-                                return(
-                                    <a key={i}>
-                                        {v.disname}
-                                    </a>
-                                )
-                        })
+                        <p>
+                            找到{this.state.abslist.HIT}个结果，更多结果可下载APP查看
+                        </p>
                     }
                 </div>
+                <Router>
+                    <div className={"searchName"}>
+                        <div className={"searchsong"}><NavLink exact style={{color:"#46b4e6"}} to={"/searchdetails"}>搜索出的全部歌曲</NavLink></div>
+                    </div>
+                    <Route exact path={"/searchdetails"} component={SearchSong}></Route>
+                </Router>
             </div>
         )
     }
     async search(){
-        if (this.refs.all.value.length === 0){
-            alert("请输入歌手名或歌曲名");
-        }else {
-            this.props.history.push("/searchdetails");
-            const data = await axios.get("/kugouu/r.s?all="+this.refs.all.value+"&ft=music&client=kt&pn=0&rn=50&rformat=json&encoding=utf8")
-                .then(data=>{
-                    let list = eval("("+data.data+")");
-                    console.log(list.abslist);
-                })
-        }
-    }
-    componentDidMount() {
-        axios.get("http://mobile.kuwo.cn/mpage/html5/2015/action/hotword.jsp")
-            .then(data=>{
-            this.setState({
-                data:data.data
-            })
-        });
+        pubsub.publish("one",{value:this.refs.all.value});
+        pubsub.publish("two",{value:this.refs.all.value});
+        this.props.history.push("/searchdetails");
+        const {data} = await axios.get("/kugouu/r.s?all="+this.refs.all.value+"&ft=music&client=kt&pn=0&rn=50&rformat=json&encoding=utf8")
+        const list = eval("("+data+")");
+        this.setState({
+            abslist:list
+        })
+
     }
 }
 
-export default withRouter(SearchList)
+export default withRouter(screachDetails)

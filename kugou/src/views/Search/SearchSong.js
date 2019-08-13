@@ -65,7 +65,6 @@ export default class SearchSong extends React.Component{
     }
 
     render() {
-        console.log(this.state.abslist)
         return(
             <div>
                 <div>
