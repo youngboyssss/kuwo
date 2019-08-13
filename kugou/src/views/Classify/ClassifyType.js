@@ -87,6 +87,7 @@ class ClassifyType extends React.Component {
                         <span className="iconfont on">&#xe615;</span>
                     </div>
                 </div>
+                <div className={"classifyType_div"}></div>
                 <div className={"playInfo"}>
                     <div className={"playInfo_1"}>
                         <span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/defpic_240.png" alt=""/></span>

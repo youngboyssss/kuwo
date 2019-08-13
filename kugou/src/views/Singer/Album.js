@@ -58,7 +58,6 @@ class Album extends Component {
             albumlist: this.state.albumlist.concat(list.albumlist)
         });
         localStorage.albumlist = JSON.stringify(this.state.albumlist);
-        console.log(89,list);
     }
 
     componentDidMount() {
@@ -68,7 +67,6 @@ class Album extends Component {
         //         albumlist:JSON.parse(localStorage.albumlist)
         //     })
         // }else{
-        console.log(11111);
             this.zyh_getAlubmList();
         // }
     }

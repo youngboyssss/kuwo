@@ -60,7 +60,9 @@ class ClassifyType extends React.Component {
             infoList: data.data
         })
     }
-
+jumpSearch(){
+		this.props.history.push("/searchList")
+	}
     render() {
         if (!this.state.infoList.musiclist) return <div className={"wait"}>{<this.component.Wait/>}</div>
         return (<>
@@ -68,14 +70,15 @@ class ClassifyType extends React.Component {
                 <div className={"listHeader"}>
                     <div className={"listHeader_left"}>
                         <span className="iconfont" onClick={this.return.bind(this)}>&#xe738;</span>
-                        <div>{this.state.infoList.leader}</div>
+                        <div>抖音2019年7月</div>
                         <div></div>
                     </div>
-                    <span className="iconfont on">&#xe615;</span>
+                    <span className="iconfont on" onClick={this.jumpSearch.bind(this)}>&#xe615;</span>
                 </div>
+				<div className="xixi"></div>
                 <div className={"playInfo"}>
                     <div className={"playInfo_1"}>
-                        <span><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/defpic_240.png" alt=""/></span>
+                        <span><img src="http://img1.kwcdn.kuwo.cn/star/userpl2015/81/23/1564994688854_182253281_150.jpg" alt=""/></span>
                         <p>{this.state.infoList.info}</p>
                     </div>
                     <span className={"play"}><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"
@@ -100,6 +103,7 @@ class ClassifyType extends React.Component {
                             )
                         })
                     }
+					<div className="xixi"></div>
                 </div>
             </div>
         </>)

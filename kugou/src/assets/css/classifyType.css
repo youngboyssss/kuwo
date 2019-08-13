@@ -2,6 +2,8 @@
     background: #ededed;
     height: 50px;
     display: flex;
+	position:fixed;
+	width:100%;
     justify-content: space-between;
     padding: 0 15px;
     align-items: center;
@@ -10,6 +12,7 @@
 .classifyTypeBoy .listHeader .iconfont{
     font-size: 30px;
     color: black;
+
 }
 
 .on{
@@ -169,10 +172,6 @@
     display: flex;
 }
 
-.classifyTypeBoy img{
-    background: black;
-}
-
 .audio .audio_body_2  p{
     margin-left: 30px;
 }
@@ -222,4 +221,12 @@
 #root{
     width: 100%;
     height: 100%;
+}
+.xixi{
+	height:49px
+}
+
+.classifyType_div{
+    height: 50px;
+    width: 100%;
 }

@@ -34,7 +34,7 @@ class Xiangqing extends React.Component{
 				<div style={{height:"50px"}}></div>
 				
 				<div className="singerPic">
-					<span><img src="http://img4.kwcdn.kuwo.cn/star/userpl2015/95/40/1561351924618_254780995_700.jpg"/></span>
+					<span><img src="http://img2.kwcdn.kuwo.cn/star/userpl2013/67/27/1389668636029_131161167b.jpg"/></span>
 					<div className="box-1">
 						<p className="quan">{this.state.data.info}</p>
 						<p className="bofang"><img src="http://image.kuwo.cn/mpage/html5/2015/tuijian/singPlay.png"/></p>

@@ -15,7 +15,7 @@ import PlayTit from "./PlayTit";
 class SongListNav extends React.Component{
     constructor(props){
         super(props);
-        console.log(777777,this.props);
+        // console.log(777777,this.props);
     }
     render(){
         return(

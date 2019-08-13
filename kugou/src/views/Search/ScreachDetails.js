@@ -37,21 +37,16 @@ class screachDetails extends React.Component{
                 </div>
                 <Router>
                     <div className={"searchName"}>
-                        <div className={"searchsong"}><NavLink exact style={{color:"#46b4e6",padding:"5px"}} to={"/searchdetails"}>歌曲</NavLink></div>
-                        <div className={"searchmv"}><NavLink style={{color:"#46b4e6",padding:"5px"}} activeStyle={{borderBottom:"10px solid #46b4e6"}}  to={"/searchdetails/mv"}>MV</NavLink></div>
-                        <div className={"searchsinger"}><NavLink style={{color:"#46b4e6",padding:"5px"}} activeStyle={{borderBottom:"3px solid #46b4e6"}}  to={"/searchdetails/singer"}>歌手</NavLink></div>
-                        <div className={"searchalbum"}><NavLink style={{color:"#46b4e6",padding:"5px"}} activeStyle={{borderBottom:"3px solid #46b4e6"}}  to={"/searchdetails/album"}>专辑</NavLink></div>
+                        <div className={"searchsong"}><NavLink exact style={{color:"#46b4e6"}} to={"/searchdetails"}>搜索出的全部歌曲</NavLink></div>
                     </div>
                     <Route exact path={"/searchdetails"} component={SearchSong}></Route>
-                    <Route path={"/searchdetails/mv"} component={SearchMV}></Route>
-                    <Route path={"/searchdetails/singer"} component={SearchSinger}></Route>
-                    <Route path={"/searchdetails/album"} component={SearchAlbum}></Route>
                 </Router>
             </div>
         )
     }
     async search(){
-        pubsub.publish("one",{value:this.refs.all.value})
+        pubsub.publish("one",{value:this.refs.all.value});
+        pubsub.publish("two",{value:this.refs.all.value});
         this.props.history.push("/searchdetails");
         const {data} = await axios.get("/kugouu/r.s?all="+this.refs.all.value+"&ft=music&client=kt&pn=0&rn=50&rformat=json&encoding=utf8")
                 const list = eval("("+data+")");
