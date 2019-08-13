@@ -345,9 +345,6 @@ app.get("/singer",function(req,res){
 //     })
 // });
 
-
-
-
 /**************************************************************************************************************/
   app.get("/Rank1",function(req,res){
    fs.readFile(__dirname+"/data/songList.json","utf-8",function(err,data){
